@@ -24,7 +24,7 @@ export function FaqSection({
   eyebrow = "FAQ",
 }: FaqSectionProps) {
   return (
-    <section className="py-20 md:py-28">
+    <section className="section-alt py-20 md:py-28">
       <Container>
         <SectionTitle eyebrow={eyebrow} title={title} description={description} />
         <FadeIn delay={0.1} className="mx-auto mt-12 max-w-3xl">

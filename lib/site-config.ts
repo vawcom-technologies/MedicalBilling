@@ -73,13 +73,21 @@ export const siteConfig = {
 export type SiteConfig = typeof siteConfig;
 
 export const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/medical-billing", label: "Medical Billing" },
-  { href: "/credentialing", label: "Credentialing" },
-  { href: "/virtual-front-desk", label: "Virtual Front Desk" },
-  { href: "/tools/revenue-leakage-calculator", label: "Calculator" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Home", short: "Home" },
+  { href: "/medical-billing", label: "Medical Billing", short: "Billing" },
+  { href: "/credentialing", label: "Credentialing", short: "Credentialing" },
+  {
+    href: "/virtual-front-desk",
+    label: "Virtual Front Desk",
+    short: "Front Desk",
+  },
+  {
+    href: "/tools/revenue-leakage-calculator",
+    label: "Calculator",
+    short: "Calculator",
+  },
+  { href: "/about", label: "About", short: "About" },
+  { href: "/contact", label: "Contact", short: "Contact" },
 ] as const;
 
 export const serviceLinks = [

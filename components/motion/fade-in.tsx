@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { cn } from "@/lib/utils";
 import { easeOutExpo, staggerFast } from "@/lib/motion";
 
 type FadeInProps = {
@@ -36,12 +35,12 @@ export function FadeIn({
 
   return (
     <motion.div
-      className={cn("will-change-transform", className)}
+      className={className}
       initial={{ opacity: 0, y, x }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
-      viewport={{ once, margin: "-12% 0px -8% 0px", amount: 0.2 }}
+      viewport={{ once, margin: "-8% 0px -6% 0px", amount: 0.15 }}
       transition={{
-        duration: 0.8,
+        duration: 0.55,
         delay,
         ease: easeOutExpo,
       }}
@@ -64,7 +63,7 @@ const staggerItem: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
+      duration: 0.5,
       ease: easeOutExpo,
     },
   },
@@ -91,7 +90,7 @@ export function Stagger({
 
   return (
     <motion.div
-      className={cn(className)}
+      className={className}
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
@@ -122,10 +121,7 @@ export function StaggerItem({
   }
 
   return (
-    <motion.div
-      className={cn("will-change-transform", className)}
-      variants={staggerItem}
-    >
+    <motion.div className={className} variants={staggerItem}>
       {children}
     </motion.div>
   );

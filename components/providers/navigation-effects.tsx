@@ -80,15 +80,32 @@ export function NavigationEffects() {
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
-  // Keep the current route's scroll position fresh while the user scrolls
+  // Persist scroll position, but never write storage on every wheel tick
   useEffect(() => {
-    const onScroll = () => {
+    let frame = 0;
+    let timer = 0;
+
+    const persist = () => {
+      frame = 0;
       if (ignoreScrollSave.current) return;
       savePosition(pathnameRef.current, getScrollY());
     };
 
+    const onScroll = () => {
+      if (ignoreScrollSave.current) return;
+      if (!frame) {
+        frame = requestAnimationFrame(persist);
+      }
+      window.clearTimeout(timer);
+      timer = window.setTimeout(persist, 180);
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) cancelAnimationFrame(frame);
+      window.clearTimeout(timer);
+    };
   }, []);
 
   // Intercept same-origin navigations so Next doesn't force scroll-to-top

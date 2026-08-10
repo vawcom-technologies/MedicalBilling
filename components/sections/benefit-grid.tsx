@@ -39,11 +39,11 @@ export function BenefitGrid({
       <FadeIn className="mt-12">
         <div className="relative">
           <div
-            className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-16 bg-gradient-to-r from-background to-transparent md:w-28"
+            className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-16 bg-gradient-to-r from-[#eef5fa] to-transparent md:w-28"
             aria-hidden="true"
           />
           <div
-            className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-16 bg-gradient-to-l from-background to-transparent md:w-28"
+            className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-16 bg-gradient-to-l from-[#eef5fa] to-transparent md:w-28"
             aria-hidden="true"
           />
 
@@ -51,7 +51,7 @@ export function BenefitGrid({
             {loopItems.map((item, index) => (
               <div
                 key={`${item}-${index}`}
-                className="flex h-[72px] w-[280px] shrink-0 items-center gap-3 rounded-[1.5rem] border border-border bg-white px-5 shadow-[0_8px_24px_rgba(15,76,129,0.04)] sm:w-[320px]"
+                className="glass flex h-[72px] w-[280px] shrink-0 items-center gap-3 rounded-[1.5rem] px-5 sm:w-[320px]"
               >
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
                   <Icon className="h-5 w-5" aria-hidden="true" />

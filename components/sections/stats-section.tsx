@@ -26,7 +26,7 @@ export function StatsSection({
       className={
         brand
           ? "bg-primary py-16 text-white md:py-20"
-          : "border-y border-border bg-white py-16 md:py-20"
+          : "section-surface border-y py-16 md:py-20"
       }
     >
       <Container>
@@ -54,8 +54,8 @@ export function StatsSection({
               <div
                 className={`rounded-[1.5rem] p-6 text-center ${
                   brand
-                    ? "bg-white/10"
-                    : "gradient-border shadow-[0_10px_30px_rgba(15,76,129,0.05)]"
+                    ? "border border-white/20 bg-white/10 backdrop-blur-md"
+                    : "glass"
                 }`}
               >
                 <div

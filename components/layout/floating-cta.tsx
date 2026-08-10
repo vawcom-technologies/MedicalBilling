@@ -9,16 +9,26 @@ export function FloatingCta() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 420);
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        setVisible(window.scrollY > 420);
+      });
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
   }, []);
 
   const scrollTop = () => {
     const lenis = (window as Window & { __lenis?: { scrollTo: (v: number, o?: object) => void } }).__lenis;
     if (lenis) {
-      lenis.scrollTo(0, { lerp: 0.07 });
+      lenis.scrollTo(0, { lerp: 0.12 });
       return;
     }
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -37,7 +47,7 @@ export function FloatingCta() {
         type="button"
         onClick={scrollTop}
         aria-label="Back to top"
-        className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-border bg-white text-primary shadow-[0_10px_30px_rgba(15,76,129,0.12)] transition hover:-translate-y-0.5"
+        className="glass-strong inline-flex h-11 w-11 items-center justify-center rounded-2xl text-primary transition hover:-translate-y-0.5"
       >
         <ArrowUp className="h-4 w-4" />
       </button>

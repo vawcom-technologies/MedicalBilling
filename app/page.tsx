@@ -60,13 +60,13 @@ export default function HomePage() {
       >
         <div className="relative">
           <HealthcareHeroIllustration />
-          <div className="glass absolute -left-2 bottom-8 hidden rounded-2xl px-4 py-3 md:block">
+          <div className="glass-strong absolute -left-2 bottom-8 hidden rounded-2xl px-4 py-3 md:block">
             <p className="text-xs font-semibold uppercase tracking-wider text-muted">
               Clean Claim Rate
             </p>
             <p className="text-2xl font-bold text-primary">98%</p>
           </div>
-          <div className="glass absolute -right-2 top-10 hidden rounded-2xl px-4 py-3 md:block">
+          <div className="glass-strong absolute -right-2 top-10 hidden rounded-2xl px-4 py-3 md:block">
             <p className="text-xs font-semibold uppercase tracking-wider text-muted">
               Collection Lift
             </p>
@@ -75,7 +75,7 @@ export default function HomePage() {
         </div>
       </PageHero>
 
-      <section className="border-b border-border bg-white py-8">
+      <section className="section-surface border-b py-8">
         <Container>
           <FadeIn>
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium text-muted">
@@ -145,7 +145,7 @@ export default function HomePage() {
           <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {industries.map((item) => (
               <StaggerItem key={item.label}>
-                <div className="flex items-center gap-4 rounded-[1.5rem] border border-border bg-white p-5 shadow-[0_8px_24px_rgba(15,76,129,0.04)] transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(15,76,129,0.1)]">
+                <div className="glass flex items-center gap-4 rounded-[1.5rem] p-5 transition hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(15,76,129,0.1)]">
                   <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
                     <item.icon className="h-5 w-5" aria-hidden="true" />
                   </span>

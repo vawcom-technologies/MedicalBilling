@@ -99,7 +99,7 @@ export default function MedicalBillingPage() {
               description={medicalBillingContent.whyTeam.description}
             />
             <FadeIn delay={0.1}>
-              <div className="rounded-[1.75rem] border border-border bg-white p-8 shadow-[0_16px_40px_rgba(15,76,129,0.06)]">
+              <div className="glass rounded-[1.75rem] p-8">
                 <h3 className="text-lg font-semibold text-foreground">
                   Related services that strengthen collections
                 </h3>

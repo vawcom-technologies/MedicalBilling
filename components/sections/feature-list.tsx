@@ -56,7 +56,7 @@ export function FeatureList({
   const closeDetail = () => setActiveIndex(null);
 
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="section-alt py-20 md:py-28">
       <Container>
         <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionTitle
@@ -87,7 +87,7 @@ export function FeatureList({
                     style={{ originY: 0 }}
                     className="w-full"
                   >
-                    <div className="w-full rounded-2xl border border-secondary/25 bg-gradient-to-br from-secondary/5 via-white to-accent/5 p-5 shadow-[0_14px_36px_rgba(15,76,129,0.08)] md:p-6">
+                    <div className="glass-strong w-full rounded-2xl border-secondary/25 p-5 md:p-6">
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex items-start gap-3">
                           <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
@@ -100,7 +100,7 @@ export function FeatureList({
                         <button
                           type="button"
                           onClick={closeDetail}
-                          className="inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-border bg-white px-3 py-2 text-xs font-semibold text-foreground transition hover:border-secondary/40 hover:text-secondary"
+                          className="glass inline-flex shrink-0 items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold text-foreground transition hover:border-secondary/40 hover:text-secondary"
                         >
                           <ArrowLeft
                             className="h-3.5 w-3.5"
@@ -167,7 +167,7 @@ export function FeatureList({
                             damping: 24,
                           }}
                           className={cn(
-                            "group flex h-full min-h-[5.25rem] w-full items-center gap-3 rounded-2xl border border-border bg-background px-4 py-4 text-left shadow-none transition-[border-color,background-color,box-shadow] duration-300 hover:border-secondary/45 hover:bg-white hover:shadow-[0_14px_32px_rgba(15,76,129,0.12)]"
+                            "glass group flex h-full min-h-[5.25rem] w-full items-center gap-3 rounded-2xl px-4 py-4 text-left transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_14px_32px_rgba(15,76,129,0.12)]"
                           )}
                         >
                           {content}
@@ -175,7 +175,7 @@ export function FeatureList({
                       ) : (
                         <div
                           key={item.title}
-                          className="group flex h-full min-h-[5.25rem] items-center gap-3 rounded-2xl border border-border bg-background px-4 py-4 transition duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:bg-white hover:shadow-[0_14px_32px_rgba(15,76,129,0.12)]"
+                          className="glass group flex h-full min-h-[5.25rem] items-center gap-3 rounded-2xl px-4 py-4 transition duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_14px_32px_rgba(15,76,129,0.12)]"
                         >
                           {content}
                         </div>

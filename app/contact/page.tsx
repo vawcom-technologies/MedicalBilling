@@ -82,7 +82,7 @@ export default function ContactPage() {
           <div className="grid items-start gap-10 lg:grid-cols-[0.92fr_1.08fr]">
             <FadeIn>
               <div className="space-y-5">
-                <div className="rounded-[1.5rem] border border-border bg-white p-6 shadow-[0_12px_36px_rgba(15,76,129,0.05)]">
+                <div className="glass rounded-[1.5rem] p-6">
                   <h2 className="text-xl font-bold text-foreground">
                     Contact Details
                   </h2>
@@ -144,7 +144,7 @@ export default function ContactPage() {
                   </ul>
                 </div>
 
-                <div className="overflow-hidden rounded-[1.5rem] border border-border bg-white shadow-[0_12px_36px_rgba(15,76,129,0.05)]">
+                <div className="glass overflow-hidden rounded-[1.5rem]">
                   <div
                     className="flex h-64 items-center justify-center bg-[linear-gradient(135deg,#e8f3fb_0%,#f4fbf9_100%)]"
                     role="img"

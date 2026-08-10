@@ -28,15 +28,25 @@ export function SupportAssistant() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    if (unlocked) return;
+
+    let frame = 0;
     const onScroll = () => {
-      if (window.scrollY > 80) {
-        setUnlocked(true);
-      }
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        if (window.scrollY > 80) {
+          setUnlocked(true);
+        }
+      });
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, [unlocked]);
 
   const heading = useMemo(() => {
     if (view === "live") return "Live Chat";
@@ -100,7 +110,7 @@ export function SupportAssistant() {
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3 md:bottom-8 md:right-8">
       {open ? (
-        <div className="flex w-[min(100vw-2.5rem,360px)] flex-col overflow-hidden rounded-[1.5rem] border border-border bg-white shadow-[0_24px_60px_rgba(15,76,129,0.2)]">
+        <div className="glass-panel flex w-[min(100vw-2.5rem,360px)] flex-col overflow-hidden rounded-[1.5rem]">
           <div className="flex items-center justify-between bg-gradient-to-r from-primary to-secondary px-4 py-3 text-white">
             <div className="flex items-center gap-2">
               {view !== "menu" ? (
@@ -159,7 +169,7 @@ export function SupportAssistant() {
                         key={page.id}
                         type="button"
                         onClick={() => openPage(page)}
-                        className="rounded-2xl border border-border bg-background px-3 py-3 text-left text-sm font-medium text-foreground transition hover:border-secondary/40 hover:bg-white"
+                        className="glass-soft rounded-2xl px-3 py-3 text-left text-sm font-medium text-foreground transition hover:border-secondary/40"
                       >
                         {page.label}
                       </button>
@@ -171,7 +181,7 @@ export function SupportAssistant() {
 
             {view === "live" && (
               <div className="space-y-4">
-                <div className="rounded-2xl border border-border bg-background p-4">
+                <div className="glass-soft rounded-2xl p-4">
                   <p className="text-sm font-semibold text-foreground">
                     Connect with a live representative
                   </p>
@@ -199,7 +209,7 @@ export function SupportAssistant() {
 
             {view === "page" && activePage && (
               <div className="space-y-4">
-                <div className="rounded-2xl border border-border bg-background p-4">
+                <div className="glass-soft rounded-2xl p-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-secondary">
                     Page summary
                   </p>

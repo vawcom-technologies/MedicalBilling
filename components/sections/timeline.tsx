@@ -52,7 +52,7 @@ export function Timeline({
   const [active, setActive] = useState(0);
 
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="section-alt py-20 md:py-28">
       <Container>
         <SectionTitle
           eyebrow={eyebrow}
@@ -84,7 +84,7 @@ export function Timeline({
                     "transition-[flex-grow,background-color,border-color,box-shadow,color] duration-500 ease-in-out",
                     isActive
                       ? "grow-[3.2] border-primary bg-gradient-to-br from-primary via-[#135a96] to-secondary text-white shadow-[0_20px_50px_rgba(15,76,129,0.28)]"
-                      : "grow border-border bg-background text-foreground shadow-[0_8px_24px_rgba(15,76,129,0.04)]"
+                      : "glass grow text-foreground"
                   )}
                 >
                   {/* Collapsed view: fades out as card expands */}
@@ -105,7 +105,7 @@ export function Timeline({
                     <h3 className="mt-auto px-1 text-center text-base font-bold leading-snug text-foreground">
                       {item.title}
                     </h3>
-                    <span className="mt-8 inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-muted">
+                    <span className="glass mt-8 inline-flex h-10 w-10 items-center justify-center rounded-full text-muted">
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </span>
                   </div>
@@ -175,7 +175,7 @@ export function Timeline({
                     "w-full rounded-[1.35rem] border p-5 text-left transition-[background-color,border-color,box-shadow,color] duration-500 ease-in-out",
                     isActive
                       ? "border-primary bg-gradient-to-br from-primary to-secondary text-white shadow-[0_16px_40px_rgba(15,76,129,0.25)]"
-                      : "border-border bg-background text-foreground"
+                      : "glass text-foreground"
                   )}
                 >
                   <div className="flex items-start gap-4">
@@ -219,7 +219,7 @@ export function Timeline({
                         "mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors duration-500",
                         isActive
                           ? "border-white/30 bg-white text-primary"
-                          : "border-border bg-white text-muted"
+                          : "glass text-muted"
                       )}
                     >
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />

@@ -17,7 +17,7 @@ export function CalculatorPromo({
     <section className="py-16 md:py-20">
       <Container>
         <FadeIn>
-          <div className="relative overflow-hidden rounded-[1.75rem] border border-border bg-white px-6 py-10 shadow-[0_16px_40px_rgba(15,76,129,0.06)] md:px-10 md:py-12">
+          <div className="glass relative overflow-hidden rounded-[1.75rem] px-6 py-10 md:px-10 md:py-12">
             <div
               className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-accent/10 blur-3xl"
               aria-hidden="true"

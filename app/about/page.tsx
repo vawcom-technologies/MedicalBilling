@@ -81,7 +81,7 @@ export default function AboutPage() {
         <Container>
           <div className="grid gap-6 lg:grid-cols-2">
             <FadeIn>
-              <div className="h-full rounded-[1.75rem] border border-border bg-white p-8 shadow-[0_12px_36px_rgba(15,76,129,0.05)]">
+              <div className="glass h-full rounded-[1.75rem] p-8">
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white">
                   <Target className="h-5 w-5" aria-hidden="true" />
                 </span>
@@ -94,7 +94,7 @@ export default function AboutPage() {
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <div className="h-full rounded-[1.75rem] border border-border bg-white p-8 shadow-[0_12px_36px_rgba(15,76,129,0.05)]">
+              <div className="glass h-full rounded-[1.75rem] p-8">
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-white">
                   <Eye className="h-5 w-5" aria-hidden="true" />
                 </span>
@@ -110,7 +110,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="section-alt py-20 md:py-28">
         <Container>
           <SectionTitle
             eyebrow="Values"
@@ -120,7 +120,7 @@ export default function AboutPage() {
           <Stagger className="mt-12 grid gap-5 md:grid-cols-2">
             {aboutContent.values.items.map((value) => (
               <StaggerItem key={value.title}>
-                <div className="h-full rounded-[1.5rem] border border-border bg-background p-6">
+                <div className="glass h-full rounded-[1.5rem] p-6">
                   <h3 className="text-lg font-semibold text-foreground">
                     {value.title}
                   </h3>
@@ -147,7 +147,7 @@ export default function AboutPage() {
         steps={aboutContent.timeline}
       />
 
-      <section className="bg-background py-20 md:py-28">
+      <section className="py-20 md:py-28">
         <Container>
           <SectionTitle
             eyebrow="Team"
@@ -157,7 +157,7 @@ export default function AboutPage() {
           <Stagger className="mt-12 grid gap-6 lg:grid-cols-3">
             {aboutContent.team.map((member) => (
               <StaggerItem key={member.name}>
-                <div className="h-full rounded-[1.5rem] border border-border bg-white p-7 shadow-[0_10px_30px_rgba(15,76,129,0.04)]">
+                <div className="glass h-full rounded-[1.5rem] p-7">
                   <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-primary to-secondary" />
                   <h3 className="mt-5 text-lg font-bold text-foreground">
                     {member.name}
@@ -187,7 +187,7 @@ export default function AboutPage() {
             <Stagger className="grid auto-rows-fr gap-3 sm:grid-cols-2">
               {aboutContent.certifications.items.map((item) => (
                 <StaggerItem key={item} className="h-full">
-                  <div className="flex h-full min-h-[4.75rem] w-full items-center gap-3 rounded-2xl border border-border bg-white px-4 py-4">
+                  <div className="glass flex h-full min-h-[4.75rem] w-full items-center gap-3 rounded-2xl px-4 py-4">
                     <Award
                       className="h-5 w-5 shrink-0 text-accent"
                       aria-hidden="true"

@@ -49,7 +49,7 @@ export function ContactForm() {
   };
 
   return (
-    <div className="gradient-border rounded-[1.75rem] bg-white p-6 shadow-[0_20px_50px_rgba(15,76,129,0.08)] md:p-8">
+    <div className="gradient-border rounded-[1.75rem] p-6 md:p-8">
       <AnimatePresence mode="wait">
         {success ? (
           <motion.div
@@ -146,7 +146,7 @@ export function ContactForm() {
             >
               <select
                 id="service"
-                className="flex h-12 w-full rounded-2xl border border-border bg-white px-4 text-sm text-foreground shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40"
+                className="glass-strong flex h-12 w-full rounded-2xl px-4 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40"
                 aria-invalid={!!errors.service}
                 defaultValue=""
                 {...register("service")}

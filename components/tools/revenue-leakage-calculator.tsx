@@ -116,8 +116,8 @@ export function RevenueLeakageCalculator() {
   });
 
   return (
-    <div className="gradient-border overflow-hidden rounded-[1.75rem] bg-white shadow-[0_24px_60px_rgba(15,76,129,0.1)]">
-      <div className="border-b border-border bg-gradient-to-r from-primary/5 via-white to-accent/5 px-6 py-5 md:px-8">
+    <div className="gradient-border overflow-hidden rounded-[1.75rem]">
+      <div className="border-b border-white/50 bg-gradient-to-r from-primary/5 via-white/40 to-accent/5 px-6 py-5 md:px-8">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-white">
@@ -329,7 +329,7 @@ export function RevenueLeakageCalculator() {
                 </div>
 
                 {!unlocked ? (
-                  <div className="rounded-[1.5rem] border border-border bg-background p-5 md:p-6">
+                  <div className="glass-soft rounded-[1.5rem] p-5 md:p-6">
                     <div className="mb-4 flex items-start gap-3">
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
                         <Lock className="h-4 w-4" aria-hidden="true" />
@@ -470,7 +470,7 @@ export function RevenueLeakageCalculator() {
                       />
                     </div>
 
-                    <div className="rounded-[1.5rem] border border-border bg-background p-5">
+                    <div className="glass-soft rounded-[1.5rem] p-5">
                       <h3 className="font-semibold text-foreground">
                         Recommended next steps
                       </h3>
@@ -537,9 +537,9 @@ export function RevenueLeakageCalculator() {
           </div>
         </div>
 
-        <aside className="border-t border-border bg-background p-6 md:p-8 lg:border-l lg:border-t-0">
+        <aside className="border-t border-white/50 bg-white/25 p-6 backdrop-blur-md md:p-8 lg:border-l lg:border-t-0">
           <div className="sticky top-28 space-y-5">
-            <div className="rounded-[1.5rem] border border-border bg-white p-5">
+            <div className="glass rounded-[1.5rem] p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-secondary">
                 Live preview
               </p>
@@ -567,7 +567,7 @@ export function RevenueLeakageCalculator() {
               </div>
             </div>
 
-            <div className="rounded-[1.5rem] border border-border bg-white p-5 text-sm text-muted">
+            <div className="glass rounded-[1.5rem] p-5 text-sm text-muted">
               <p className="font-semibold text-foreground">How this works</p>
               <ul className="mt-3 space-y-2">
                 <li>1. Enter collections + specialty</li>
@@ -615,7 +615,7 @@ function Select({
     <select
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="flex h-12 w-full rounded-2xl border border-border bg-white px-4 text-sm text-foreground shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40"
+      className="glass-strong flex h-12 w-full rounded-2xl px-4 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40"
     >
       {options.map((option) => (
         <option key={option.value} value={option.value}>
@@ -647,8 +647,8 @@ function OptionGrid({
             className={cn(
               "rounded-2xl border px-4 py-3 text-left text-sm font-medium transition",
               active
-                ? "border-secondary bg-secondary/10 text-primary"
-                : "border-border bg-white text-muted hover:border-secondary/40 hover:text-foreground"
+                ? "border-secondary bg-secondary/10 text-primary backdrop-blur-md"
+                : "glass text-muted hover:border-secondary/40 hover:text-foreground"
             )}
           >
             {option.label}
@@ -669,7 +669,7 @@ function StatCard({
   hint: string;
 }) {
   return (
-    <div className="rounded-[1.25rem] border border-border bg-white p-4">
+    <div className="glass rounded-[1.25rem] p-4">
       <p className="text-xs font-semibold uppercase tracking-wider text-muted">
         {label}
       </p>

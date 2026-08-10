@@ -28,7 +28,7 @@ export function Testimonials({
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   return (
-    <section className="bg-background py-20 md:py-28">
+    <section className="py-20 md:py-28">
       <Container>
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionTitle

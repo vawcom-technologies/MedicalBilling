@@ -32,7 +32,7 @@ export function PageHero({
       <Container className="relative z-[2]">
         {breadcrumb ? (
           <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted">
+            <ol className="inline-flex flex-wrap items-center gap-1.5 rounded-full glass px-3 py-1.5 text-sm text-muted">
               <li>
                 <Link href="/" className="transition-colors hover:text-primary">
                   Home
@@ -51,7 +51,7 @@ export function PageHero({
           <div>
             {eyebrow ? (
               <FadeIn>
-                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
+                <p className="mb-5 inline-flex items-center rounded-full border border-secondary/20 bg-secondary/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-secondary">
                   {eyebrow}
                 </p>
               </FadeIn>
@@ -67,14 +67,14 @@ export function PageHero({
               </p>
             </FadeIn>
             <FadeIn delay={0.18} className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="rounded-full">
                 <Link href={primaryHref}>
                   {primaryCta}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
               {secondaryCta ? (
-                <Button asChild size="lg" variant="outline">
+                <Button asChild size="lg" variant="outline" className="rounded-full">
                   <Link href={secondaryHref}>{secondaryCta}</Link>
                 </Button>
               ) : null}

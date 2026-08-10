@@ -56,7 +56,7 @@ export const homeContent = {
       },
       {
         tone: "positive" as const,
-        text: `${siteConfig.name} achieves a 98% clean claim acceptance rate and provides dedicated support to review, correct, and resubmit denied claims efficiently.`,
+        text: `${siteConfig.name} delivers a 98% clean claim acceptance rate with dedicated support to fix and resubmit denials.`,
         highlight: "98% clean claim acceptance rate",
       },
     ],

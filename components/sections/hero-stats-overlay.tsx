@@ -24,7 +24,7 @@ function StatCard({
 }) {
   return (
     <div
-      className={`rounded-2xl border border-white/70 bg-white/95 px-3.5 py-2.5 shadow-[0_12px_30px_rgba(15,76,129,0.12)] backdrop-blur-md ${className ?? ""}`}
+      className={`glass-strong rounded-2xl px-3.5 py-2.5 ${className ?? ""}`}
     >
       <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">
         {stat.label}
@@ -72,7 +72,7 @@ export function HeroStatsOverlay({ children, stats }: HeroStatsOverlayProps) {
         {all.map((stat) => (
           <div
             key={stat.label}
-            className="rounded-2xl border border-border bg-white px-2 py-3 text-center shadow-sm"
+            className="glass rounded-2xl px-2 py-3 text-center"
           >
             <p className="text-[9px] font-semibold uppercase tracking-[0.1em] text-muted">
               {stat.label}
@@ -103,7 +103,7 @@ export function HeroStatsRow({ stats }: HeroStatsRowProps) {
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="min-w-[140px] rounded-2xl border border-border bg-white/95 px-4 py-3 text-center shadow-[0_8px_24px_rgba(15,76,129,0.06)]"
+          className="glass-strong min-w-[140px] rounded-2xl px-4 py-3 text-center"
         >
           <p className="text-xs font-semibold uppercase tracking-wider text-muted">
             {stat.label}
