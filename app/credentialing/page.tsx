@@ -70,17 +70,21 @@ export default function CredentialingPage() {
 
       <section className="py-16 md:py-20">
         <Container>
-          <FadeIn className="mx-auto max-w-3xl text-center">
-            <p className="text-base leading-relaxed text-muted md:text-lg">
-              {credentialingContent.intro}
-            </p>
+          <FadeIn className="mx-auto max-w-3xl space-y-5 text-center">
+            {credentialingContent.intro.map((paragraph) => (
+              <p
+                key={paragraph.slice(0, 48)}
+                className="text-base leading-relaxed text-muted md:text-lg"
+              >
+                {paragraph}
+              </p>
+            ))}
           </FadeIn>
         </Container>
       </section>
 
       <FeatureList
         title={credentialingContent.includes.title}
-        description="From CAQH profile management to Medicare Medicaid enrollment and commercial payer enrollment services, managed with precision."
         items={credentialingContent.includes.items}
       />
 
@@ -111,9 +115,7 @@ export default function CredentialingPage() {
       </section>
 
       <BenefitGrid
-        eyebrow="Why Work With Us"
         title={credentialingContent.whyUs.title}
-        description="Work with a medical credentialing company that treats payer enrollment as a revenue-critical workflow."
         items={credentialingContent.whyUs.items}
       />
 

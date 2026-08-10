@@ -16,12 +16,13 @@ export const credentialingContent = {
   hero: {
     h1: "Credentialing Services That Get Providers Enrolled Faster",
     subheadline:
-      "Provider credentialing is one of the most critical steps in building a successful healthcare practice. Delays, incomplete applications, or missing documentation can postpone reimbursements and keep providers from seeing insured patients.",
+      "Provider credentialing is one of the most critical steps in building a successful healthcare practice. Delays, incomplete applications, or missing documentation can postpone reimbursements and prevent providers from seeing insured patients.",
     primaryCta: siteConfig.cta.credentialing,
     secondaryCta: "Speak With a Credentialing Specialist",
   },
-  intro:
-    "Our credentialing services streamline the entire enrollment process, so providers get credentialed accurately and efficiently with commercial insurers, Medicare, Medicaid, and other payer organizations.",
+  intro: [
+    "Our Credentialing Services streamline the entire enrollment process, ensuring healthcare providers become credentialed accurately and efficiently with commercial insurance companies, Medicare, Medicaid, and other payer organizations.",
+  ],
   includes: {
     title: "Our Credentialing Solutions Include",
     items: [
@@ -75,10 +76,10 @@ export const credentialingContent = {
   whyMatters: {
     title: "Why Credentialing Matters",
     description:
-      "Without proper credentialing, providers cannot bill insurance companies for covered services, and every delay can mean lost revenue and interrupted patient access. Our specialists manage each application carefully, monitor payer requirements, communicate directly with insurers, and provide regular status updates until approval is secured.",
+      "Without proper credentialing, providers cannot bill insurance companies for covered services. Every delay can result in lost revenue and interrupted patient access. Our specialists carefully manage every application, monitor payer requirements, communicate with insurance companies, and provide regular status updates until approval is obtained.",
   },
   whyUs: {
-    title: "Why Work With Us",
+    title: "Why Work With Us?",
     items: [
       "Faster enrollment timelines",
       "Accurate application preparation",
@@ -91,7 +92,7 @@ export const credentialingContent = {
   growing: {
     title: "Built for Growing Practices",
     description:
-      "Whether you're opening a new practice, hiring additional providers, or expanding into new states, our credentialing experts make sure your providers are enrolled correctly and stay compliant throughout the process.",
+      "Whether you’re opening a new practice, hiring additional providers, or expanding into new states, our credentialing experts ensure your providers are enrolled correctly and remain compliant throughout the process. We remove the complexity from credentialing so you can focus on growing your practice with confidence.",
   },
   process: [
     {
@@ -174,9 +175,9 @@ export const credentialingContent = {
     cta: siteConfig.cta.credentialing,
   },
   finalCta: {
-    title: "Ready to Accelerate Payer Enrollment?",
+    title: "Grow Your Practice With Confidence",
     description:
-      "Partner with specialists who treat provider credentialing services as a revenue-critical workflow, not paperwork.",
+      "We remove the complexity from credentialing so you can focus on growing your practice with confidence.",
     cta: siteConfig.cta.credentialing,
   },
 } as const;

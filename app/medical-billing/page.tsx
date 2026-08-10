@@ -71,17 +71,21 @@ export default function MedicalBillingPage() {
 
       <section className="py-16 md:py-20">
         <Container>
-          <FadeIn className="mx-auto max-w-3xl text-center">
-            <p className="text-base leading-relaxed text-muted md:text-lg">
-              {medicalBillingContent.intro}
-            </p>
+          <FadeIn className="mx-auto max-w-3xl space-y-5 text-center">
+            {medicalBillingContent.intro.map((paragraph) => (
+              <p
+                key={paragraph.slice(0, 48)}
+                className="text-base leading-relaxed text-muted md:text-lg"
+              >
+                {paragraph}
+              </p>
+            ))}
           </FadeIn>
         </Container>
       </section>
 
       <FeatureList
         title={medicalBillingContent.includes.title}
-        description="Comprehensive medical coding services, denial management services, insurance claim follow-up, and accounts receivable recovery, managed end to end."
         items={medicalBillingContent.includes.items}
       />
 
@@ -140,7 +144,6 @@ export default function MedicalBillingPage() {
 
       <BenefitGrid
         title={medicalBillingContent.benefits.title}
-        description="Outsource medical billing to increase collections, accelerate reimbursements, and return more time to patient care."
         items={medicalBillingContent.benefits.items}
       />
 

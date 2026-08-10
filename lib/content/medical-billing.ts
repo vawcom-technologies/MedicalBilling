@@ -16,14 +16,16 @@ export const medicalBillingContent = {
   hero: {
     h1: "Medical Billing Services That Maximize Revenue and Reduce Administrative Burden",
     subheadline:
-      "Every delayed or denied claim impacts your revenue. Our proactive, technology-driven approach identifies billing issues before they become financial losses.",
+      "Healthcare providers should focus on delivering exceptional patient care, not chasing unpaid claims, correcting billing errors, or spending hours on insurance follow-ups.",
     primaryCta: siteConfig.cta.billingAnalysis,
     secondaryCta: "Talk to Our Billing Experts",
   },
-  intro:
-    "Our experienced billing specialists manage every stage of the revenue cycle, from patient registration and insurance verification to claim submission, payment posting, denial management, and AR follow-up, minimizing rejections and accelerating payment turnaround.",
+  intro: [
+    "Our Medical Billing Services are designed to simplify your revenue cycle, improve cash flow, and maximize reimbursements while maintaining complete compliance with industry standards.",
+    "Our experienced billing specialists handle every stage of the revenue cycle, from patient registration and insurance verification to claim submission, payment posting, denial management, and accounts receivable follow-up. By combining industry expertise with advanced billing technology, we minimize claim rejections and accelerate payment turnaround times.",
+  ],
   includes: {
-    title: "What Our Medical Billing Services Include",
+    title: "What We Offer",
     items: [
       {
         title: "Accurate medical coding and claim preparation",
@@ -56,7 +58,7 @@ export const medicalBillingContent = {
           "Clear, itemized patient statements and responsive billing support reduce confusion and accelerate patient collections. We explain balances, set up payment plans when appropriate, and keep communication professional so your front desk is not buried in billing calls.",
       },
       {
-        title: "Aging accounts receivable (AR) recovery",
+        title: "Aging Accounts Receivable (AR) recovery",
         detail:
           "Priority worklists target 30/60/90/120+ day balances with payer outreach, corrected resubmissions, and appeal escalation. The goal is simple: convert aging AR into collected cash while protecting legitimate write-offs and preserving audit-ready documentation.",
       },
@@ -68,12 +70,12 @@ export const medicalBillingContent = {
     ],
   },
   whyTeam: {
-    title: "Why Healthcare Providers Choose Our Billing Team",
+    title: "Why Healthcare Providers Choose Us",
     description:
-      "We continuously monitor claim status, resolve denials efficiently, and stay current on payer policies, coding regulations, and compliance requirements so your practice stays financially healthy while carrying less administrative overhead.",
+      "Every delayed or denied claim impacts your revenue. Our proactive approach identifies billing issues before they become financial losses. We continuously monitor claim status, resolve denials efficiently, and ensure every legitimate dollar is collected. Our team stays updated with changing payer policies, coding regulations, and compliance requirements, allowing your practice to remain financially healthy while reducing administrative overhead.",
   },
   benefits: {
-    title: "Benefits of Outsourcing Your Medical Billing",
+    title: "Benefits of Outsourcing Medical Billing",
     items: [
       "Increased collections and profitability",
       "Faster reimbursements",
@@ -113,7 +115,7 @@ export const medicalBillingContent = {
   specialties: {
     title: "Specialties We Support",
     description:
-      "Whether you're an independent physician, specialty clinic, urgent care center, behavioral health provider, or multi-provider practice, we customize our billing solutions to fit your workflow and growth goals.",
+      "Whether you’re an independent physician, specialty clinic, urgent care center, behavioral health provider, or multi-provider practice, we customize our billing solutions to fit your workflow and growth goals.",
   },
   stats: [
     { value: 98, suffix: "%", label: "First-Pass Acceptance" },
@@ -170,9 +172,9 @@ export const medicalBillingContent = {
     cta: siteConfig.cta.billingAnalysis,
   },
   finalCta: {
-    title: "Ready to Get Paid Faster?",
+    title: "Partner With Us",
     description:
-      "Partner with a medical billing services team that protects every legitimate dollar your practice earns.",
+      "Partner with us to transform your revenue cycle into a predictable, efficient, and profitable process.",
     cta: siteConfig.cta.billingAnalysis,
   },
 } as const;

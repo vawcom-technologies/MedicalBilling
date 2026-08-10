@@ -73,17 +73,21 @@ export default function VirtualFrontDeskPage() {
 
       <section className="py-16 md:py-20">
         <Container>
-          <FadeIn className="mx-auto max-w-3xl text-center">
-            <p className="text-base leading-relaxed text-muted md:text-lg">
-              {virtualFrontDeskContent.intro}
-            </p>
+          <FadeIn className="mx-auto max-w-3xl space-y-5 text-center">
+            {virtualFrontDeskContent.intro.map((paragraph) => (
+              <p
+                key={paragraph.slice(0, 48)}
+                className="text-base leading-relaxed text-muted md:text-lg"
+              >
+                {paragraph}
+              </p>
+            ))}
           </FadeIn>
         </Container>
       </section>
 
       <FeatureList
         title={virtualFrontDeskContent.includes.title}
-        description="A complete medical answering service and healthcare appointment scheduling service layer, plus insurance eligibility verification and intake support."
         items={virtualFrontDeskContent.includes.items}
       />
 
@@ -108,7 +112,6 @@ export default function VirtualFrontDeskPage() {
 
       <BenefitGrid
         title={virtualFrontDeskContent.benefits.title}
-        description="Virtual medical receptionist support that improves patient experience while controlling overhead."
         items={virtualFrontDeskContent.benefits.items}
       />
 

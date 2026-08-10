@@ -16,12 +16,13 @@ export const virtualFrontDeskContent = {
   hero: {
     h1: "Virtual Front Desk Services That Create Exceptional Patient Experiences",
     subheadline:
-      "Your front desk is the first impression patients have of your practice. Every call answered professionally, every appointment scheduled accurately, and every insurance verification completed correctly builds patient satisfaction and operational efficiency.",
+      "Your front desk is the first impression patients have of your practice. Every phone call answered professionally, every appointment scheduled accurately, and every insurance verification completed correctly contributes to patient satisfaction and operational efficiency.",
     primaryCta: siteConfig.cta.frontDesk,
     secondaryCta: "See How Virtual Support Works",
   },
-  intro:
-    "Our virtual front desk services provide trained healthcare support professionals who function as an extension of your practice without the cost of hiring in-house staff.",
+  intro: [
+    "Our Virtual Front Desk Services provide highly trained healthcare support professionals who function as an extension of your practice, delivering reliable administrative assistance without the cost of hiring in-house staff.",
+  ],
   includes: {
     title: "Our Front Desk Services Include",
     items: [
@@ -71,7 +72,7 @@ export const virtualFrontDeskContent = {
           "Messages are handled through HIPAA-conscious channels with clear documentation, so patients get timely answers and your practice keeps an audit-ready communication trail.",
       },
       {
-        title: "General administrative support",
+        title: "Administrative support",
         detail:
           "From follow-up calls to document collection and basic office tasks, our virtual front desk team absorbs admin load so your in-office staff can focus on patients in the clinic.",
       },
@@ -80,7 +81,7 @@ export const virtualFrontDeskContent = {
   efficiency: {
     title: "Improve Efficiency Without Increasing Overhead",
     description:
-      "Managing a busy front office can overwhelm internal staff, leading to longer wait times, missed calls, scheduling errors, and frustrated patients. Our dedicated virtual front desk team handles every patient interaction professionally, keeping provider schedules organized and optimized.",
+      "Managing a busy front office can overwhelm your internal staff, leading to longer wait times, missed calls, scheduling errors, and frustrated patients. Our dedicated virtual front desk team ensures every patient interaction is handled professionally while keeping your providers’ schedules organized and optimized.",
   },
   benefits: {
     title: "Benefits of Our Virtual Front Desk",
@@ -97,7 +98,7 @@ export const virtualFrontDeskContent = {
   flexible: {
     title: "Flexible for Any Practice Size",
     description:
-      "Whether you operate a solo practice or a multi-location healthcare organization, our virtual front desk solutions are customized to match your workflow, office hours, and communication preferences.",
+      "Whether you operate a solo practice or a multi-location healthcare organization, our virtual front desk solutions are customized to match your workflow, office hours, and communication preferences. Deliver a seamless patient experience while allowing your clinical staff to focus on what matters most.",
   },
   process: [
     {
@@ -182,7 +183,7 @@ export const virtualFrontDeskContent = {
   finalCta: {
     title: "Ready for a Seamless Patient Experience?",
     description:
-      "Let trained virtual medical receptionist professionals keep your phones answered, schedules full, and insurance checks accurate.",
+      "Deliver a seamless patient experience while allowing your clinical staff to focus on what matters most.",
     cta: siteConfig.cta.frontDesk,
   },
 } as const;
