@@ -79,10 +79,9 @@ export function Navbar() {
         progress > 0.02
           ? `rgba(255,255,255,${0.55 + progress * 0.22})`
           : "transparent";
-      shell.style.backdropFilter =
-        progress > 0.02 ? `blur(${10 + progress * 4}px)` : "none";
-      shell.style.webkitBackdropFilter =
-        progress > 0.02 ? `blur(${10 + progress * 4}px)` : "none";
+      const blur = progress > 0.02 ? `blur(${10 + progress * 4}px)` : "none";
+      shell.style.backdropFilter = blur;
+      shell.style.setProperty("-webkit-backdrop-filter", blur);
 
       row.style.height = `${barHeight}px`;
 
@@ -146,13 +145,13 @@ export function Navbar() {
     if (open) {
       shell.style.background = "rgba(255,255,255,0.82)";
       shell.style.backdropFilter = "blur(12px)";
-      shell.style.webkitBackdropFilter = "blur(12px)";
+      shell.style.setProperty("-webkit-backdrop-filter", "blur(12px)");
       shell.style.borderColor = "rgba(255,255,255,0.7)";
       shell.style.boxShadow = "0 12px 36px rgba(15,76,129,0.08)";
     } else {
       shell.style.background = "transparent";
       shell.style.backdropFilter = "none";
-      shell.style.webkitBackdropFilter = "none";
+      shell.style.setProperty("-webkit-backdrop-filter", "none");
       shell.style.borderColor = "transparent";
       shell.style.boxShadow = "none";
     }
