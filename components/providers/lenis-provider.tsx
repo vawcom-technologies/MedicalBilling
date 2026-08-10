@@ -24,6 +24,13 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
       },
       stopInertiaOnNavigate: true,
       respectReducedMotion: true,
+      // Allow nested panels (support chat, menus) to scroll independently
+      prevent: (node) =>
+        node instanceof HTMLElement &&
+        Boolean(
+          node.closest("[data-lenis-prevent]") ||
+            node.closest("[data-lenis-prevent-wheel]")
+        ),
     });
 
     (window as Window & { __lenis?: Lenis }).__lenis = lenis;

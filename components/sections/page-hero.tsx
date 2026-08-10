@@ -32,7 +32,7 @@ export function PageHero({
       <Container className="relative z-[2]">
         {breadcrumb ? (
           <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="inline-flex flex-wrap items-center gap-1.5 rounded-full glass px-3 py-1.5 text-sm text-muted">
+            <ol className="inline-flex flex-wrap items-center gap-1.5 text-sm text-muted">
               <li>
                 <Link href="/" className="transition-colors hover:text-primary">
                   Home

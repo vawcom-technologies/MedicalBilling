@@ -22,6 +22,7 @@ export function Navbar() {
   const [pill, setPill] = useState(false);
   const [elevated, setElevated] = useState(false);
   const [open, setOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const headerRef = useRef<HTMLElement>(null);
   const shellRef = useRef<HTMLDivElement>(null);
@@ -33,6 +34,29 @@ export function Navbar() {
   const ctaFullRef = useRef<HTMLSpanElement>(null);
   const ctaShortRef = useRef<HTMLSpanElement>(null);
   const progressRef = useRef(0);
+  const openRef = useRef(false);
+  const desktopRef = useRef(false);
+  const applyRef = useRef<(progress: number) => void>(() => {});
+
+  useEffect(() => {
+    openRef.current = open;
+    // Re-run morph when the mobile drawer opens/closes
+    applyRef.current(progressRef.current);
+    setElevated(progressRef.current > 0.05 || open);
+  }, [open]);
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 1024px)");
+    const sync = () => {
+      desktopRef.current = media.matches;
+      setIsDesktop(media.matches);
+      if (!media.matches) setOpen(false);
+      applyRef.current(progressRef.current);
+    };
+    sync();
+    media.addEventListener("change", sync);
+    return () => media.removeEventListener("change", sync);
+  }, []);
 
   useEffect(() => {
     let frame = 0;
@@ -47,17 +71,37 @@ export function Navbar() {
       const cta = ctaRef.current;
       if (!header || !shell || !row) return;
 
-      const padX = progress * 20;
-      const padY = progress * 14;
-      const radius = progress * 999;
-      // Keep enough width so nav labels stay on one centered line
-      const maxWidth = 100 - progress * 16;
-      const barHeight = 80 - progress * 20;
-      const logoSize = 40 - progress * 4;
-      const iconSize = 20 - progress * 4;
-      const titleSize = 18 - progress * 2.5;
-      const ctaHeight = 44 - progress * 6;
-      const ctaPadX = 22 - progress * 4;
+      const desktop = desktopRef.current;
+      const menuOpen = openRef.current;
+      const p = progress;
+
+      // Mobile gets the same morph, but with safer radius when the drawer is open
+      const padX = desktop ? p * 20 : p * 12;
+      const padY = desktop ? p * 14 : p * 10;
+      const maxWidth = desktop
+        ? 100 - p * 16
+        : menuOpen
+          ? 100 - p * 4
+          : 100 - p * 8;
+
+      let radius = 0;
+      if (p > 0.01) {
+        if (!desktop && menuOpen) {
+          radius = 22; // rounded card, never a giant circle
+        } else if (desktop) {
+          radius = p * 999;
+        } else {
+          radius = p * 999; // capsule for the single-row bar
+        }
+      }
+
+      const barHeight = 72 - p * (desktop ? 12 : 10);
+      const logoSize = 40 - p * 4;
+      const iconSize = 20 - p * 4;
+      const titleSize = 18 - p * 2.5;
+      const ctaHeight = 44 - p * 6;
+      const ctaPadX = 22 - p * 4;
+      const showGlass = p > 0.02 || menuOpen;
 
       header.style.paddingLeft = `${padX}px`;
       header.style.paddingRight = `${padX}px`;
@@ -65,21 +109,19 @@ export function Navbar() {
 
       shell.style.maxWidth = `${maxWidth}%`;
       shell.style.borderRadius = `${radius}px`;
-      shell.style.paddingLeft = `${4 + progress * 10}px`;
-      shell.style.paddingRight = `${4 + progress * 10}px`;
-      shell.style.boxShadow =
-        progress > 0.02
-          ? `0 ${12 + progress * 8}px ${30 + progress * 14}px rgba(15,76,129,${0.06 + progress * 0.08})`
-          : "none";
-      shell.style.borderColor =
-        progress > 0.02
-          ? `rgba(255,255,255,${0.55 + progress * 0.2})`
-          : "transparent";
-      shell.style.background =
-        progress > 0.02
-          ? `rgba(255,255,255,${0.55 + progress * 0.22})`
-          : "transparent";
-      const blur = progress > 0.02 ? `blur(${10 + progress * 4}px)` : "none";
+      shell.style.paddingLeft = `${p * (desktop ? 10 : 6)}px`;
+      shell.style.paddingRight = `${p * (desktop ? 10 : 6)}px`;
+      shell.style.overflow = "hidden";
+      shell.style.boxShadow = showGlass
+        ? `0 ${10 + p * 8}px ${28 + p * 14}px rgba(15,76,129,${0.06 + p * 0.08})`
+        : "none";
+      shell.style.borderColor = showGlass
+        ? `rgba(255,255,255,${0.55 + p * 0.2})`
+        : "transparent";
+      shell.style.background = showGlass
+        ? `rgba(255,255,255,${0.72 + p * 0.16})`
+        : "transparent";
+      const blur = showGlass ? `blur(${10 + p * 4}px)` : "none";
       shell.style.backdropFilter = blur;
       shell.style.setProperty("-webkit-backdrop-filter", blur);
 
@@ -102,21 +144,22 @@ export function Navbar() {
         cta.style.paddingRight = `${ctaPadX}px`;
       }
       if (ctaFullRef.current && ctaShortRef.current) {
-        const showShort = progress > 0.55;
+        const showShort = p > 0.55;
         ctaFullRef.current.style.opacity = showShort ? "0" : "1";
         ctaShortRef.current.style.opacity = showShort ? "1" : "0";
       }
     };
 
+    applyRef.current = apply;
+
     const update = () => {
       frame = 0;
       const next = easeInOut(clamp(window.scrollY / 100));
-      if (Math.abs(progressRef.current - next) < 0.001) return;
       progressRef.current = next;
       apply(next);
 
       const nextPill = next > 0.55;
-      const nextElevated = next > 0.05;
+      const nextElevated = next > 0.05 || openRef.current;
       setPill((prev) => (prev === nextPill ? prev : nextPill));
       setElevated((prev) => (prev === nextElevated ? prev : nextElevated));
     };
@@ -128,8 +171,10 @@ export function Navbar() {
 
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
   }, []);
@@ -139,23 +184,15 @@ export function Navbar() {
   }, [pathname]);
 
   useEffect(() => {
-    const shell = shellRef.current;
-    if (!shell || progressRef.current > 0.05) return;
-
-    if (open) {
-      shell.style.background = "rgba(255,255,255,0.82)";
-      shell.style.backdropFilter = "blur(12px)";
-      shell.style.setProperty("-webkit-backdrop-filter", "blur(12px)");
-      shell.style.borderColor = "rgba(255,255,255,0.7)";
-      shell.style.boxShadow = "0 12px 36px rgba(15,76,129,0.08)";
-    } else {
-      shell.style.background = "transparent";
-      shell.style.backdropFilter = "none";
-      shell.style.setProperty("-webkit-backdrop-filter", "none");
-      shell.style.borderColor = "transparent";
-      shell.style.boxShadow = "none";
+    if (!open || isDesktop) {
+      document.body.style.overflow = "";
+      return;
     }
-  }, [open]);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open, isDesktop]);
 
   return (
     <header
@@ -178,10 +215,10 @@ export function Navbar() {
         <Container
           ref={rowRef}
           className={cn(
-            "grid grid-cols-[1fr_auto_1fr] items-center gap-3",
-            pill && "max-w-none !px-3"
+            "grid grid-cols-[1fr_auto] items-center gap-3 lg:grid-cols-[1fr_auto_1fr]",
+            pill && "max-w-none !px-2 md:!px-3"
           )}
-          style={{ height: 80 }}
+          style={{ height: 72 }}
         >
           <Link
             href="/"
@@ -198,7 +235,7 @@ export function Navbar() {
               ref={titleRef}
               className={cn(
                 "font-bold tracking-tight text-primary",
-                pill ? "max-w-[7.5rem] truncate xl:max-w-none" : "truncate"
+                pill ? "max-w-[9rem] truncate sm:max-w-none" : "truncate"
               )}
             >
               {siteConfig.name}
@@ -262,8 +299,10 @@ export function Navbar() {
           <button
             type="button"
             className={cn(
-              "col-start-3 inline-flex h-11 w-11 items-center justify-center justify-self-end text-primary transition-[border-radius,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden",
-              pill ? "rounded-full bg-primary/5" : "glass rounded-2xl"
+              "inline-flex h-11 w-11 items-center justify-center justify-self-end text-primary transition-colors lg:hidden",
+              open || elevated
+                ? "rounded-full bg-primary/5"
+                : "glass rounded-xl"
             )}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
@@ -275,42 +314,46 @@ export function Navbar() {
 
         <div
           className={cn(
-            "grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden",
+            "grid lg:hidden",
+            "transition-[grid-template-rows,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
             open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
           )}
         >
           <div className="overflow-hidden">
-            <Container
-              className={cn(
-                "flex flex-col gap-1 border-t border-border/70 py-4",
-                pill && "border-white/50"
-              )}
+            <div
+              data-lenis-prevent
+              className="max-h-[min(70vh,520px)] overflow-y-auto overscroll-contain border-t border-primary/10 px-3 py-3"
             >
-              {navLinks.map((link) => {
-                const active =
-                  link.href === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(link.href);
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    scroll={false}
-                    className={cn(
-                      "rounded-xl px-3 py-3 text-sm font-medium transition-colors",
-                      active
-                        ? "bg-primary/8 text-primary"
-                        : "text-foreground hover:bg-background"
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-              <Button asChild className="mt-2 w-full rounded-full">
-                <Link href="/contact">{siteConfig.cta.primary}</Link>
+              <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
+                {navLinks.map((link) => {
+                  const active =
+                    link.href === "/"
+                      ? pathname === "/"
+                      : pathname.startsWith(link.href);
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      scroll={false}
+                      onClick={() => setOpen(false)}
+                      className={cn(
+                        "rounded-xl px-3 py-3 text-sm font-medium transition-colors",
+                        active
+                          ? "bg-primary/8 text-primary"
+                          : "text-foreground hover:bg-primary/5"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
+              </nav>
+              <Button asChild className="mt-3 w-full rounded-full">
+                <Link href="/contact" onClick={() => setOpen(false)}>
+                  {siteConfig.cta.primary}
+                </Link>
               </Button>
-            </Container>
+            </div>
           </div>
         </div>
       </div>
