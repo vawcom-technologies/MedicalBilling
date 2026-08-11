@@ -26,7 +26,7 @@ export const homeContent = {
       title: "Medical Billing Services",
       href: "/medical-billing",
       description:
-        "Accurate coding, fast claim submission, and proactive denial management that keeps your cash flow predictable and your AR days low.",
+        "Fast claim submission, payment posting, and proactive denial management that keeps your cash flow predictable and your AR days low.",
       icon: "FileText",
     },
     {
@@ -68,7 +68,7 @@ export const homeContent = {
       "Faster reimbursements and shorter AR cycles",
       "Reduced claim denial rates",
       "Lower operational and staffing costs",
-      "Improved compliance and coding accuracy",
+      "Improved compliance and claim accuracy",
       "Full transparency through detailed performance reporting",
       "More time back for patient care",
     ],
@@ -97,7 +97,7 @@ export const homeContent = {
       step: "02",
       title: "Implement",
       description:
-        "Our specialists configure coding, claim submission, credentialing, and virtual support around your specialty and EHR.",
+        "Our specialists configure claim submission, credentialing, and virtual support around your specialty and EHR.",
     },
     {
       step: "03",
@@ -136,7 +136,7 @@ export const homeContent = {
     {
       question: "What are medical billing services?",
       answer:
-        "Medical billing services cover the full revenue cycle, including coding, claim submission, payment posting, denial management, insurance follow-up, and AR recovery, so healthcare providers get reimbursed accurately and on time.",
+        "Medical billing services cover the full revenue cycle, including claim submission, payment posting, denial management, insurance follow-up, and AR recovery, so healthcare providers get reimbursed accurately and on time.",
     },
     {
       question: "Should I outsource medical billing?",

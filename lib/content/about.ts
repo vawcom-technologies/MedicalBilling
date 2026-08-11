@@ -100,12 +100,12 @@ export const aboutContent = {
   certifications: {
     title: "Healthcare Certifications & Standards",
     description:
-      "Our billing and coding workflows are guided by industry best practices. Update this section with client-specific credentials such as AAPC/CPC-certified coders, HIPAA training programs, and payer enrollment certifications.",
+      "Our billing workflows are guided by industry best practices, HIPAA-aware operations, and ongoing payer policy monitoring.",
     items: [
-      "AAPC / CPC-aligned coding standards",
       "HIPAA-aware operational protocols",
       "Payer policy compliance monitoring",
       "Secure healthcare data handling practices",
+      "Transparent revenue cycle reporting standards",
     ],
   },
   faqs: [

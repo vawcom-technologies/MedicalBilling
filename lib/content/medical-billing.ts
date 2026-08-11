@@ -4,10 +4,9 @@ export const medicalBillingContent = {
   seo: {
     title: `Medical Billing Services for Healthcare Providers | ${siteConfig.name}`,
     description:
-      "Outsource your medical billing to reduce denials, accelerate reimbursements, and increase collections. Accurate coding, claims management, AR recovery & more.",
+      "Outsource your medical billing to reduce denials, accelerate reimbursements, and increase collections. Claims management, denial follow-up, AR recovery & more.",
     keywords: [
       "medical billing services",
-      "medical coding services",
       "denial management services",
       "accounts receivable recovery",
       "insurance claim follow-up",
@@ -28,14 +27,14 @@ export const medicalBillingContent = {
     title: "What We Offer",
     items: [
       {
-        title: "Accurate medical coding and claim preparation",
+        title: "Claim preparation and scrubbing",
         detail:
-          "Certified coders review clinical documentation and assign the correct CPT, HCPCS, and ICD-10 codes before a claim is built. We catch incomplete notes, mismatched diagnoses, and missing modifiers early so claims leave clean, compliant, and positioned for maximum appropriate reimbursement.",
+          "We prepare and scrub claims against payer-specific edits before submission, catching incomplete demographics, missing authorizations, and common billing errors early so claims leave clean, compliant, and positioned for faster reimbursement.",
       },
       {
         title: "Electronic claim submission",
         detail:
-          "Claims are scrubbed against payer-specific edits, then submitted electronically through secure clearinghouses. Real-time rejection alerts let us correct issues the same day instead of waiting weeks for a paper denial, which improves first-pass acceptance and shortens your payment cycle.",
+          "Claims are submitted electronically through secure clearinghouses. Real-time rejection alerts let us correct issues the same day instead of waiting weeks for a paper denial, which improves first-pass acceptance and shortens your payment cycle.",
       },
       {
         title: "Payment posting and reconciliation",
@@ -45,7 +44,7 @@ export const medicalBillingContent = {
       {
         title: "Denial analysis, appeals, and resubmissions",
         detail:
-          "Denied and rejected claims are categorized by root cause: coding, eligibility, authorization, medical necessity, or payer error. Our team corrects and resubmits quickly, files structured appeals with supporting documentation, and feeds denial trends back into front-end edits to stop repeats.",
+          "Denied and rejected claims are categorized by root cause: eligibility, authorization, medical necessity, billing errors, or payer error. Our team corrects and resubmits quickly, files structured appeals with supporting documentation, and feeds denial trends back into front-end edits to stop repeats.",
       },
       {
         title: "Insurance follow-up with commercial and government payers",
@@ -72,7 +71,7 @@ export const medicalBillingContent = {
   whyTeam: {
     title: "Why Healthcare Providers Choose Us",
     description:
-      "Every delayed or denied claim impacts your revenue. Our proactive approach identifies billing issues before they become financial losses. We continuously monitor claim status, resolve denials efficiently, and ensure every legitimate dollar is collected. Our team stays updated with changing payer policies, coding regulations, and compliance requirements, allowing your practice to remain financially healthy while reducing administrative overhead.",
+      "Every delayed or denied claim impacts your revenue. Our proactive approach identifies billing issues before they become financial losses. We continuously monitor claim status, resolve denials efficiently, and ensure every legitimate dollar is collected. Our team stays updated with changing payer policies and compliance requirements, allowing your practice to remain financially healthy while reducing administrative overhead.",
   },
   benefits: {
     title: "Benefits of Outsourcing Medical Billing",
@@ -95,9 +94,9 @@ export const medicalBillingContent = {
     },
     {
       step: "02",
-      title: "Coding & Submission",
+      title: "Claim Submission",
       description:
-        "Apply accurate medical coding services and submit electronic claims with payer-specific compliance checks.",
+        "Scrub and submit electronic claims with payer-specific compliance checks to improve first-pass acceptance.",
     },
     {
       step: "03",
@@ -127,17 +126,12 @@ export const medicalBillingContent = {
     {
       question: "What are medical billing services?",
       answer:
-        "Medical billing services include coding, electronic claim submission, payment posting, denial management services, insurance claim follow-up, patient billing support, and accounts receivable recovery for healthcare providers.",
+        "Medical billing services include electronic claim submission, payment posting, denial management services, insurance claim follow-up, patient billing support, and accounts receivable recovery for healthcare providers.",
     },
     {
       question: "Should I outsource medical billing?",
       answer:
         "Yes, if your practice wants higher collections, lower overhead, and fewer denied claims. Outsourcing medical billing gives you specialized expertise without building a full in-house billing department.",
-    },
-    {
-      question: "What is included in medical coding services?",
-      answer:
-        "Medical coding services translate clinical documentation into accurate CPT, HCPCS, and ICD-10 codes so claims meet payer rules and maximize appropriate reimbursement.",
     },
     {
       question: "How do denial management services work?",

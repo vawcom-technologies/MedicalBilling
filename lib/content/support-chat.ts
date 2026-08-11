@@ -75,11 +75,10 @@ export const supportFaqs: SupportFaq[] = [
       "billing services",
       "full service",
       "rcm",
-      "coding",
       "claims",
     ],
     answer:
-      "Our medical billing services cover coding support, electronic claim submission, payment posting, denial management, insurance follow-up, patient billing, and AR recovery. The goal is cleaner claims, fewer rejections, and faster reimbursement so your team can focus on patients.",
+      "Our medical billing services cover electronic claim submission, payment posting, denial management, insurance follow-up, patient billing, and AR recovery. The goal is cleaner claims, fewer rejections, and faster reimbursement so your team can focus on patients.",
   },
   {
     id: "reduce-denials",

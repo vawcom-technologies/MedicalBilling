@@ -156,7 +156,7 @@ export function calculateRevenueLeakage(
 
   if (denialRateUsed >= 0.1) {
     insights.push(
-      "Denial rates above 10% often signal coding, eligibility, or payer follow-up gaps."
+      "Denial rates above 10% often signal eligibility, authorization, or payer follow-up gaps."
     );
   } else {
     insights.push(

@@ -18,7 +18,7 @@ export const pageGuides: PageGuide[] = [
     label: "Medical Billing",
     href: "/medical-billing",
     summary:
-      "Our medical billing services cover coding, electronic claim submission, payment posting, denial management, insurance follow-up, patient billing, and AR recovery, designed to get you paid faster with fewer rejections.",
+      "Our medical billing services cover electronic claim submission, payment posting, denial management, insurance follow-up, patient billing, and AR recovery, designed to get you paid faster with fewer rejections.",
   },
   {
     id: "credentialing",

@@ -55,7 +55,7 @@ export const siteConfig = {
     {
       title: "Continuous Improvement",
       description:
-        "We stay current on payer rules, coding updates, and compliance so your practice stays ahead.",
+        "We stay current on payer rules and compliance so your practice stays ahead.",
     },
   ],
   cta: {

@@ -177,7 +177,7 @@ export default function MedicalBillingPage() {
 
       <FaqSection
         title="Medical Billing FAQs"
-        description="Common questions about medical billing services, medical coding services, denial management, and AR recovery."
+        description="Common questions about medical billing services, denial management, and AR recovery."
         faqs={medicalBillingContent.faqs}
       />
 
