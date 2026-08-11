@@ -15,11 +15,12 @@ function getScrollY() {
   return lenis ? lenis.scroll : window.scrollY;
 }
 
-function setScroll(y: number) {
+function setScroll(y: number, resize = false) {
   const lenis = getLenis();
   if (lenis) {
-    lenis.resize();
+    if (resize) lenis.resize();
     lenis.scrollTo(y, { immediate: true });
+    return;
   }
   window.scrollTo({ top: y, left: 0, behavior: "auto" });
 }
@@ -157,23 +158,21 @@ export function NavigationEffects() {
     const targetY = shouldRestore ? loadPosition(pathname) : 0;
 
     ignoreScrollSave.current = true;
-    setScroll(targetY);
+    // One clean jump avoids Lenis resize thrash that makes opens feel janky
+    setScroll(targetY, shouldRestore);
 
-    const retries = shouldRestore
-      ? [0, 40, 100, 200, 350, 500]
-      : [0, 40, 100];
-
-    const timers = retries.map((delay) =>
-      window.setTimeout(() => setScroll(targetY), delay)
-    );
+    const timers = shouldRestore
+      ? [80, 220].map((delay) =>
+          window.setTimeout(() => setScroll(targetY, true), delay)
+        )
+      : [];
 
     const unlock = window.setTimeout(() => {
       ignoreScrollSave.current = false;
-      // After restoring, keep the saved value accurate
       if (shouldRestore) {
         savePosition(pathname, targetY);
       }
-    }, shouldRestore ? 550 : 120);
+    }, shouldRestore ? 260 : 80);
 
     return () => {
       timers.forEach((id) => window.clearTimeout(id));

@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { easeOutExpo, staggerFast } from "@/lib/motion";
 
@@ -17,19 +16,13 @@ export function FadeIn({
   children,
   className,
   delay = 0,
-  y = 22,
+  y = 16,
   x = 0,
   once = true,
 }: FadeInProps) {
   const reduceMotion = useReducedMotion();
-  const [canAnimate, setCanAnimate] = useState(false);
 
-  useEffect(() => {
-    const id = requestAnimationFrame(() => setCanAnimate(true));
-    return () => cancelAnimationFrame(id);
-  }, []);
-
-  if (!canAnimate || reduceMotion) {
+  if (reduceMotion) {
     return <div className={className}>{children}</div>;
   }
 
@@ -38,9 +31,9 @@ export function FadeIn({
       className={className}
       initial={{ opacity: 0, y, x }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
-      viewport={{ once, margin: "-8% 0px -6% 0px", amount: 0.15 }}
+      viewport={{ once, margin: "-6% 0px -4% 0px", amount: 0.12 }}
       transition={{
-        duration: 0.55,
+        duration: 0.5,
         delay,
         ease: easeOutExpo,
       }}
@@ -58,12 +51,12 @@ const staggerContainer: Variants = {
 };
 
 const staggerItem: Variants = {
-  hidden: { opacity: 0, y: 18 },
+  hidden: { opacity: 0, y: 12 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.45,
       ease: easeOutExpo,
     },
   },
@@ -77,14 +70,8 @@ export function Stagger({
   className?: string;
 }) {
   const reduceMotion = useReducedMotion();
-  const [canAnimate, setCanAnimate] = useState(false);
 
-  useEffect(() => {
-    const id = requestAnimationFrame(() => setCanAnimate(true));
-    return () => cancelAnimationFrame(id);
-  }, []);
-
-  if (!canAnimate || reduceMotion) {
+  if (reduceMotion) {
     return <div className={className}>{children}</div>;
   }
 
@@ -94,7 +81,7 @@ export function Stagger({
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-10% 0px -6% 0px", amount: 0.15 }}
+      viewport={{ once: true, margin: "-6% 0px -4% 0px", amount: 0.12 }}
     >
       {children}
     </motion.div>
@@ -109,14 +96,8 @@ export function StaggerItem({
   className?: string;
 }) {
   const reduceMotion = useReducedMotion();
-  const [canAnimate, setCanAnimate] = useState(false);
 
-  useEffect(() => {
-    const id = requestAnimationFrame(() => setCanAnimate(true));
-    return () => cancelAnimationFrame(id);
-  }, []);
-
-  if (!canAnimate || reduceMotion) {
+  if (reduceMotion) {
     return <div className={className}>{children}</div>;
   }
 

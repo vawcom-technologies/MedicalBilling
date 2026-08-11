@@ -13,14 +13,14 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
 
     const lenis = new Lenis({
       autoRaf: true,
-      lerp: 0.12,
+      lerp: 0.1,
       smoothWheel: true,
-      wheelMultiplier: 0.85,
-      touchMultiplier: 1.15,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.2,
       syncTouch: false,
       anchors: {
         offset: -88,
-        lerp: 0.12,
+        lerp: 0.1,
       },
       stopInertiaOnNavigate: true,
       respectReducedMotion: true,

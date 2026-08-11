@@ -9,6 +9,6 @@ export const fadeUp = {
 };
 
 export const staggerFast = {
-  staggerChildren: 0.08,
-  delayChildren: 0.04,
+  staggerChildren: 0.06,
+  delayChildren: 0.02,
 };
