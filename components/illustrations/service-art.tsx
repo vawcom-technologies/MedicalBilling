@@ -1,5 +1,5 @@
 type ServiceArtProps = {
-  variant: "billing" | "credentialing" | "front-desk" | "about";
+  variant: "billing" | "credentialing" | "front-desk" | "about" | "digital-marketing";
   className?: string;
 };
 
@@ -8,6 +8,7 @@ const titles = {
   credentialing: "Provider credentialing and payer enrollment illustration",
   "front-desk": "Virtual front desk and medical answering service illustration",
   about: "Medical billing company partnership illustration",
+  "digital-marketing": "Digital marketing website social and SEO illustration",
 };
 
 export function ServiceArt({ variant, className }: ServiceArtProps) {
@@ -80,6 +81,25 @@ export function ServiceArt({ variant, className }: ServiceArtProps) {
           <circle cx="280" cy="150" r="30" fill="#2EC4B6" />
           <rect x="110" y="210" width="260" height="12" rx="6" fill="#0F4C81" />
           <rect x="140" y="236" width="200" height="10" rx="5" fill="#E5E7EB" />
+        </>
+      )}
+
+      {variant === "digital-marketing" && (
+        <>
+          <rect x="58" y="78" width="210" height="150" rx="22" fill="white" stroke="#E5E7EB" />
+          <rect x="80" y="104" width="110" height="10" rx="5" fill="#0F4C81" />
+          <rect x="80" y="128" width="166" height="8" rx="4" fill="#E5E7EB" />
+          <rect x="80" y="148" width="140" height="8" rx="4" fill="#E5E7EB" />
+          <rect x="80" y="178" width="88" height="24" rx="12" fill="#2EC4B6" />
+          <rect x="250" y="68" width="150" height="110" rx="22" fill="white" stroke="#E5E7EB" />
+          <circle cx="292" cy="108" r="18" fill="#1E88E5" fillOpacity="0.2" />
+          <rect x="320" y="98" width="58" height="8" rx="4" fill="#0F4C81" />
+          <rect x="320" y="116" width="46" height="8" rx="4" fill="#E5E7EB" />
+          <rect x="272" y="142" width="106" height="18" rx="9" fill="#EAF6FF" />
+          <rect x="180" y="210" width="180" height="90" rx="20" fill="white" stroke="#E5E7EB" />
+          <rect x="204" y="232" width="80" height="10" rx="5" fill="#1E88E5" />
+          <rect x="204" y="254" width="132" height="8" rx="4" fill="#E5E7EB" />
+          <rect x="204" y="272" width="100" height="8" rx="4" fill="#E5E7EB" />
         </>
       )}
     </svg>

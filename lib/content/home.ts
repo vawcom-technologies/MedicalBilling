@@ -43,6 +43,27 @@ export const homeContent = {
         "Trained healthcare support staff handle scheduling, intake, and insurance verification, so your patients get a seamless experience and your office runs on time.",
       icon: "Headset",
     },
+    {
+      title: "Website Development",
+      href: "/website-development",
+      description:
+        "Modern, mobile-friendly practice websites with clear service pages and easy ways for patients to contact you.",
+      icon: "Globe",
+    },
+    {
+      title: "Social Media Marketing",
+      href: "/social-media-marketing",
+      description:
+        "Consistent, healthcare-appropriate social content that builds trust and keeps your practice visible.",
+      icon: "Megaphone",
+    },
+    {
+      title: "SEO Services",
+      href: "/seo-services",
+      description:
+        "Local and specialty search optimization so patients can find your practice when they need care.",
+      icon: "Search",
+    },
   ],
   comparison: {
     title: "Stop Settling for Average Results",

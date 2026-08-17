@@ -3,7 +3,10 @@ import {
   ArrowRight,
   BadgeCheck,
   FileText,
+  Globe,
   Headset,
+  Megaphone,
+  Search,
   type LucideIcon,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -14,6 +17,9 @@ const icons: Record<string, LucideIcon> = {
   FileText,
   BadgeCheck,
   Headset,
+  Megaphone,
+  Globe,
+  Search,
 };
 
 type Service = {
@@ -40,7 +46,7 @@ export function ServiceCards({
           title={title}
           description={description}
         />
-        <Stagger className="mt-12 grid gap-6 lg:grid-cols-3">
+        <Stagger className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => {
             const Icon = icons[service.icon] ?? FileText;
             return (

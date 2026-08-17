@@ -13,6 +13,9 @@ export type SupportTopicId =
   | "billing"
   | "credentialing"
   | "front-desk"
+  | "website-development"
+  | "social-media"
+  | "seo"
   | "pricing"
   | "getting-started"
   | "results";
@@ -42,6 +45,24 @@ export const supportTopics: SupportTopic[] = [
     label: "Front Desk",
     description: "Scheduling, intake, and eligibility",
     href: "/virtual-front-desk",
+  },
+  {
+    id: "website-development",
+    label: "Websites",
+    description: "Practice website development",
+    href: "/website-development",
+  },
+  {
+    id: "social-media",
+    label: "Social Media",
+    description: "Content and brand presence",
+    href: "/social-media-marketing",
+  },
+  {
+    id: "seo",
+    label: "SEO",
+    description: "Search visibility growth",
+    href: "/seo-services",
   },
   {
     id: "pricing",
@@ -178,6 +199,50 @@ export const supportFaqs: SupportFaq[] = [
       "Virtual front desk support covers appointment scheduling, insurance eligibility verification, patient intake, call answering, reminders, and referral coordination. It expands front-desk capacity without adding full-time overhead.",
   },
   {
+    id: "website-development-included",
+    topic: "website-development",
+    question: "Do you build websites for medical practices?",
+    keywords: [
+      "website",
+      "web development",
+      "website development",
+      "redesign",
+      "site",
+    ],
+    answer:
+      "Yes. We build modern, mobile-friendly practice websites with clear service pages and easy contact paths so patients can find what they need and reach your team.",
+  },
+  {
+    id: "social-media-included",
+    topic: "social-media",
+    question: "Can you manage social media for our clinic?",
+    keywords: [
+      "social media",
+      "social",
+      "instagram",
+      "facebook",
+      "posts",
+      "content",
+    ],
+    answer:
+      "Yes. Our social media marketing support helps practices stay active with healthcare-appropriate content that builds trust and keeps your brand visible.",
+  },
+  {
+    id: "seo-included",
+    topic: "seo",
+    question: "What does SEO for healthcare practices include?",
+    keywords: [
+      "seo",
+      "search",
+      "google",
+      "ranking",
+      "local seo",
+      "search engine",
+    ],
+    answer:
+      "SEO services typically include website optimization, local search improvements, service-page targeting, content guidance, and visibility tracking so patients can find you more easily.",
+  },
+  {
     id: "pricing",
     topic: "pricing",
     question: "How much do your services cost?",
@@ -191,7 +256,7 @@ export const supportFaqs: SupportFaq[] = [
       "percentage",
       "contract",
     ],
-    answer: `Pricing depends on specialty, claim volume, and which services you need (billing, credentialing, front desk, or a combination). Most practices start with a free revenue cycle assessment so we can recommend a clear plan. Contact ${siteConfig.name} for a tailored quote.`,
+    answer: `Pricing depends on specialty, claim volume, and which services you need (billing, credentialing, front desk, website development, social media, SEO, or a combination). Most practices start with a free consultation so we can recommend a clear plan. Contact ${siteConfig.name} for a tailored quote.`,
   },
   {
     id: "get-started",
@@ -338,7 +403,7 @@ export function buildKnowledgeContext() {
     .join("\n");
 
   return `Company: ${siteConfig.name}
-Services: medical billing, provider credentialing, virtual front desk
+Services: medical billing, provider credentialing, virtual front desk, website development, social media marketing, SEO
 Phone: ${siteConfig.phone}
 Email: ${siteConfig.email}
 CTA: free consultation / free revenue cycle assessment

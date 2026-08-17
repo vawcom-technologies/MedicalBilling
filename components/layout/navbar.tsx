@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, Cross } from "lucide-react";
-import { navLinks, siteConfig } from "@/lib/site-config";
+import { ChevronDown, Menu, X, Cross } from "lucide-react";
+import { navLinks, servicesMenuLinks, siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -23,6 +23,9 @@ export function Navbar() {
   const [elevated, setElevated] = useState(false);
   const [open, setOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
 
   const headerRef = useRef<HTMLElement>(null);
   const shellRef = useRef<HTMLDivElement>(null);
@@ -38,9 +41,12 @@ export function Navbar() {
   const desktopRef = useRef(false);
   const applyRef = useRef<(progress: number) => void>(() => {});
 
+  const servicesActive = servicesMenuLinks.some((link) =>
+    pathname.startsWith(link.href)
+  );
+
   useEffect(() => {
     openRef.current = open;
-    // Re-run morph when the mobile drawer opens/closes
     applyRef.current(progressRef.current);
     setElevated(progressRef.current > 0.05 || open);
   }, [open]);
@@ -50,7 +56,12 @@ export function Navbar() {
     const sync = () => {
       desktopRef.current = media.matches;
       setIsDesktop(media.matches);
-      if (!media.matches) setOpen(false);
+      if (!media.matches) {
+        setOpen(false);
+        setServicesOpen(false);
+      } else {
+        setMobileServicesOpen(false);
+      }
       applyRef.current(progressRef.current);
     };
     sync();
@@ -75,7 +86,6 @@ export function Navbar() {
       const menuOpen = openRef.current;
       const p = progress;
 
-      // Mobile gets the same morph, but with safer radius when the drawer is open
       const padX = desktop ? p * 20 : p * 12;
       const padY = desktop ? p * 14 : p * 10;
       const maxWidth = desktop
@@ -87,11 +97,11 @@ export function Navbar() {
       let radius = 0;
       if (p > 0.01) {
         if (!desktop && menuOpen) {
-          radius = 22; // rounded card, never a giant circle
+          radius = 22;
         } else if (desktop) {
           radius = p * 999;
         } else {
-          radius = p * 999; // capsule for the single-row bar
+          radius = p * 999;
         }
       }
 
@@ -111,7 +121,7 @@ export function Navbar() {
       shell.style.borderRadius = `${radius}px`;
       shell.style.paddingLeft = `${p * (desktop ? 10 : 6)}px`;
       shell.style.paddingRight = `${p * (desktop ? 10 : 6)}px`;
-      shell.style.overflow = "hidden";
+      shell.style.overflow = servicesOpen && desktop ? "visible" : "hidden";
       shell.style.boxShadow = showGlass
         ? `0 ${10 + p * 8}px ${28 + p * 14}px rgba(15,76,129,${0.06 + p * 0.08})`
         : "none";
@@ -177,10 +187,12 @@ export function Navbar() {
       window.removeEventListener("resize", onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
-  }, []);
+  }, [servicesOpen]);
 
   useEffect(() => {
     setOpen(false);
+    setServicesOpen(false);
+    setMobileServicesOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -193,6 +205,43 @@ export function Navbar() {
       document.body.style.overflow = "";
     };
   }, [open, isDesktop]);
+
+  useEffect(() => {
+    if (!servicesOpen) return;
+
+    const onPointerDown = (event: MouseEvent) => {
+      if (!servicesRef.current?.contains(event.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setServicesOpen(false);
+    };
+
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [servicesOpen]);
+
+  const linkClass = (active: boolean) =>
+    cn(
+      "inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full px-3 text-sm font-medium leading-none transition-[background-color,color,box-shadow,padding,font-size] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+      pill && "h-8 px-2.5 text-[13px]",
+      active
+        ? pill
+          ? "bg-primary text-white shadow-[0_6px_16px_rgba(15,76,129,0.22)]"
+          : "bg-primary/5 text-primary"
+        : "text-muted hover:bg-white/70 hover:text-primary"
+    );
+
+  const frontDeskIndex = navLinks.findIndex(
+    (link) => link.href === "/virtual-front-desk"
+  );
+  const linksBeforeServices = navLinks.slice(0, frontDeskIndex + 1);
+  const linksAfterServices = navLinks.slice(frontDeskIndex + 1);
 
   return (
     <header
@@ -246,7 +295,7 @@ export function Navbar() {
             className="hidden items-center justify-center gap-0.5 justify-self-center lg:flex"
             aria-label="Primary navigation"
           >
-            {navLinks.map((link) => {
+            {linksBeforeServices.map((link) => {
               const active =
                 link.href === "/"
                   ? pathname === "/"
@@ -256,15 +305,73 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   scroll={false}
-                  className={cn(
-                    "inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full px-3 text-sm font-medium leading-none transition-[background-color,color,box-shadow,padding,font-size] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
-                    pill && "h-8 px-2.5 text-[13px]",
-                    active
-                      ? pill
-                        ? "bg-primary text-white shadow-[0_6px_16px_rgba(15,76,129,0.22)]"
-                        : "bg-primary/5 text-primary"
-                      : "text-muted hover:bg-white/70 hover:text-primary"
-                  )}
+                  className={linkClass(active)}
+                >
+                  {pill ? link.short : link.label}
+                </Link>
+              );
+            })}
+
+            <div ref={servicesRef} className="relative">
+              <button
+                type="button"
+                className={linkClass(servicesActive || servicesOpen)}
+                aria-expanded={servicesOpen}
+                aria-haspopup="menu"
+                onClick={() => setServicesOpen((value) => !value)}
+              >
+                <span className="inline-flex items-center gap-1">
+                  Services
+                  <ChevronDown
+                    className={cn(
+                      "h-3.5 w-3.5 transition-transform duration-200",
+                      servicesOpen && "rotate-180"
+                    )}
+                    aria-hidden="true"
+                  />
+                </span>
+              </button>
+
+              {servicesOpen ? (
+                <div
+                  role="menu"
+                  className="absolute left-1/2 top-[calc(100%+0.55rem)] z-[60] w-64 -translate-x-1/2 rounded-2xl border border-white/70 bg-white/95 p-2 shadow-[0_18px_40px_rgba(15,76,129,0.14)] backdrop-blur-xl"
+                >
+                  {servicesMenuLinks.map((link) => {
+                    const active = pathname.startsWith(link.href);
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        role="menuitem"
+                        scroll={false}
+                        onClick={() => setServicesOpen(false)}
+                        className={cn(
+                          "block rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
+                          active
+                            ? "bg-primary/8 text-primary"
+                            : "text-foreground hover:bg-primary/5 hover:text-primary"
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              ) : null}
+            </div>
+
+            {linksAfterServices.map((link) => {
+              const active =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  scroll={false}
+                  className={linkClass(active)}
                 >
                   {pill ? link.short : link.label}
                 </Link>
@@ -325,7 +432,76 @@ export function Navbar() {
               className="max-h-[min(70vh,520px)] overflow-y-auto overscroll-contain border-t border-primary/10 px-3 py-3"
             >
               <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
-                {navLinks.map((link) => {
+                {linksBeforeServices.map((link) => {
+                  const active =
+                    link.href === "/"
+                      ? pathname === "/"
+                      : pathname.startsWith(link.href);
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      scroll={false}
+                      onClick={() => setOpen(false)}
+                      className={cn(
+                        "rounded-xl px-3 py-3 text-sm font-medium transition-colors",
+                        active
+                          ? "bg-primary/8 text-primary"
+                          : "text-foreground hover:bg-primary/5"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
+
+                <div className="rounded-xl">
+                  <button
+                    type="button"
+                    className={cn(
+                      "flex w-full items-center justify-between rounded-xl px-3 py-3 text-left text-sm font-medium transition-colors",
+                      servicesActive || mobileServicesOpen
+                        ? "bg-primary/8 text-primary"
+                        : "text-foreground hover:bg-primary/5"
+                    )}
+                    aria-expanded={mobileServicesOpen}
+                    onClick={() => setMobileServicesOpen((value) => !value)}
+                  >
+                    Services
+                    <ChevronDown
+                      className={cn(
+                        "h-4 w-4 transition-transform duration-200",
+                        mobileServicesOpen && "rotate-180"
+                      )}
+                      aria-hidden="true"
+                    />
+                  </button>
+                  {mobileServicesOpen ? (
+                    <div className="mt-1 space-y-1 border-l border-primary/10 pl-3">
+                      {servicesMenuLinks.map((link) => {
+                        const active = pathname.startsWith(link.href);
+                        return (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            scroll={false}
+                            onClick={() => setOpen(false)}
+                            className={cn(
+                              "block rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
+                              active
+                                ? "bg-primary/8 text-primary"
+                                : "text-foreground hover:bg-primary/5"
+                            )}
+                          >
+                            {link.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  ) : null}
+                </div>
+
+                {linksAfterServices.map((link) => {
                   const active =
                     link.href === "/"
                       ? pathname === "/"

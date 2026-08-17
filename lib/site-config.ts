@@ -1,12 +1,12 @@
 export const siteConfig = {
-  name: "[Company Name]",
-  legalName: "[Company Name]",
+  name: "MedsolCare",
+  legalName: "MedsolCare",
   tagline: "Medical Billing • Credentialing • Virtual Front Desk",
   description:
     "Full-service medical billing, credentialing, and virtual front desk support for healthcare providers. Increase collections, reduce denials, and get paid faster.",
   url: "https://www.example.com",
   phone: "[Phone]",
-  email: "[Email]",
+  email: "info@medsolcare.com",
   address: {
     street: "[Street Address]",
     city: "[City]",
@@ -67,6 +67,9 @@ export const siteConfig = {
     consultation: "Schedule a Free Consultation",
     discovery: "Book a Discovery Call",
     experts: "Talk to Our Experts",
+    websiteDevelopment: "Get a Free Website Consultation",
+    socialMedia: "Talk About Social Media Marketing",
+    seoServices: "Get a Free SEO Consultation",
   },
 } as const;
 
@@ -90,6 +93,25 @@ export const navLinks = [
   { href: "/contact", label: "Contact", short: "Contact" },
 ] as const;
 
+/** Dropdown under the Services nav item */
+export const servicesMenuLinks = [
+  {
+    href: "/website-development",
+    label: "Website Development",
+    short: "Websites",
+  },
+  {
+    href: "/social-media-marketing",
+    label: "Social Media Marketing",
+    short: "Social",
+  },
+  {
+    href: "/seo-services",
+    label: "SEO Services",
+    short: "SEO",
+  },
+] as const;
+
 export const serviceLinks = [
   {
     href: "/medical-billing",
@@ -105,5 +127,20 @@ export const serviceLinks = [
     href: "/virtual-front-desk",
     title: "Virtual Front Desk Services",
     short: "Virtual Front Desk",
+  },
+  {
+    href: "/website-development",
+    title: "Website Development",
+    short: "Website Development",
+  },
+  {
+    href: "/social-media-marketing",
+    title: "Social Media Marketing",
+    short: "Social Media Marketing",
+  },
+  {
+    href: "/seo-services",
+    title: "SEO Services",
+    short: "SEO Services",
   },
 ] as const;

@@ -35,6 +35,27 @@ export const pageGuides: PageGuide[] = [
       "Virtual front desk support handles appointment scheduling, insurance eligibility verification, patient intake, call answering, reminders, and referral coordination without adding full-time overhead.",
   },
   {
+    id: "website-development",
+    label: "Website Development",
+    href: "/website-development",
+    summary:
+      "Website development services create fast, mobile-friendly practice websites with clear service pages and conversion-focused contact paths.",
+  },
+  {
+    id: "social-media-marketing",
+    label: "Social Media Marketing",
+    href: "/social-media-marketing",
+    summary:
+      "Social media marketing keeps your practice visible with healthcare-appropriate content, planning, and consistent brand presence.",
+  },
+  {
+    id: "seo-services",
+    label: "SEO Services",
+    href: "/seo-services",
+    summary:
+      "SEO services improve local and specialty search visibility so patients can find your practice online more easily.",
+  },
+  {
     id: "calculator",
     label: "Calculator",
     href: "/tools/revenue-leakage-calculator",

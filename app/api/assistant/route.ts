@@ -62,7 +62,7 @@ export async function POST(request: Request) {
     const page = pageId ? getPageGuide(pageId) : null;
     const topic = topicId ? getSupportTopic(topicId) : null;
 
-    // Instant FAQ match — most visitor questions never need the model
+    // Instant FAQ match. Most visitor questions never need the model
     if (matchedFaq && !apiKey) {
       return NextResponse.json({
         ok: true,
@@ -83,7 +83,7 @@ export async function POST(request: Request) {
     const knowledge = buildKnowledgeContext();
     const focus = [
       topic ? `Selected topic: ${topic.label}` : null,
-      page ? `Selected page: ${page.label} — ${page.summary}` : null,
+      page ? `Selected page: ${page.label}. ${page.summary}` : null,
       matchedFaq
         ? `Closest FAQ: ${matchedFaq.question} → ${matchedFaq.answer}`
         : null,
@@ -110,7 +110,7 @@ Rules:
 - Answer only with information grounded in the knowledge base below.
 - Prefer short, clear answers (2-4 sentences, or short bullets).
 - Use the terms visitors use: denials, clean claims, AR, credentialing, payer enrollment, eligibility, scheduling, pricing, onboarding.
-- If pricing is asked, explain that it depends on specialty/volume and invite a free assessment — do not invent rates.
+- If pricing is asked, explain that it depends on specialty/volume and invite a free assessment. Do not invent rates.
 - If you lack specifics, say so and point them to Contact for a free consultation.
 - Do not invent compliance certifications, client names, or guarantees not in the knowledge base.
 

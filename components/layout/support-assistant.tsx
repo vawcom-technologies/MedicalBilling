@@ -201,7 +201,7 @@ export function SupportAssistant() {
                   <div className="glass-soft rounded-2xl p-3.5">
                     <p className="text-sm leading-relaxed text-foreground">
                       Ask about billing, credentialing, denials, pricing, or
-                      how to get started — the questions practices ask most.
+                      how to get started. These are the questions practices ask most.
                     </p>
                   </div>
 
