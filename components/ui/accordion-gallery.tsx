@@ -7,7 +7,6 @@ import {
   useCallback,
   type CSSProperties,
   type KeyboardEvent,
-  type MouseEvent,
 } from "react";
 import { gsap } from "gsap";
 import "./accordion-gallery.css";
@@ -15,7 +14,6 @@ import "./accordion-gallery.css";
 export type AccordionGalleryItem = {
   image: string;
   label?: string;
-  link?: string;
   alt?: string;
 };
 
@@ -46,31 +44,26 @@ const DEFAULT_ITEMS: AccordionGalleryItem[] = [
     image:
       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80",
     label: "Independent Physicians",
-    link: "/medical-billing",
   },
   {
     image:
       "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
     label: "Specialty Clinics",
-    link: "/medical-billing",
   },
   {
     image:
       "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1400&q=80",
     label: "Urgent Care",
-    link: "/virtual-front-desk",
   },
   {
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
     label: "Behavioral Health",
-    link: "/credentialing",
   },
   {
     image:
       "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
     label: "Multi-Provider Groups",
-    link: "/contact",
   },
 ];
 
@@ -101,9 +94,7 @@ export function AccordionGallery({
   className = "",
 }: AccordionGalleryProps) {
   const rootRef = useRef<HTMLDivElement>(null);
-  const panelRefs = useRef<Array<HTMLAnchorElement | HTMLDivElement | null>>(
-    []
-  );
+  const panelRefs = useRef<Array<HTMLDivElement | null>>([]);
   const mediaRefs = useRef<Array<HTMLSpanElement | null>>([]);
   const barRefs = useRef<Array<HTMLSpanElement | null>>([]);
   const textRefs = useRef<Array<HTMLSpanElement | null>>([]);
@@ -277,12 +268,15 @@ export function AccordionGallery({
     if (effectiveTrigger === "hover") setActive(i);
   };
 
-  const handleClick = (i: number, e: MouseEvent) => {
-    // First tap expands; only navigate when already active
-    if (i !== active) {
-      e.preventDefault();
+  const handleClick = (i: number) => {
+    // Mobile/tablet: tap only expands the panel (design interaction)
+    if (isTouchUI || effectiveTrigger === "click") {
       setActive(i);
     }
+  };
+
+  const handleFocus = (i: number) => {
+    if (!isTouchUI) setActive(i);
   };
 
   const handleKeyDown = (i: number, e: KeyboardEvent) => {
@@ -293,10 +287,8 @@ export function AccordionGallery({
       e.preventDefault();
       setActive((i - 1 + count) % count);
     } else if (e.key === "Enter" || e.key === " ") {
-      if (i !== active) {
-        e.preventDefault();
-        setActive(i);
-      }
+      e.preventDefault();
+      setActive(i);
     }
   };
 
@@ -316,27 +308,31 @@ export function AccordionGallery({
           } as CSSProperties
         }
         role="list"
-        aria-label="Who we serve"
+        aria-label="Gallery"
       >
         {items.map((item, i) => {
           const isActive = i === active;
-          const sharedProps = {
-            className: `ag-panel${isActive ? " ag-panel--active" : ""}`,
-            style: { borderRadius: `${radius}px` },
-            onClick: (e: MouseEvent) => handleClick(i, e),
-            onMouseEnter: () => handleEnter(i),
-            onFocus: () => setActive(i),
-            onKeyDown: (e: KeyboardEvent) => handleKeyDown(i, e),
-            role: "listitem" as const,
-            tabIndex: 0,
-            "aria-current": isActive ? ("true" as const) : undefined,
-            "aria-label": item.label
-              ? `${item.label}${isActive ? "" : ". Activate to expand"}`
-              : undefined,
-          };
-
-          const content = (
-            <>
+          return (
+            <div
+              key={`${item.label ?? "panel"}-${i}`}
+              ref={(el: HTMLDivElement | null) => {
+                panelRefs.current[i] = el;
+              }}
+              className={`ag-panel${isActive ? " ag-panel--active" : ""}`}
+              style={{ borderRadius: `${radius}px` }}
+              onClick={() => handleClick(i)}
+              onMouseEnter={() => handleEnter(i)}
+              onFocus={() => handleFocus(i)}
+              onKeyDown={(e: KeyboardEvent) => handleKeyDown(i, e)}
+              role="listitem"
+              tabIndex={0}
+              aria-current={isActive ? "true" : undefined}
+              aria-label={
+                item.label
+                  ? `${item.label}${isActive ? "" : ". Expand"}`
+                  : undefined
+              }
+            >
               <span className="ag-panel__frame">
                 <span
                   className="ag-panel__media"
@@ -372,39 +368,12 @@ export function AccordionGallery({
                   </span>
                 </span>
               ) : null}
-            </>
-          );
-
-          if (item.link) {
-            return (
-              <a
-                key={`${item.label ?? "panel"}-${i}`}
-                ref={(el: HTMLAnchorElement | null) => {
-                  panelRefs.current[i] = el;
-                }}
-                href={item.link}
-                {...sharedProps}
-              >
-                {content}
-              </a>
-            );
-          }
-
-          return (
-            <div
-              key={`${item.label ?? "panel"}-${i}`}
-              ref={(el: HTMLDivElement | null) => {
-                panelRefs.current[i] = el;
-              }}
-              {...sharedProps}
-            >
-              {content}
             </div>
           );
         })}
       </div>
       {isTouchUI ? (
-        <p className="ag-panel__hint">Tap a panel to expand · tap again to open</p>
+        <p className="ag-panel__hint">Tap a panel to expand</p>
       ) : null}
     </div>
   );

@@ -3,6 +3,7 @@ import {
   DigitalServicePage,
   buildDigitalServiceMetadata,
 } from "@/components/sections/digital-service-page";
+import { SeoGallery } from "@/components/sections/seo-gallery";
 
 export const metadata = buildDigitalServiceMetadata(seoServicesContent);
 
@@ -11,6 +12,7 @@ export default function SeoServicesPage() {
     <DigitalServicePage
       content={seoServicesContent}
       serviceName="SEO Services"
+      afterFeatures={<SeoGallery />}
     />
   );
 }

@@ -5,6 +5,7 @@ import {
   DigitalServicePage,
   buildDigitalServiceMetadata,
 } from "@/components/sections/digital-service-page";
+import { SocialMediaGallery } from "@/components/sections/social-media-gallery";
 
 export const metadata = buildDigitalServiceMetadata(socialMediaMarketingContent);
 
@@ -13,6 +14,7 @@ export default function SocialMediaMarketingPage() {
     <DigitalServicePage
       content={socialMediaMarketingContent}
       serviceName="Social Media Marketing Services"
+      afterFeatures={<SocialMediaGallery />}
     />
   );
 }

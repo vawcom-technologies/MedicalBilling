@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "MedsolCare",
-  legalName: "MedsolCare",
+  name: "Medsol",
+  legalName: "Medsol",
   tagline: "Medical Billing • Credentialing • Virtual Front Desk",
   description:
     "Full-service medical billing, credentialing, and virtual front desk support for healthcare providers. Increase collections, reduce denials, and get paid faster.",

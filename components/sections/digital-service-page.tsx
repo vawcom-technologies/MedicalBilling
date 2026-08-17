@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { buildMetadata } from "@/lib/seo";
 import {
   breadcrumbSchema,
@@ -32,9 +33,11 @@ export function buildDigitalServiceMetadata(content: DigitalServiceContent) {
 export function DigitalServicePage({
   content,
   serviceName,
+  afterFeatures,
 }: {
   content: DigitalServiceContent;
   serviceName: string;
+  afterFeatures?: ReactNode;
 }) {
   return (
     <>
@@ -90,6 +93,8 @@ export function DigitalServicePage({
           </FadeIn>
         </Container>
       </section>
+
+      {afterFeatures}
 
       <FeatureList title={content.includes.title} items={content.includes.items} />
 
