@@ -50,6 +50,31 @@ export function Testimonials({
     };
   }, [emblaApi]);
 
+  const navButtons = (
+    <div className="flex gap-2">
+      <Button
+        type="button"
+        variant="outline"
+        size="sm"
+        onClick={scrollPrev}
+        aria-label="Previous testimonial"
+        className="h-10 w-10 rounded-full p-0"
+      >
+        <ChevronLeft className="h-4 w-4" aria-hidden="true" />
+      </Button>
+      <Button
+        type="button"
+        variant="outline"
+        size="sm"
+        onClick={scrollNext}
+        aria-label="Next testimonial"
+        className="h-10 w-10 rounded-full p-0"
+      >
+        <ChevronRight className="h-4 w-4" aria-hidden="true" />
+      </Button>
+    </div>
+  );
+
   return (
     <section className="py-20 md:py-28">
       <Container>
@@ -61,28 +86,7 @@ export function Testimonials({
             description="Practices choose us for medical billing services, credentialing, and virtual front desk support that deliver measurable results."
             className="md:max-w-xl"
           />
-          <div className="flex gap-2">
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              onClick={scrollPrev}
-              aria-label="Previous testimonial"
-              className="h-10 w-10 rounded-full p-0"
-            >
-              <ChevronLeft className="h-4 w-4" aria-hidden="true" />
-            </Button>
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              onClick={scrollNext}
-              aria-label="Next testimonial"
-              className="h-10 w-10 rounded-full p-0"
-            >
-              <ChevronRight className="h-4 w-4" aria-hidden="true" />
-            </Button>
-          </div>
+          <div className="hidden md:flex">{navButtons}</div>
         </div>
 
         <FadeIn className="mt-10" delay={0.1}>
@@ -126,6 +130,7 @@ export function Testimonials({
               ))}
             </div>
           </div>
+          <div className="mt-2 flex justify-center md:hidden">{navButtons}</div>
         </FadeIn>
       </Container>
     </section>
