@@ -125,10 +125,9 @@ export default function HomePage() {
         />
       </div>
 
-      <ComparisonCallout
-        title={homeContent.comparison.title}
-        description={homeContent.comparison.description}
-        items={homeContent.comparison.items}
+      <WhoWeServe
+        title={homeContent.whoWeServe.title}
+        description={homeContent.whoWeServe.description}
       />
 
       <BenefitGrid
@@ -142,9 +141,10 @@ export default function HomePage() {
 
       <CalculatorPromo />
 
-      <WhoWeServe
-        title={homeContent.whoWeServe.title}
-        description={homeContent.whoWeServe.description}
+      <ComparisonCallout
+        title={homeContent.comparison.title}
+        description={homeContent.comparison.description}
+        items={homeContent.comparison.items}
       />
 
       <Timeline

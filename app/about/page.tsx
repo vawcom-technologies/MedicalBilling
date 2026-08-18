@@ -14,7 +14,14 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { Container } from "@/components/ui/container";
 import { SectionTitle } from "@/components/section-title";
 import { FadeIn, Stagger, StaggerItem } from "@/components/motion/fade-in";
-import { Award, Eye, Target } from "lucide-react";
+import { Award, BadgeCheck, Eye, FileText, Headset, Target } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+const teamIcons: Record<string, LucideIcon> = {
+  "Revenue Cycle Leadership": FileText,
+  "Credentialing Specialists": BadgeCheck,
+  "Virtual Front Desk Team": Headset,
+};
 
 export const metadata = buildMetadata({
   title: aboutContent.seo.title,
@@ -155,22 +162,27 @@ export default function AboutPage() {
             description="Meet the functional teams behind billing accuracy, enrollment speed, and patient experience."
           />
           <Stagger className="mt-12 grid gap-6 lg:grid-cols-3">
-            {aboutContent.team.map((member) => (
-              <StaggerItem key={member.name}>
-                <div className="glass h-full rounded-[1.5rem] p-7">
-                  <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-primary to-secondary" />
-                  <h3 className="mt-5 text-lg font-bold text-foreground">
-                    {member.name}
-                  </h3>
-                  <p className="mt-1 text-sm font-medium text-secondary">
-                    {member.role}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">
-                    {member.description}
-                  </p>
-                </div>
-              </StaggerItem>
-            ))}
+            {aboutContent.team.map((member) => {
+              const Icon = teamIcons[member.name] ?? FileText;
+              return (
+                <StaggerItem key={member.name}>
+                  <div className="glass h-full rounded-[1.5rem] p-7">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary text-white shadow-[0_10px_24px_rgba(15,76,129,0.22)]">
+                      <Icon className="h-6 w-6" aria-hidden="true" />
+                    </span>
+                    <h3 className="mt-5 text-lg font-bold text-foreground">
+                      {member.name}
+                    </h3>
+                    <p className="mt-1 text-sm font-medium text-secondary">
+                      {member.role}
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-muted">
+                      {member.description}
+                    </p>
+                  </div>
+                </StaggerItem>
+              );
+            })}
           </Stagger>
         </Container>
       </section>

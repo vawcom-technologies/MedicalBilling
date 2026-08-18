@@ -351,7 +351,6 @@ export function RevenueLeakageCalculator() {
                           <Label htmlFor="calc-name">Name</Label>
                           <Input
                             id="calc-name"
-                            placeholder="Dr. Jane Smith"
                             aria-invalid={!!errors.name}
                             {...register("name")}
                           />
@@ -365,7 +364,6 @@ export function RevenueLeakageCalculator() {
                           <Label htmlFor="calc-practice">Practice Name</Label>
                           <Input
                             id="calc-practice"
-                            placeholder="Sunrise Family Clinic"
                             aria-invalid={!!errors.practiceName}
                             {...register("practiceName")}
                           />
@@ -382,7 +380,6 @@ export function RevenueLeakageCalculator() {
                           <Input
                             id="calc-email"
                             type="email"
-                            placeholder="you@practice.com"
                             aria-invalid={!!errors.email}
                             {...register("email")}
                           />
@@ -397,7 +394,6 @@ export function RevenueLeakageCalculator() {
                           <Input
                             id="calc-phone"
                             type="tel"
-                            placeholder="(555) 123-4567"
                             {...register("phone")}
                           />
                         </div>

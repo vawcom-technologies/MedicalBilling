@@ -97,7 +97,6 @@ export function ContactForm() {
                 <Input
                   id="name"
                   autoComplete="name"
-                  placeholder="Dr. Jane Smith"
                   aria-invalid={!!errors.name}
                   {...register("name")}
                 />
@@ -109,7 +108,6 @@ export function ContactForm() {
               >
                 <Input
                   id="practiceName"
-                  placeholder="Sunrise Family Clinic"
                   aria-invalid={!!errors.practiceName}
                   {...register("practiceName")}
                 />
@@ -122,7 +120,6 @@ export function ContactForm() {
                   id="email"
                   type="email"
                   autoComplete="email"
-                  placeholder="you@practice.com"
                   aria-invalid={!!errors.email}
                   {...register("email")}
                 />
@@ -132,7 +129,6 @@ export function ContactForm() {
                   id="phone"
                   type="tel"
                   autoComplete="tel"
-                  placeholder="(555) 123-4567"
                   aria-invalid={!!errors.phone}
                   {...register("phone")}
                 />
@@ -165,7 +161,6 @@ export function ContactForm() {
             <Field id="message" label="Message" error={errors.message?.message}>
               <Textarea
                 id="message"
-                placeholder="Tell us about your practice, specialty, and goals..."
                 aria-invalid={!!errors.message}
                 {...register("message")}
               />
