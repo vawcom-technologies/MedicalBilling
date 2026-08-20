@@ -156,7 +156,7 @@ export function DigitalServicePage({
 
       <FaqSection
         title={`${content.breadcrumb} FAQs`}
-        description={`Common questions about ${content.breadcrumb.toLowerCase()}.`}
+        description={content.seo.description}
         faqs={content.faqs}
       />
 

@@ -66,11 +66,11 @@ export const websiteDevelopmentContent: DigitalServiceContent = {
     secondaryCta: "Talk About Your Website",
   },
   intro: [
-    "We design and develop healthcare practice websites that look professional, load quickly, and guide visitors toward booking or contacting your team.",
+    "We design and develop healthcare practice websites, including medical practice website development and clinic website design, that look professional, load quickly, and guide visitors toward booking or contacting your team.",
     "From single-location clinics to multi-provider groups, every site is built around clarity, trust, and conversion, not clutter.",
   ],
   includes: {
-    title: "What’s Included",
+    title: "Website Development Services for Medical Practices",
     items: [
       {
         title: "Custom practice website design",
@@ -210,11 +210,11 @@ export const socialMediaMarketingContent: DigitalServiceContent = {
     secondaryCta: "Talk About Social Media",
   },
   intro: [
-    "We help healthcare practices stay active on social media without adding extra work for your staff.",
+    "We help healthcare practices stay active with social media marketing without adding extra work for your staff.",
     "From educational posts to service highlights and community updates, we keep your brand present with messaging that feels professional and patient-friendly.",
   ],
   includes: {
-    title: "What’s Included",
+    title: "Social Media Marketing for Healthcare Practices",
     items: [
       {
         title: "Content planning and calendars",
@@ -354,11 +354,11 @@ export const seoServicesContent: DigitalServiceContent = {
     secondaryCta: "Talk About SEO",
   },
   intro: [
-    "Our SEO services help practices strengthen website structure, local visibility, and content so the right patients can discover you through search.",
+    "Our SEO services for medical practices help strengthen website structure, local SEO for doctors, and content so the right patients can discover you through search.",
     "We focus on practical improvements that support long-term growth, not short-term tricks.",
   ],
   includes: {
-    title: "What’s Included",
+    title: "Healthcare SEO Services Include",
     items: [
       {
         title: "Website SEO foundations",

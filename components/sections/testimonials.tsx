@@ -107,10 +107,10 @@ export function Testimonials({
                   <figure
                     className={cn(
                       "gradient-border flex h-full flex-col rounded-[1.5rem] p-7 md:p-8",
-                      "bg-white/70 shadow-[0_12px_40px_rgba(15,76,129,0.08)]",
+                      "shadow-[0_12px_40px_rgba(15,76,129,0.08)]",
                       "transition-[transform,box-shadow,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
                       "will-change-transform",
-                      "hover:-translate-y-2 hover:bg-white",
+                      "hover:-translate-y-2",
                       "hover:shadow-[0_22px_56px_rgba(15,76,129,0.18),0_0_0_1px_rgba(46,196,182,0.35),0_0_36px_rgba(46,196,182,0.45),0_0_64px_rgba(30,136,229,0.28)]"
                     )}
                   >

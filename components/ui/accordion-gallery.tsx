@@ -372,9 +372,6 @@ export function AccordionGallery({
           );
         })}
       </div>
-      {isTouchUI ? (
-        <p className="ag-panel__hint">Tap a panel to expand</p>
-      ) : null}
     </div>
   );
 }

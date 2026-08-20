@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site-config";
 export const aboutContent = {
   seo: {
     title: `About ${siteConfig.name} | Medical Billing & RCM Experts`,
-    description: `Learn about ${siteConfig.name}, a trusted revenue cycle management partner helping healthcare providers get paid faster and run more efficient practices.`,
+    description: `Learn about ${siteConfig.name} — a trusted medical billing company and revenue cycle management partner helping healthcare providers get paid faster and run more efficient practices.`,
     keywords: [
       "medical billing company",
       "RCM partner",
@@ -17,7 +17,7 @@ export const aboutContent = {
     primaryCta: siteConfig.cta.consultation,
     secondaryCta: "Meet Our Approach",
   },
-  story: `Our team combines industry expertise with modern billing technology to reduce denials, accelerate reimbursements, and improve the financial health of every practice we work with. As a medical billing company and RCM partner, we bring healthcare BPO discipline to independent physicians, clinics, and growing multi-location organizations.`,
+  story: `Our team combines industry expertise with modern billing technology to reduce denials, accelerate reimbursements, and improve the financial health of every practice we work with. As a medical billing company, RCM partner, and healthcare BPO, we support independent physicians, clinics, and growing multi-location organizations.`,
   mission: {
     title: "Our Mission",
     description: siteConfig.mission,
@@ -31,7 +31,7 @@ export const aboutContent = {
     items: siteConfig.values,
   },
   whyPartner: {
-    title: "Why Partner With Us",
+    title: "Why Partner With a Medical Billing Company Like Us",
     items: [
       "Dedicated, US-focused revenue cycle experts",
       "Transparent reporting and open communication",

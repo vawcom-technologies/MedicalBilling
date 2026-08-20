@@ -31,9 +31,15 @@ export function SectionTitle({
       )}
     >
       {eyebrow ? (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
-          {eyebrow}
-        </p>
+        <div className={cn("mb-3", align === "center" && "flex justify-center")}>
+          <p className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
+            <span
+              className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-accent to-spark shadow-[0_0_10px_rgba(42,212,196,0.7)]"
+              aria-hidden="true"
+            />
+            {eyebrow}
+          </p>
+        </div>
       ) : null}
       <Heading
         className={cn(

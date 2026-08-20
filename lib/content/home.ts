@@ -20,7 +20,7 @@ export const homeContent = {
     primaryCta: siteConfig.cta.freeAssessment,
     secondaryCta: "Explore Our Services",
   },
-  intro: `Healthcare providers should focus on delivering exceptional patient care, not chasing unpaid claims, correcting billing errors, or spending hours on insurance follow-ups. ${siteConfig.name} simplifies your entire revenue cycle, from patient registration and eligibility verification through claim submission, payment posting, denial management, and accounts receivable recovery, so every legitimate dollar gets collected, on time and in full.`,
+  intro: `Healthcare providers should focus on delivering exceptional patient care, not chasing unpaid claims, correcting billing errors, or spending hours on insurance follow-ups. As a revenue cycle management company, ${siteConfig.name} helps practices outsource medical billing and simplify the entire revenue cycle, from patient registration and eligibility verification through claim submission, payment posting, denial management, and accounts receivable recovery, so every legitimate dollar gets collected, on time and in full.`,
   services: [
     {
       title: "Medical Billing Services",
@@ -36,6 +36,14 @@ export const homeContent = {
         "We get providers enrolled with Medicare, Medicaid, and commercial payers faster, with fewer rejected applications and less back-and-forth.",
       icon: "BadgeCheck",
     },
+    // Re-enable later with /mips page:
+    // {
+    //   title: "MIPS Services",
+    //   href: "/mips",
+    //   description:
+    //     "Measure selection, year-round tracking, and Quality Payment Program submission support that helps protect your Medicare reimbursement.",
+    //   icon: "ClipboardList",
+    // },
     {
       title: "Virtual Front Desk Services",
       href: "/virtual-front-desk",

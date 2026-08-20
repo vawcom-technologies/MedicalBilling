@@ -10,6 +10,7 @@ export const medicalBillingContent = {
       "denial management services",
       "accounts receivable recovery",
       "insurance claim follow-up",
+      "outsource medical billing",
     ],
   },
   hero: {
@@ -21,10 +22,10 @@ export const medicalBillingContent = {
   },
   intro: [
     "Our Medical Billing Services are designed to simplify your revenue cycle, improve cash flow, and maximize reimbursements while maintaining complete compliance with industry standards.",
-    "Our experienced billing specialists handle every stage of the revenue cycle, from patient registration and insurance verification to claim submission, payment posting, denial management, and accounts receivable follow-up. By combining industry expertise with advanced billing technology, we minimize claim rejections and accelerate payment turnaround times.",
+    "Our experienced billing specialists handle every stage of the revenue cycle, from patient registration and insurance verification to claim submission, payment posting, denial management services, insurance claim follow-up, and accounts receivable recovery. By combining industry expertise with advanced billing technology, we minimize claim rejections and accelerate payment turnaround times.",
   ],
   includes: {
-    title: "What We Offer",
+    title: "What Our Medical Billing Services Include",
     items: [
       {
         title: "Claim preparation and scrubbing",

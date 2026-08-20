@@ -48,19 +48,27 @@ export function BenefitGrid({
           />
 
           <div className="benefit-marquee flex w-max gap-4 py-2">
-            {loopItems.map((item, index) => (
+            {loopItems.map((item, index) => {
+              const iconTone =
+                index % 3 === 0
+                  ? "bg-accent/10 text-accent"
+                  : index % 3 === 1
+                    ? "bg-secondary/10 text-secondary"
+                    : "bg-spark/15 text-spark";
+              return (
               <div
                 key={`${item}-${index}`}
                 className="glass flex h-[72px] w-[280px] shrink-0 items-center gap-3 rounded-[1.5rem] px-5 sm:w-[320px]"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${iconTone}`}>
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-foreground sm:text-base">
                   {item}
                 </h3>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </FadeIn>

@@ -120,10 +120,6 @@
   text-shadow: 0 2px 14px rgba(10, 54, 92, 0.55);
 }
 
-.ag-panel__hint {
-  display: none;
-}
-
 /* Tablet / phone: stack + tap-friendly expand heights */
 @media (max-width: 900px) {
   .accordion-gallery {
@@ -162,17 +158,6 @@
   .ag-panel:not(.ag-panel--active) .ag-panel__text {
     opacity: 0.9 !important;
     font-size: 0.95rem;
-  }
-
-  .ag-panel__hint {
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: color-mix(in srgb, var(--primary, #0f4c81) 70%, #6b7280);
   }
 }
 

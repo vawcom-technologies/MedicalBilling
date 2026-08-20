@@ -13,8 +13,9 @@ function clamp(value: number, min = 0, max = 1) {
   return Math.min(max, Math.max(min, value));
 }
 
-function easeInOut(t: number) {
-  return t * t * (3 - 2 * t);
+/** Soft ease-out for scroll → progress mapping */
+function easeOutCubic(t: number) {
+  return 1 - Math.pow(1 - t, 3);
 }
 
 export function Navbar() {
@@ -37,9 +38,11 @@ export function Navbar() {
   const ctaFullRef = useRef<HTMLSpanElement>(null);
   const ctaShortRef = useRef<HTMLSpanElement>(null);
   const progressRef = useRef(0);
+  const targetProgressRef = useRef(0);
   const openRef = useRef(false);
   const desktopRef = useRef(false);
   const applyRef = useRef<(progress: number) => void>(() => {});
+  const rafRef = useRef(0);
 
   const servicesActive = servicesMenuLinks.some((link) =>
     pathname.startsWith(link.href)
@@ -70,7 +73,8 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    let frame = 0;
+    const SCROLL_RANGE = 180;
+    const LERP = 0.12;
 
     const apply = (progress: number) => {
       const header = headerRef.current;
@@ -98,10 +102,9 @@ export function Navbar() {
       if (p > 0.01) {
         if (!desktop && menuOpen) {
           radius = 22;
-        } else if (desktop) {
-          radius = p * 999;
         } else {
-          radius = p * 999;
+          // Gradual capsule rounding instead of snapping to a huge radius
+          radius = Math.pow(p, 0.85) * 48;
         }
       }
 
@@ -129,7 +132,7 @@ export function Navbar() {
         ? `rgba(255,255,255,${0.55 + p * 0.2})`
         : "transparent";
       shell.style.background = showGlass
-        ? `rgba(255,255,255,${0.72 + p * 0.16})`
+        ? `radial-gradient(120% 90% at 0% 0%, rgba(74,168,255,${0.14 + p * 0.05}), transparent 54%), radial-gradient(90% 80% at 100% 100%, rgba(42,212,196,${0.11 + p * 0.04}), transparent 50%), linear-gradient(165deg, rgba(255,255,255,${0.7 + p * 0.12}), rgba(232,244,251,${0.64 + p * 0.12}))`
         : "transparent";
       const blur = showGlass ? `blur(${10 + p * 4}px)` : "none";
       shell.style.backdropFilter = blur;
@@ -154,38 +157,60 @@ export function Navbar() {
         cta.style.paddingRight = `${ctaPadX}px`;
       }
       if (ctaFullRef.current && ctaShortRef.current) {
-        const showShort = p > 0.55;
-        ctaFullRef.current.style.opacity = showShort ? "0" : "1";
-        ctaShortRef.current.style.opacity = showShort ? "1" : "0";
+        // Soft crossfade instead of a hard cutover
+        const fade = clamp((p - 0.42) / 0.28);
+        ctaFullRef.current.style.opacity = String(1 - fade);
+        ctaShortRef.current.style.opacity = String(fade);
       }
     };
 
     applyRef.current = apply;
 
-    const update = () => {
-      frame = 0;
-      const next = easeInOut(clamp(window.scrollY / 100));
-      progressRef.current = next;
-      apply(next);
+    const readTarget = () => {
+      targetProgressRef.current = easeOutCubic(
+        clamp(window.scrollY / SCROLL_RANGE)
+      );
+    };
 
-      const nextPill = next > 0.55;
-      const nextElevated = next > 0.05 || openRef.current;
+    const syncFlags = (progress: number) => {
+      const nextPill = progress > 0.55;
+      const nextElevated = progress > 0.05 || openRef.current;
       setPill((prev) => (prev === nextPill ? prev : nextPill));
       setElevated((prev) => (prev === nextElevated ? prev : nextElevated));
     };
 
-    const onScroll = () => {
-      if (frame) return;
-      frame = requestAnimationFrame(update);
+    const tick = () => {
+      const current = progressRef.current;
+      const target = targetProgressRef.current;
+      const next = current + (target - current) * LERP;
+      const settled = Math.abs(target - next) < 0.001;
+
+      progressRef.current = settled ? target : next;
+      apply(progressRef.current);
+      syncFlags(progressRef.current);
+
+      rafRef.current = settled ? 0 : requestAnimationFrame(tick);
     };
 
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll, { passive: true });
+    const kick = () => {
+      readTarget();
+      if (!rafRef.current) {
+        rafRef.current = requestAnimationFrame(tick);
+      }
+    };
+
+    readTarget();
+    progressRef.current = targetProgressRef.current;
+    apply(progressRef.current);
+    syncFlags(progressRef.current);
+
+    window.addEventListener("scroll", kick, { passive: true });
+    window.addEventListener("resize", kick, { passive: true });
+
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", kick);
+      window.removeEventListener("resize", kick);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, [servicesOpen]);
 
@@ -276,7 +301,7 @@ export function Navbar() {
           >
             <span
               ref={logoRef}
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white shadow-[0_8px_20px_rgba(15,76,129,0.25)] transition-transform duration-300 group-hover:scale-105"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary via-secondary to-accent text-white shadow-[0_8px_20px_rgba(15,76,129,0.25)] transition-transform duration-300 group-hover:scale-105"
             >
               <Cross ref={iconRef} className="h-5 w-5" aria-hidden="true" />
             </span>
@@ -386,15 +411,12 @@ export function Navbar() {
                 href="/contact"
                 className="relative inline-flex items-center justify-center"
               >
-                <span
-                  ref={ctaFullRef}
-                  className="whitespace-nowrap transition-opacity duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
-                >
+                <span ref={ctaFullRef} className="whitespace-nowrap">
                   {siteConfig.cta.primary}
                 </span>
                 <span
                   ref={ctaShortRef}
-                  className="pointer-events-none absolute inset-0 flex items-center justify-center whitespace-nowrap opacity-0 transition-opacity duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                  className="pointer-events-none absolute inset-0 flex items-center justify-center whitespace-nowrap opacity-0"
                   aria-hidden="true"
                 >
                   Book a Call

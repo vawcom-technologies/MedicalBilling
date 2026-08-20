@@ -71,25 +71,31 @@ export default function HomePage() {
                 {
                   label: "HIPAA-aware workflows",
                   icon: ShieldCheck,
+                  tone: "text-accent bg-accent/10 group-hover:bg-accent group-hover:shadow-[0_6px_16px_rgba(42,212,196,0.35)]",
                 },
                 {
                   label: "Transparent reporting",
                   icon: ClipboardCheck,
+                  tone: "text-secondary bg-secondary/10 group-hover:bg-secondary group-hover:shadow-[0_6px_16px_rgba(74,168,255,0.35)]",
                 },
                 {
                   label: "Specialty-aware specialists",
                   icon: Stethoscope,
+                  tone: "text-primary bg-primary/10 group-hover:bg-primary group-hover:shadow-[0_6px_16px_rgba(15,76,129,0.3)]",
                 },
                 {
                   label: "US-focused RCM support",
                   icon: MapPinned,
+                  tone: "text-spark bg-spark/15 group-hover:bg-spark group-hover:shadow-[0_6px_16px_rgba(243,193,75,0.4)]",
                 },
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="group relative inline-flex cursor-default items-center gap-2.5 rounded-full border border-transparent bg-white/50 px-4 py-2.5 text-sm font-medium text-muted shadow-[0_4px_16px_rgba(15,76,129,0.04)] backdrop-blur-sm transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-accent/30 hover:bg-white hover:text-primary hover:shadow-[0_12px_28px_rgba(46,196,182,0.18)]"
+                  className="group relative inline-flex cursor-default items-center gap-2.5 rounded-full border border-white/70 bg-[linear-gradient(165deg,rgba(255,255,255,0.72),rgba(232,244,251,0.58))] px-4 py-2.5 text-sm font-medium text-muted shadow-[0_4px_16px_rgba(15,76,129,0.04),inset_0_-12px_20px_rgba(15,76,129,0.04)] backdrop-blur-sm transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-accent/30 hover:bg-white hover:text-primary hover:shadow-[0_12px_28px_rgba(42,212,196,0.18)]"
                 >
-                  <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent transition-all duration-300 group-hover:scale-110 group-hover:bg-accent group-hover:text-white group-hover:shadow-[0_6px_16px_rgba(46,196,182,0.35)]">
+                  <span
+                    className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 group-hover:text-white ${item.tone}`}
+                  >
                     <item.icon
                       className="relative z-[1] h-4 w-4 transition-transform duration-300 group-hover:rotate-[-8deg]"
                       aria-hidden="true"

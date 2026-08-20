@@ -21,7 +21,7 @@ export const virtualFrontDeskContent = {
     secondaryCta: "See How Virtual Support Works",
   },
   intro: [
-    "Our Virtual Front Desk Services provide highly trained healthcare support professionals who function as an extension of your practice, delivering reliable administrative assistance without the cost of hiring in-house staff.",
+    "Our Virtual Front Desk Services provide highly trained healthcare support professionals who function as an extension of your practice, delivering a virtual front desk for medical practice operations, medical answering service coverage, and healthcare appointment scheduling service support without the cost of hiring in-house staff.",
   ],
   includes: {
     title: "Our Front Desk Services Include",

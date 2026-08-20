@@ -53,7 +53,7 @@ export function FloatingCta() {
       </button>
       <Link
         href="/contact"
-        className="inline-flex items-center gap-2 rounded-2xl bg-accent px-4 py-3 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(46,196,182,0.35)] transition hover:-translate-y-0.5"
+        className="inline-flex items-center gap-2 rounded-2xl bg-accent px-4 py-3 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(42,212,196,0.4)] transition hover:-translate-y-0.5 hover:brightness-110"
         aria-label="Contact us"
       >
         <MessageCircle className="h-4 w-4" aria-hidden="true" />

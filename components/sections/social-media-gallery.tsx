@@ -10,7 +10,7 @@ const socialMediaItems = [
     image:
       "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=1400&q=80",
     label: "Content Calendars",
-    alt: "Social media app icons on a phone screen",
+    alt: "Healthcare social media marketing content calendar on a phone",
   },
   {
     image:

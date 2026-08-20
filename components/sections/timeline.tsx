@@ -138,13 +138,9 @@ export function Timeline({
                         </p>
                       </div>
 
-                      <div className="mt-4 flex items-center justify-between gap-3">
+                      <div className="mt-4 flex items-center">
                         <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-white text-primary">
                           <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                        </span>
-                        <span className="hidden items-center gap-2 text-xs font-medium text-white/75 sm:inline-flex">
-                          <Icon className="h-4 w-4 opacity-80" aria-hidden="true" />
-                          Hover next step to continue
                         </span>
                       </div>
                     </div>

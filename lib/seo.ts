@@ -19,7 +19,9 @@ export function buildMetadata({
   const resolvedTitle = title.replaceAll("[Company Name]", siteConfig.name);
 
   return {
-    title: resolvedTitle,
+    title: {
+      absolute: resolvedTitle,
+    },
     description,
     keywords,
     alternates: {

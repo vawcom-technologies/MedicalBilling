@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { siteConfig } from "@/lib/site-config";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: `Page Not Found | ${siteConfig.name}`,
+  },
+  description: `This page does not exist. Explore ${siteConfig.name} medical billing services, credentialing, or contact our team for help.`,
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function NotFound() {
   return (

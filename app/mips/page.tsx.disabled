@@ -1,0 +1,166 @@
+/**
+ * MIPS page — temporarily disabled.
+ * To re-enable: rename this file to `page.tsx` and uncomment MIPS entries in
+ * site-config, home, contact, sitemap, page-summaries, and support-chat.
+ */
+import Link from "next/link";
+import { mipsContent } from "@/lib/content/mips";
+import { buildMetadata } from "@/lib/seo";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  serviceSchema,
+} from "@/lib/schema";
+import { JsonLd } from "@/components/json-ld";
+import { PageHero } from "@/components/sections/page-hero";
+import { ServiceArt } from "@/components/illustrations/service-art";
+import { HeroStatsOverlay } from "@/components/sections/hero-stats-overlay";
+import { FeatureList } from "@/components/sections/feature-list";
+import { BenefitGrid } from "@/components/sections/benefit-grid";
+import { Timeline } from "@/components/sections/timeline";
+import { StatsSection } from "@/components/sections/stats-section";
+import { FaqSection } from "@/components/sections/faq-section";
+import { CtaBanner } from "@/components/sections/cta-banner";
+import { Container } from "@/components/ui/container";
+import { FadeIn } from "@/components/motion/fade-in";
+import { SectionTitle } from "@/components/section-title";
+
+export const metadata = buildMetadata({
+  title: mipsContent.seo.title,
+  description: mipsContent.seo.description,
+  path: "/mips",
+  keywords: [...mipsContent.seo.keywords],
+});
+
+export default function MipsPage() {
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", href: "/" },
+          { name: "MIPS Services", href: "/mips" },
+        ])}
+      />
+      <JsonLd
+        data={serviceSchema({
+          name: "MIPS Services",
+          description: mipsContent.seo.description,
+          path: "/mips",
+        })}
+      />
+      <JsonLd data={faqSchema([...mipsContent.faqs])} />
+
+      <PageHero
+        breadcrumb="MIPS"
+        eyebrow="Merit-based Incentive Payment System"
+        h1={mipsContent.hero.h1}
+        subheadline={mipsContent.hero.subheadline}
+        primaryCta={mipsContent.hero.primaryCta}
+        secondaryCta={mipsContent.hero.secondaryCta}
+        secondaryHref="/contact"
+      >
+        <HeroStatsOverlay
+          stats={[
+            { label: "Categories Covered", value: "4", tone: "primary" },
+            { label: "Deadline Focus", value: "100%", tone: "accent" },
+            { label: "Planning Cadence", value: "12 mo", tone: "secondary" },
+          ]}
+        >
+          <ServiceArt
+            variant="mips"
+            className="h-auto w-full drop-shadow-[0_24px_50px_rgba(15,76,129,0.12)]"
+          />
+        </HeroStatsOverlay>
+      </PageHero>
+
+      <section className="py-16 md:py-20">
+        <Container>
+          <FadeIn className="mx-auto max-w-3xl space-y-5 text-center">
+            {mipsContent.intro.map((paragraph) => (
+              <p
+                key={paragraph.slice(0, 48)}
+                className="text-base leading-relaxed text-muted md:text-lg"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </FadeIn>
+        </Container>
+      </section>
+
+      <FeatureList
+        title={mipsContent.includes.title}
+        items={mipsContent.includes.items}
+      />
+
+      <section className="bg-background py-20 md:py-28">
+        <Container>
+          <SectionTitle
+            title={mipsContent.whyMatters.title}
+            description={mipsContent.whyMatters.description}
+          />
+          <FadeIn className="mx-auto mt-8 max-w-3xl text-center text-sm text-muted">
+            Pair MIPS reporting with{" "}
+            <Link
+              href="/medical-billing"
+              className="font-semibold text-secondary underline-offset-4 hover:underline"
+            >
+              medical billing services
+            </Link>{" "}
+            for cleaner documentation support, or{" "}
+            <Link
+              href="/contact"
+              className="font-semibold text-secondary underline-offset-4 hover:underline"
+            >
+              schedule a consultation
+            </Link>{" "}
+            to review your performance year plan.
+          </FadeIn>
+        </Container>
+      </section>
+
+      <BenefitGrid
+        title={mipsContent.whyUs.title}
+        items={mipsContent.whyUs.items}
+      />
+
+      <Timeline
+        title="MIPS Reporting Timeline"
+        description="A structured year-round approach from eligibility review through submission and next-year planning."
+        steps={mipsContent.process}
+      />
+
+      <StatsSection
+        stats={[...mipsContent.stats]}
+        description="*CMS rules and category weights can change by performance year. We track current requirements for your practice."
+      />
+
+      <section className="py-20 md:py-24">
+        <Container>
+          <SectionTitle
+            title={mipsContent.growing.title}
+            description={mipsContent.growing.description}
+          />
+        </Container>
+      </section>
+
+      <CtaBanner
+        title={mipsContent.midCta.title}
+        description={mipsContent.midCta.description}
+        cta={mipsContent.midCta.cta}
+      />
+
+      <FaqSection
+        title="MIPS FAQs"
+        description="Answers about Merit-based Incentive Payment System reporting, measure selection, and Medicare payment adjustments."
+        faqs={mipsContent.faqs}
+      />
+
+      <CtaBanner
+        title={mipsContent.finalCta.title}
+        description={mipsContent.finalCta.description}
+        cta={mipsContent.finalCta.cta}
+      />
+    </>
+  );
+}

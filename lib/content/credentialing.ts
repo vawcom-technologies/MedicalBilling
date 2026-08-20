@@ -21,7 +21,7 @@ export const credentialingContent = {
     secondaryCta: "Speak With a Credentialing Specialist",
   },
   intro: [
-    "Our Credentialing Services streamline the entire enrollment process, ensuring healthcare providers become credentialed accurately and efficiently with commercial insurance companies, Medicare, Medicaid, and other payer organizations.",
+    "Our Credentialing Services streamline the entire enrollment process, ensuring healthcare providers become credentialed accurately and efficiently with commercial insurance companies, Medicare, Medicaid, and other payer organizations. As a medical credentialing company, we manage CAQH profile management, payer enrollment services, and Medicare Medicaid enrollment from one coordinated workflow.",
   ],
   includes: {
     title: "Our Credentialing Solutions Include",
@@ -76,7 +76,7 @@ export const credentialingContent = {
   whyMatters: {
     title: "Why Credentialing Matters",
     description:
-      "Without proper credentialing, providers cannot bill insurance companies for covered services. Every delay can result in lost revenue and interrupted patient access. Our specialists carefully manage every application, monitor payer requirements, communicate with insurance companies, and provide regular status updates until approval is obtained.",
+      "Without proper credentialing, providers cannot bill insurance companies for covered services. Every delay can result in lost revenue and interrupted patient access. Our specialists manage provider credentialing services carefully, monitor payer enrollment services requirements, communicate with insurance companies, and provide regular status updates until approval is obtained.",
   },
   whyUs: {
     title: "Why Work With Us?",

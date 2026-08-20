@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site-config";
 export const contactContent = {
   seo: {
     title: `Contact ${siteConfig.name} | Medical Billing & Credentialing Support`,
-    description: `Get in touch with ${siteConfig.name} to discuss medical billing, credentialing, or virtual front desk support for your practice.`,
+    description: `Get in touch with ${siteConfig.name} to discuss medical billing, credentialing, virtual front desk support, or a free consultation for your practice.`,
     keywords: [
       "contact medical billing company",
       "medical billing consultation",
@@ -30,6 +30,7 @@ export const contactContent = {
   services: [
     "Medical Billing Services",
     "Credentialing Services",
+    // "MIPS Services", // Re-enable later with /mips page
     "Virtual Front Desk Services",
     "Website Development",
     "Social Media Marketing",

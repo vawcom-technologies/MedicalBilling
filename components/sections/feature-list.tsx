@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import type Lenis from "lenis";
 import { ArrowLeft, Check } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionTitle } from "@/components/section-title";
@@ -35,6 +36,33 @@ function normalizeItems(
   );
 }
 
+function getLenis() {
+  return (window as Window & { __lenis?: Lenis }).__lenis;
+}
+
+/** Center an element in the viewport via Lenis (site smooth scroll) or native scroll. */
+function scrollElementToCenter(el: HTMLElement, immediate: boolean) {
+  const lenis = getLenis();
+  if (lenis) lenis.resize();
+
+  const rect = el.getBoundingClientRect();
+  const current = lenis ? lenis.scroll : window.scrollY;
+  const target = Math.max(
+    0,
+    current + rect.top + rect.height / 2 - window.innerHeight / 2
+  );
+
+  if (lenis) {
+    lenis.scrollTo(target, immediate ? { immediate: true } : { lerp: 0.1 });
+    return;
+  }
+
+  window.scrollTo({
+    top: target,
+    behavior: immediate ? "auto" : "smooth",
+  });
+}
+
 export function FeatureList({
   title,
   description,
@@ -44,6 +72,7 @@ export function FeatureList({
   const normalized = normalizeItems(items);
   const expandable = normalized.some((item) => Boolean(item.detail));
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
   const activeItem =
     activeIndex !== null ? normalized[activeIndex] : undefined;
@@ -54,6 +83,28 @@ export function FeatureList({
   };
 
   const closeDetail = () => setActiveIndex(null);
+
+  useEffect(() => {
+    if (activeIndex === null) return;
+
+    let cancelled = false;
+
+    // Wait for the grid → detail swap + height change, then center via Lenis.
+    const timer = window.setTimeout(
+      () => {
+        requestAnimationFrame(() => {
+          if (cancelled || !panelRef.current) return;
+          scrollElementToCenter(panelRef.current, Boolean(reduceMotion));
+        });
+      },
+      reduceMotion ? 16 : 150
+    );
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [activeIndex, reduceMotion]);
 
   return (
     <section className="section-alt py-20 md:py-28">
@@ -71,6 +122,7 @@ export function FeatureList({
                 {activeItem?.detail ? (
                   <motion.div
                     key={`detail-${activeIndex}`}
+                    ref={panelRef}
                     layout
                     initial={
                       reduceMotion

@@ -10,7 +10,7 @@ const seoProjectItems = [
     image:
       "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&w=1400&q=80",
     label: "Local Search Visibility",
-    alt: "Laptop showing search and analytics work on a desk",
+    alt: "Laptop showing local SEO for doctors and medical practice search visibility",
   },
   {
     image:

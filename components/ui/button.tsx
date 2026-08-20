@@ -9,13 +9,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-white shadow-[0_10px_30px_rgba(15,76,129,0.25)] hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-[0_16px_36px_rgba(15,76,129,0.3)]",
+          "bg-gradient-to-br from-primary via-[#1460a0] to-secondary text-white shadow-[0_10px_30px_rgba(15,76,129,0.28),0_0_0_1px_rgba(74,168,255,0.12)] hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_16px_36px_rgba(30,136,229,0.32)]",
         secondary:
-          "bg-secondary text-white shadow-[0_10px_30px_rgba(30,136,229,0.25)] hover:-translate-y-0.5 hover:brightness-105",
+          "bg-secondary text-white shadow-[0_10px_30px_rgba(74,168,255,0.32)] hover:-translate-y-0.5 hover:brightness-110",
         accent:
-          "bg-accent text-white shadow-[0_10px_30px_rgba(46,196,182,0.28)] hover:-translate-y-0.5 hover:brightness-105",
+          "bg-accent text-white shadow-[0_10px_30px_rgba(42,212,196,0.34)] hover:-translate-y-0.5 hover:brightness-110",
         outline:
-          "glass text-primary hover:-translate-y-0.5 hover:border-secondary/40",
+          "glass text-primary hover:-translate-y-0.5 hover:border-accent/45",
         ghost: "text-primary hover:bg-primary/5",
         link: "rounded-none text-secondary underline-offset-4 hover:underline",
       },

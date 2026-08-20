@@ -11,19 +11,19 @@ const audienceItems = [
     image:
       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1400&q=80",
     label: "Independent Physicians",
-    alt: "Physician reviewing patient care",
+    alt: "Independent physician reviewing patient care in a medical practice",
   },
   {
     image:
       "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=80",
     label: "Specialty Clinics",
-    alt: "Specialty clinic hallway",
+    alt: "Specialty clinic hallway serving healthcare providers",
   },
   {
     image:
       "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=1400&q=80",
     label: "Urgent Care Centers",
-    alt: "Urgent care medical setting",
+    alt: "Urgent care medical setting for outsourced billing support",
   },
   {
     image:
@@ -49,7 +49,7 @@ export function WhoWeServe({ title, description }: WhoWeServeProps) {
     <section className="py-20 md:py-28">
       <Container>
         <SectionTitle
-          eyebrow="Who We Serve"
+          eyebrow="Practices We Support"
           title={title}
           description={description}
         />

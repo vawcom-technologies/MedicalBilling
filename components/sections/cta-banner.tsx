@@ -21,13 +21,17 @@ export function CtaBanner({
     <section className="relative overflow-hidden py-16 md:py-20">
       <Container>
         <FadeIn>
-          <div className="noise-overlay relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-primary via-[#135a96] to-secondary px-6 py-12 text-white shadow-[0_24px_60px_rgba(15,76,129,0.28)] md:px-12 md:py-16">
+          <div className="noise-overlay relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-primary via-[#1463aa] to-secondary px-6 py-12 text-white shadow-[0_24px_60px_rgba(15,76,129,0.28)] md:px-12 md:py-16">
             <div
-              className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/25 blur-3xl"
+              className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/40 blur-3xl"
               aria-hidden="true"
             />
             <div
-              className="pointer-events-none absolute -bottom-20 left-10 h-56 w-56 rounded-full bg-white/10 blur-3xl"
+              className="pointer-events-none absolute -bottom-20 left-10 h-56 w-56 rounded-full bg-highlight/25 blur-3xl"
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute bottom-8 right-24 h-24 w-24 rounded-full bg-spark/30 blur-2xl"
               aria-hidden="true"
             />
             <div className="relative z-[2] grid items-center gap-8 lg:grid-cols-[1.4fr_auto]">

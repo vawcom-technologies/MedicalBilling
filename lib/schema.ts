@@ -5,6 +5,11 @@ type FaqItem = { question: string; answer: string };
 type BreadcrumbItem = { name: string; href: string };
 
 export function organizationSchema() {
+  const phone =
+    siteConfig.phone && !siteConfig.phone.includes("[")
+      ? siteConfig.phone
+      : undefined;
+
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -12,7 +17,7 @@ export function organizationSchema() {
     url: absoluteUrl("/"),
     logo: absoluteUrl("/logo.svg"),
     email: siteConfig.email,
-    telephone: siteConfig.phone,
+    ...(phone ? { telephone: phone } : {}),
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address.street,
@@ -30,13 +35,18 @@ export function organizationSchema() {
 }
 
 export function healthcareBusinessSchema() {
+  const phone =
+    siteConfig.phone && !siteConfig.phone.includes("[")
+      ? siteConfig.phone
+      : undefined;
+
   return {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     name: siteConfig.name,
     description: siteConfig.description,
     url: absoluteUrl("/"),
-    telephone: siteConfig.phone,
+    ...(phone ? { telephone: phone } : {}),
     email: siteConfig.email,
     image: absoluteUrl("/og-image.png"),
     address: {
@@ -72,8 +82,10 @@ export function contactPageSchema() {
     mainEntity: {
       "@type": "Organization",
       name: siteConfig.name,
-      telephone: siteConfig.phone,
       email: siteConfig.email,
+      ...(siteConfig.phone && !siteConfig.phone.includes("[")
+        ? { telephone: siteConfig.phone }
+        : {}),
     },
   };
 }

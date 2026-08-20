@@ -1,11 +1,18 @@
 type ServiceArtProps = {
-  variant: "billing" | "credentialing" | "front-desk" | "about" | "digital-marketing";
+  variant:
+    | "billing"
+    | "credentialing"
+    | "mips"
+    | "front-desk"
+    | "about"
+    | "digital-marketing";
   className?: string;
 };
 
 const titles = {
   billing: "Medical billing services dashboard illustration",
   credentialing: "Provider credentialing and payer enrollment illustration",
+  mips: "MIPS quality reporting and score tracking illustration",
   "front-desk": "Virtual front desk and medical answering service illustration",
   about: "Medical billing company partnership illustration",
   "digital-marketing": "Digital marketing website social and SEO illustration",
@@ -55,6 +62,31 @@ export function ServiceArt({ variant, className }: ServiceArtProps) {
           <rect x="302" y="176" width="70" height="8" rx="4" fill="#E5E7EB" />
           <rect x="302" y="198" width="86" height="8" rx="4" fill="#E5E7EB" />
           <rect x="302" y="230" width="86" height="22" rx="11" fill="#0F4C81" />
+        </>
+      )}
+
+      {variant === "mips" && (
+        <>
+          <rect x="70" y="70" width="240" height="200" rx="24" fill="white" stroke="#E5E7EB" />
+          <rect x="96" y="98" width="140" height="12" rx="6" fill="#0F4C81" />
+          <rect x="96" y="130" width="72" height="56" rx="14" fill="#EAF6FF" />
+          <rect x="180" y="130" width="72" height="56" rx="14" fill="#E8FBF8" />
+          <rect x="96" y="200" width="72" height="40" rx="12" fill="#EEF2FF" />
+          <rect x="180" y="200" width="72" height="40" rx="12" fill="#EAF6FF" />
+          <rect x="280" y="90" width="130" height="180" rx="22" fill="white" stroke="#E5E7EB" />
+          <circle cx="345" cy="145" r="34" fill="#0F4C81" fillOpacity="0.12" />
+          <circle
+            cx="345"
+            cy="145"
+            r="26"
+            stroke="#2EC4B6"
+            strokeWidth="6"
+            strokeDasharray="120 40"
+            fill="none"
+          />
+          <rect x="304" y="196" width="82" height="10" rx="5" fill="#1E88E5" />
+          <rect x="304" y="220" width="64" height="8" rx="4" fill="#E5E7EB" />
+          <rect x="304" y="244" width="82" height="22" rx="11" fill="#2EC4B6" />
         </>
       )}
 

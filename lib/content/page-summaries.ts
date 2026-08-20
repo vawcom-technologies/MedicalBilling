@@ -27,6 +27,14 @@ export const pageGuides: PageGuide[] = [
     summary:
       "Provider credentialing services streamline payer enrollment with Medicare, Medicaid, and commercial insurers, plus CAQH management, NPI updates, recredentialing, and ongoing compliance follow-up.",
   },
+  // Re-enable later with /mips page:
+  // {
+  //   id: "mips",
+  //   label: "MIPS",
+  //   href: "/mips",
+  //   summary:
+  //     "MIPS services support Merit-based Incentive Payment System reporting with measure selection, performance tracking, Promoting Interoperability guidance, Improvement Activities, and on-time data submission.",
+  // },
   {
     id: "virtual-front-desk",
     label: "Virtual Front Desk",
@@ -74,7 +82,7 @@ export const pageGuides: PageGuide[] = [
     label: "Contact",
     href: "/contact",
     summary:
-      "Share your practice details and the service you need: medical billing, credentialing, or virtual front desk. Most inquiries receive a response within one business day, and consultations are free.",
+      "Share your practice details and the service you need: medical billing, credentialing, virtual front desk, website development, social media, or SEO. Most inquiries receive a response within one business day, and consultations are free.",
   },
 ];
 

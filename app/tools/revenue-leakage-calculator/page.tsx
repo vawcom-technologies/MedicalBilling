@@ -74,7 +74,7 @@ export default function RevenueLeakageCalculatorPage() {
               Free Practice Tool
             </p>
             <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-[3.2rem]">
-              Revenue Leakage Calculator
+              Revenue Leakage Calculator for Medical Billing Denials
             </h1>
             <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
               Estimate how much your practice may be losing to claim denials and

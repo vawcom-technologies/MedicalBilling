@@ -51,7 +51,11 @@ export function PageHero({
           <div>
             {eyebrow ? (
               <FadeIn>
-                <p className="mb-5 inline-flex items-center rounded-full border border-secondary/20 bg-secondary/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-secondary">
+                <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-secondary/25 bg-gradient-to-r from-secondary/10 via-accent/10 to-spark/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-secondary">
+                  <span
+                    className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_8px_rgba(42,212,196,0.8)]"
+                    aria-hidden="true"
+                  />
                   {eyebrow}
                 </p>
               </FadeIn>

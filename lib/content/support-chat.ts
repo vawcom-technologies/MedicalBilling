@@ -12,6 +12,7 @@ export type SupportFaq = {
 export type SupportTopicId =
   | "billing"
   | "credentialing"
+  // | "mips" // Re-enable later with /mips page
   | "front-desk"
   | "website-development"
   | "social-media"
@@ -40,6 +41,13 @@ export const supportTopics: SupportTopic[] = [
     description: "Payer enrollment and timelines",
     href: "/credentialing",
   },
+  // Re-enable later with /mips page:
+  // {
+  //   id: "mips",
+  //   label: "MIPS",
+  //   description: "Quality Payment Program reporting",
+  //   href: "/mips",
+  // },
   {
     id: "front-desk",
     label: "Front Desk",
@@ -180,6 +188,37 @@ export const supportFaqs: SupportFaq[] = [
     answer:
       "Provider credentialing includes payer enrollment with Medicare, Medicaid, and commercial insurers, CAQH profile management, NPI updates, recredentialing, and compliance follow-up so new and existing providers stay billable.",
   },
+  // Re-enable later with /mips page:
+  // {
+  //   id: "mips-what",
+  //   topic: "mips",
+  //   question: "What do your MIPS services include?",
+  //   keywords: [
+  //     "mips",
+  //     "quality payment",
+  //     "qpp",
+  //     "merit-based",
+  //     "promoting interoperability",
+  //     "improvement activities",
+  //     "quality measures",
+  //   ],
+  //   answer:
+  //     "Our MIPS services cover eligibility review, quality measure selection, Promoting Interoperability and Improvement Activities guidance, year-round performance tracking, and data submission support so practices can protect Medicare payment adjustments.",
+  // },
+  // {
+  //   id: "mips-when",
+  //   topic: "mips",
+  //   question: "When should we start preparing for MIPS?",
+  //   keywords: [
+  //     "mips deadline",
+  //     "when to start mips",
+  //     "mips reporting",
+  //     "performance year",
+  //     "submission",
+  //   ],
+  //   answer:
+  //     "Ideally at the start of the performance year. Early measure selection and documentation habits usually produce stronger scores than a year-end rush. We can also help mid-year with gap analysis and submission planning.",
+  // },
   {
     id: "front-desk-help",
     topic: "front-desk",
