@@ -74,7 +74,9 @@ export function Navbar() {
 
   useEffect(() => {
     const SCROLL_RANGE = 180;
-    const LERP = 0.12;
+    const LERP = 0.14;
+    // Animating blur px every frame is a major scroll stutter source
+    let lastGlass: boolean | null = null;
 
     const apply = (progress: number) => {
       const header = headerRef.current;
@@ -103,7 +105,6 @@ export function Navbar() {
         if (!desktop && menuOpen) {
           radius = 22;
         } else {
-          // Gradual capsule rounding instead of snapping to a huge radius
           radius = Math.pow(p, 0.85) * 48;
         }
       }
@@ -134,9 +135,13 @@ export function Navbar() {
       shell.style.background = showGlass
         ? `radial-gradient(120% 90% at 0% 0%, rgba(74,168,255,${0.14 + p * 0.05}), transparent 54%), radial-gradient(90% 80% at 100% 100%, rgba(42,212,196,${0.11 + p * 0.04}), transparent 50%), linear-gradient(165deg, rgba(255,255,255,${0.7 + p * 0.12}), rgba(232,244,251,${0.64 + p * 0.12}))`
         : "transparent";
-      const blur = showGlass ? `blur(${10 + p * 4}px)` : "none";
-      shell.style.backdropFilter = blur;
-      shell.style.setProperty("-webkit-backdrop-filter", blur);
+
+      if (lastGlass !== showGlass) {
+        lastGlass = showGlass;
+        const blur = showGlass ? "blur(12px)" : "none";
+        shell.style.backdropFilter = blur;
+        shell.style.setProperty("-webkit-backdrop-filter", blur);
+      }
 
       row.style.height = `${barHeight}px`;
 
@@ -157,7 +162,6 @@ export function Navbar() {
         cta.style.paddingRight = `${ctaPadX}px`;
       }
       if (ctaFullRef.current && ctaShortRef.current) {
-        // Soft crossfade instead of a hard cutover
         const fade = clamp((p - 0.42) / 0.28);
         ctaFullRef.current.style.opacity = String(1 - fade);
         ctaShortRef.current.style.opacity = String(fade);
@@ -166,9 +170,14 @@ export function Navbar() {
 
     applyRef.current = apply;
 
+    const readScrollY = () => {
+      const lenis = (window as Window & { __lenis?: { scroll: number } }).__lenis;
+      return lenis ? lenis.scroll : window.scrollY;
+    };
+
     const readTarget = () => {
       targetProgressRef.current = easeOutCubic(
-        clamp(window.scrollY / SCROLL_RANGE)
+        clamp(readScrollY() / SCROLL_RANGE)
       );
     };
 

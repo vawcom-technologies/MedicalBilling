@@ -16,7 +16,7 @@ export function FadeIn({
   children,
   className,
   delay = 0,
-  y = 16,
+  y = 10,
   x = 0,
   once = true,
 }: FadeInProps) {
@@ -31,9 +31,9 @@ export function FadeIn({
       className={className}
       initial={{ opacity: 0, y, x }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
-      viewport={{ once, margin: "-6% 0px -4% 0px", amount: 0.12 }}
+      viewport={{ once, margin: "-4% 0px -2% 0px", amount: 0.08 }}
       transition={{
-        duration: 0.5,
+        duration: 0.38,
         delay,
         ease: easeOutExpo,
       }}
@@ -51,12 +51,12 @@ const staggerContainer: Variants = {
 };
 
 const staggerItem: Variants = {
-  hidden: { opacity: 0, y: 12 },
+  hidden: { opacity: 0, y: 8 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.45,
+      duration: 0.36,
       ease: easeOutExpo,
     },
   },
@@ -81,7 +81,7 @@ export function Stagger({
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-6% 0px -4% 0px", amount: 0.12 }}
+      viewport={{ once: true, margin: "-4% 0px -2% 0px", amount: 0.08 }}
     >
       {children}
     </motion.div>

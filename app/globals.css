@@ -37,7 +37,7 @@
     radial-gradient(70% 55% at 92% 8%, rgba(243, 193, 75, 0.06), transparent 48%),
     linear-gradient(165deg, rgba(255, 255, 255, 0.9) 0%, rgba(236, 246, 252, 0.84) 50%, rgba(240, 251, 248, 0.86) 100%);
   /* Lighter blur keeps glass look without scroll jank */
-  --glass-blur: blur(10px);
+  --glass-blur: blur(8px);
 }
 
 @theme inline {
@@ -116,15 +116,15 @@ body {
   background-color: var(--glass-bg-strong);
   background-image: var(--glass-wash-strong);
   border-color: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .glass-soft {
   background-color: rgba(255, 255, 255, 0.48);
   box-shadow: 0 8px 28px rgba(15, 76, 129, 0.05), var(--glass-highlight), var(--glass-shade);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .glass-nav {
@@ -134,16 +134,16 @@ body {
     0 16px 40px rgba(15, 76, 129, 0.1),
     var(--glass-highlight),
     var(--glass-shade);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .glass-panel {
   background-color: rgba(255, 255, 255, 0.76);
   background-image: var(--glass-wash-strong);
   box-shadow: var(--shadow-lift), var(--glass-highlight), var(--glass-shade);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .gradient-border {
@@ -166,8 +166,8 @@ body {
   background-size: 180px 180px, auto, auto, auto, auto;
   border: 1px solid transparent;
   box-shadow: var(--shadow-soft), var(--glass-highlight), var(--glass-shade);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .hero-gradient {
@@ -193,7 +193,22 @@ body {
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Skip expensive backdrop blur while scrolling on smaller / low-power devices */
+/* Drop backdrop blur during route transitions to keep swaps smooth */
+html.is-page-transitioning .glass,
+html.is-page-transitioning .glass-strong,
+html.is-page-transitioning .glass-soft,
+html.is-page-transitioning .glass-nav,
+html.is-page-transitioning .glass-panel,
+html.is-page-transitioning .gradient-border {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html.is-page-transitioning {
+  overflow-x: clip;
+}
+
+/* Skip expensive backdrop blur on smaller / low-power devices */
 @media (max-width: 767px), (prefers-reduced-transparency: reduce) {
   .glass,
   .glass-strong,

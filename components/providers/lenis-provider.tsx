@@ -13,18 +13,18 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
 
     const lenis = new Lenis({
       autoRaf: true,
-      lerp: 0.1,
+      // Higher lerp + wheel = snappier, faster scroll
+      lerp: 0.12,
       smoothWheel: true,
-      wheelMultiplier: 0.9,
+      wheelMultiplier: 1.05,
       touchMultiplier: 1.2,
       syncTouch: false,
       anchors: {
         offset: -88,
-        lerp: 0.1,
+        lerp: 0.14,
       },
       stopInertiaOnNavigate: true,
       respectReducedMotion: true,
-      // Allow nested panels (support chat, menus) to scroll independently
       prevent: (node) =>
         node instanceof HTMLElement &&
         Boolean(
@@ -35,7 +35,6 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
 
     (window as Window & { __lenis?: Lenis }).__lenis = lenis;
 
-    // Keep virtual scroll in sync after late layout shifts (images, fonts)
     const onResize = () => lenis.resize();
     window.addEventListener("resize", onResize, { passive: true });
 

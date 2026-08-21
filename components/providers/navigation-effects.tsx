@@ -63,6 +63,7 @@ export function NavigationEffects() {
   const pathnameRef = useRef(pathname);
   const isPopNavigation = useRef(false);
   const ignoreScrollSave = useRef(false);
+  const lastSavedY = useRef(0);
 
   useEffect(() => {
     pathnameRef.current = pathname;
@@ -81,36 +82,31 @@ export function NavigationEffects() {
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
-  // Persist scroll position, but never write storage on every wheel tick
+  // Persist scroll only after idle — never on every wheel tick
   useEffect(() => {
-    let frame = 0;
     let timer = 0;
 
     const persist = () => {
-      frame = 0;
       if (ignoreScrollSave.current) return;
-      savePosition(pathnameRef.current, getScrollY());
+      const y = getScrollY();
+      if (Math.abs(y - lastSavedY.current) < 24) return;
+      lastSavedY.current = y;
+      savePosition(pathnameRef.current, y);
     };
 
     const onScroll = () => {
       if (ignoreScrollSave.current) return;
-      if (!frame) {
-        frame = requestAnimationFrame(persist);
-      }
       window.clearTimeout(timer);
-      timer = window.setTimeout(persist, 180);
+      timer = window.setTimeout(persist, 280);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
-      if (frame) cancelAnimationFrame(frame);
       window.clearTimeout(timer);
     };
   }, []);
 
-  // Intercept same-origin navigations so Next doesn't force scroll-to-top
-  // before we can save/restore positions ourselves.
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
       if (event.defaultPrevented) return;
@@ -137,10 +133,8 @@ export function NavigationEffects() {
       const nextKey = `${url.pathname}${url.search}`;
       const currentKey = `${window.location.pathname}${window.location.search}`;
 
-      // Same-page hash jumps are handled by Lenis / the browser
       if (nextKey === currentKey) return;
 
-      // Persist this page's position before leaving
       savePosition(current, getScrollY());
 
       event.preventDefault();
@@ -158,24 +152,23 @@ export function NavigationEffects() {
     const targetY = shouldRestore ? loadPosition(pathname) : 0;
 
     ignoreScrollSave.current = true;
-    // One clean jump avoids Lenis resize thrash that makes opens feel janky
-    setScroll(targetY, shouldRestore);
+    setScroll(targetY, true);
 
-    const timers = shouldRestore
-      ? [80, 220].map((delay) =>
-          window.setTimeout(() => setScroll(targetY, true), delay)
-        )
-      : [];
+    // One delayed resync after paint (images/fonts) — avoid multi-jump thrash
+    const resync = window.setTimeout(() => {
+      setScroll(targetY, true);
+    }, shouldRestore ? 160 : 60);
 
     const unlock = window.setTimeout(() => {
       ignoreScrollSave.current = false;
+      lastSavedY.current = targetY;
       if (shouldRestore) {
         savePosition(pathname, targetY);
       }
-    }, shouldRestore ? 260 : 80);
+    }, shouldRestore ? 220 : 100);
 
     return () => {
-      timers.forEach((id) => window.clearTimeout(id));
+      window.clearTimeout(resync);
       window.clearTimeout(unlock);
     };
   }, [pathname]);
