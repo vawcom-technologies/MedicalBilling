@@ -59,12 +59,12 @@ export default function AboutPage() {
         >
           <ServiceArt
             variant="about"
-            className="h-auto w-full drop-shadow-[0_24px_50px_rgba(15,76,129,0.12)]"
+            className="h-auto w-full drop-shadow-[0_24px_50px_rgba(15, 107, 99,0.12)]"
           />
         </HeroStatsOverlay>
       </PageHero>
 
-      <section className="py-16 md:py-20">
+      <section className="py-20 md:py-24">
         <Container>
           <FadeIn className="mx-auto max-w-3xl text-center">
             <p className="text-base leading-relaxed text-muted md:text-lg">
@@ -88,11 +88,11 @@ export default function AboutPage() {
         <Container>
           <div className="grid gap-6 lg:grid-cols-2">
             <FadeIn>
-              <div className="glass h-full rounded-[1.75rem] p-8">
+              <div className="surface-panel h-full rounded-[1.25rem] p-8">
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white">
                   <Target className="h-5 w-5" aria-hidden="true" />
                 </span>
-                <h2 className="mt-5 text-2xl font-bold text-foreground">
+                <h2 className="font-display mt-5 text-2xl font-semibold text-foreground">
                   {aboutContent.mission.title}
                 </h2>
                 <p className="mt-3 text-base leading-relaxed text-muted">
@@ -101,11 +101,11 @@ export default function AboutPage() {
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <div className="glass h-full rounded-[1.75rem] p-8">
+              <div className="surface-panel h-full rounded-[1.25rem] p-8">
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-white">
                   <Eye className="h-5 w-5" aria-hidden="true" />
                 </span>
-                <h2 className="mt-5 text-2xl font-bold text-foreground">
+                <h2 className="font-display mt-5 text-2xl font-semibold text-foreground">
                   {aboutContent.vision.title}
                 </h2>
                 <p className="mt-3 text-base leading-relaxed text-muted">
@@ -127,7 +127,7 @@ export default function AboutPage() {
           <Stagger className="mt-12 grid gap-5 md:grid-cols-2">
             {aboutContent.values.items.map((value) => (
               <StaggerItem key={value.title}>
-                <div className="glass h-full rounded-[1.5rem] p-6">
+                <div className="surface-panel h-full rounded-[1.25rem] p-6">
                   <h3 className="text-lg font-semibold text-foreground">
                     {value.title}
                   </h3>
@@ -166,11 +166,11 @@ export default function AboutPage() {
               const Icon = teamIcons[member.name] ?? FileText;
               return (
                 <StaggerItem key={member.name}>
-                  <div className="glass h-full rounded-[1.5rem] p-7">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary text-white shadow-[0_10px_24px_rgba(15,76,129,0.22)]">
+                  <div className="surface-panel h-full rounded-[1.25rem] p-7">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary text-white shadow-[0_10px_24px_rgba(15, 107, 99,0.22)]">
                       <Icon className="h-6 w-6" aria-hidden="true" />
                     </span>
-                    <h3 className="mt-5 text-lg font-bold text-foreground">
+                    <h3 className="font-display mt-5 text-lg font-semibold text-foreground">
                       {member.name}
                     </h3>
                     <p className="mt-1 text-sm font-medium text-secondary">
@@ -199,7 +199,7 @@ export default function AboutPage() {
             <Stagger className="grid auto-rows-fr gap-3 sm:grid-cols-2">
               {aboutContent.certifications.items.map((item) => (
                 <StaggerItem key={item} className="h-full">
-                  <div className="glass flex h-full min-h-[4.75rem] w-full items-center gap-3 rounded-2xl px-4 py-4">
+                  <div className="surface-panel flex h-full min-h-[4.75rem] w-full items-center gap-3 rounded-[1.15rem] px-4 py-4">
                     <Award
                       className="h-5 w-5 shrink-0 text-accent"
                       aria-hidden="true"

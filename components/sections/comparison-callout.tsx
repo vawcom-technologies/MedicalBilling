@@ -26,15 +26,15 @@ export function ComparisonCallout({
   items,
 }: ComparisonCalloutProps) {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-28">
       <Container>
         <SectionTitle
           eyebrow={eyebrow}
           title={title}
           description={description}
         />
-        <FadeIn delay={0.08} className="mx-auto mt-10 max-w-4xl">
-          <div className="grid gap-3 md:grid-cols-2 md:gap-4">
+        <FadeIn delay={0.08} className="mx-auto mt-12 max-w-4xl">
+          <div className="grid gap-4 md:grid-cols-2">
             {items.map((item) => {
               const isNegative = item.tone === "negative";
               const [before, after] = item.text.split(item.highlight);
@@ -43,16 +43,16 @@ export function ComparisonCallout({
                 <div
                   key={item.highlight}
                   className={cn(
-                    "glass flex h-full items-center gap-3 rounded-2xl px-4 py-4 md:gap-4 md:px-5 md:py-5",
+                    "flex h-full items-center gap-4 rounded-[1.25rem] border px-5 py-5",
                     isNegative
-                      ? "border-red-200/70 bg-red-50/55"
-                      : "border-emerald-200/70 bg-emerald-50/55"
+                      ? "border-red-200/80 bg-red-50/70"
+                      : "border-primary/15 bg-mist/80"
                   )}
                 >
                   <span
                     className={cn(
-                      "flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white",
-                      isNegative ? "bg-red-500" : "bg-emerald-600"
+                      "flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-white",
+                      isNegative ? "bg-red-500" : "bg-primary"
                     )}
                   >
                     {isNegative ? (
@@ -72,7 +72,7 @@ export function ComparisonCallout({
                   <p
                     className={cn(
                       "text-sm leading-relaxed md:text-[15px]",
-                      isNegative ? "text-red-950" : "text-emerald-950"
+                      isNegative ? "text-red-950" : "text-foreground"
                     )}
                   >
                     {before}

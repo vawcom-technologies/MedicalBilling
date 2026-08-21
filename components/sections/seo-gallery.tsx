@@ -57,7 +57,7 @@ export function SeoGallery() {
             gap={12}
             radius={24}
             accentColor="#2ec4b6"
-            overlayColor="#0a365c"
+            overlayColor="#0A4F4A"
             textColor="#ffffff"
             grayscale
             showLabels

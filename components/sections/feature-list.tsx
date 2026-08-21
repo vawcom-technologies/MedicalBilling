@@ -139,7 +139,7 @@ export function FeatureList({
                     style={{ originY: 0 }}
                     className="w-full"
                   >
-                    <div className="glass-strong w-full rounded-2xl border-secondary/25 p-5 md:p-6">
+                    <div className="surface-panel w-full rounded-[1.25rem] border-primary/15 p-5 md:p-6">
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex items-start gap-3">
                           <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
@@ -152,7 +152,7 @@ export function FeatureList({
                         <button
                           type="button"
                           onClick={closeDetail}
-                          className="glass inline-flex shrink-0 items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold text-foreground transition hover:border-secondary/40 hover:text-secondary"
+                          className="surface-panel inline-flex shrink-0 items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold text-foreground transition hover:border-primary/30 hover:text-primary"
                         >
                           <ArrowLeft
                             className="h-3.5 w-3.5"
@@ -219,7 +219,7 @@ export function FeatureList({
                             damping: 24,
                           }}
                           className={cn(
-                            "glass group flex h-full min-h-[5.25rem] w-full items-center gap-3 rounded-2xl px-4 py-4 text-left transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_14px_32px_rgba(15,76,129,0.12)]"
+                            "surface-panel group flex h-full min-h-[5.25rem] w-full items-center gap-3 rounded-[1.15rem] px-4 py-4 text-left transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_14px_32px_rgba(10,46,43,0.1)]"
                           )}
                         >
                           {content}
@@ -227,7 +227,7 @@ export function FeatureList({
                       ) : (
                         <div
                           key={item.title}
-                          className="glass group flex h-full min-h-[5.25rem] items-center gap-3 rounded-2xl px-4 py-4 transition duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_14px_32px_rgba(15,76,129,0.12)]"
+                          className="surface-panel group flex h-full min-h-[5.25rem] items-center gap-3 rounded-[1.15rem] px-4 py-4 transition duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_14px_32px_rgba(10,46,43,0.1)]"
                         >
                           {content}
                         </div>

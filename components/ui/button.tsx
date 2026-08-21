@@ -4,25 +4,25 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl text-sm font-semibold transition-[transform,box-shadow,background-color,color,border-color,filter] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-semibold tracking-wide transition-[transform,box-shadow,background-color,color,border-color,filter] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         default:
-          "bg-gradient-to-br from-primary via-[#1460a0] to-secondary text-white shadow-[0_10px_30px_rgba(15,76,129,0.28),0_0_0_1px_rgba(74,168,255,0.12)] hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_16px_36px_rgba(30,136,229,0.32)]",
+          "bg-primary text-white shadow-[0_10px_28px_rgba(12,92,86,0.28)] hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-[0_14px_34px_rgba(12,92,86,0.34)]",
         secondary:
-          "bg-secondary text-white shadow-[0_10px_30px_rgba(74,168,255,0.32)] hover:-translate-y-0.5 hover:brightness-110",
+          "bg-secondary text-white shadow-[0_10px_28px_rgba(26,127,196,0.28)] hover:-translate-y-0.5 hover:brightness-110",
         accent:
-          "bg-accent text-white shadow-[0_10px_30px_rgba(42,212,196,0.34)] hover:-translate-y-0.5 hover:brightness-110",
+          "bg-accent text-white shadow-[0_10px_28px_rgba(43,184,169,0.3)] hover:-translate-y-0.5 hover:brightness-110",
         outline:
-          "glass text-primary hover:-translate-y-0.5 hover:border-accent/45",
-        ghost: "text-primary hover:bg-primary/5",
+          "border border-primary/20 bg-white/70 text-primary backdrop-blur-sm hover:-translate-y-0.5 hover:border-primary/40 hover:bg-white",
+        ghost: "text-primary hover:bg-primary/6",
         link: "rounded-none text-secondary underline-offset-4 hover:underline",
       },
       size: {
         default: "h-12 px-6",
         sm: "h-10 px-4 text-xs",
-        lg: "h-14 px-8 text-base",
+        lg: "h-14 px-8 text-[15px]",
         icon: "h-12 w-12",
       },
     },

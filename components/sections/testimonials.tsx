@@ -106,24 +106,23 @@ export function Testimonials({
                 >
                   <figure
                     className={cn(
-                      "gradient-border flex h-full flex-col rounded-[1.5rem] p-7 md:p-8",
-                      "shadow-[0_12px_40px_rgba(15,76,129,0.08)]",
-                      "transition-[transform,box-shadow,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                      "surface-panel flex h-full flex-col rounded-[1.25rem] p-8",
+                      "transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
                       "will-change-transform",
-                      "hover:-translate-y-2",
-                      "hover:shadow-[0_22px_56px_rgba(15,76,129,0.18),0_0_0_1px_rgba(46,196,182,0.35),0_0_36px_rgba(46,196,182,0.45),0_0_64px_rgba(30,136,229,0.28)]"
+                      "hover:-translate-y-1.5",
+                      "hover:shadow-[0_22px_50px_rgba(10,46,43,0.12)]"
                     )}
                   >
                     <Quote
-                      className="h-8 w-8 text-accent"
+                      className="h-7 w-7 text-accent"
                       aria-hidden="true"
                     />
-                    <blockquote className="mt-4 flex-1 text-base leading-relaxed text-foreground md:text-lg">
+                    <blockquote className="mt-5 flex-1 font-display text-lg leading-relaxed text-foreground md:text-xl">
                       “{item.quote}”
                     </blockquote>
-                    <figcaption className="mt-6 border-t border-border pt-4">
+                    <figcaption className="mt-7 border-t border-primary/10 pt-5">
                       <p className="font-semibold text-primary">{item.name}</p>
-                      <p className="text-sm text-muted">{item.role}</p>
+                      <p className="mt-0.5 text-sm text-muted">{item.role}</p>
                     </figcaption>
                   </figure>
                 </div>

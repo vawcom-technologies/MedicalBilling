@@ -27,9 +27,13 @@ export function NewsletterForm() {
         placeholder="Your email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="h-11"
+        className="h-11 border-white/15 bg-white/10 text-white placeholder:text-white/40 focus-visible:ring-accent"
       />
-      <Button type="submit" size="sm" className="h-11 shrink-0 px-5">
+      <Button
+        type="submit"
+        size="sm"
+        className="h-11 shrink-0 bg-accent px-5 text-ink hover:bg-accent/90 hover:text-ink"
+      >
         {submitted ? "Joined" : "Subscribe"}
       </Button>
     </form>

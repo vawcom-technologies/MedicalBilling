@@ -19,7 +19,7 @@ export function HealthcareHeroIllustration({
             <stop offset="100%" stopColor="#2EC4B6" stopOpacity="0.25" />
           </linearGradient>
           <linearGradient id="hg2" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#0F4C81" />
+            <stop offset="0%" stopColor="#0F6B63" />
             <stop offset="100%" stopColor="#1E88E5" />
           </linearGradient>
           <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
@@ -27,7 +27,7 @@ export function HealthcareHeroIllustration({
               dx="0"
               dy="18"
               stdDeviation="18"
-              floodColor="#0F4C81"
+              floodColor="#0F6B63"
               floodOpacity="0.12"
             />
           </filter>
@@ -47,7 +47,7 @@ export function HealthcareHeroIllustration({
             fill="white"
             stroke="#E5E7EB"
           />
-          <rect x="112" y="128" width="120" height="14" rx="7" fill="#0F4C81" />
+          <rect x="112" y="128" width="120" height="14" rx="7" fill="#0F6B63" />
           <rect
             x="112"
             y="156"
@@ -70,7 +70,7 @@ export function HealthcareHeroIllustration({
           <text
             x="128"
             y="254"
-            fill="#0F4C81"
+            fill="#0F6B63"
             fontSize="16"
             fontFamily="system-ui,sans-serif"
             fontWeight="700"
@@ -80,7 +80,7 @@ export function HealthcareHeroIllustration({
           <text
             x="212"
             y="254"
-            fill="#0F4C81"
+            fill="#0F6B63"
             fontSize="16"
             fontFamily="system-ui,sans-serif"
             fontWeight="700"
@@ -90,7 +90,7 @@ export function HealthcareHeroIllustration({
           <text
             x="296"
             y="254"
-            fill="#0F4C81"
+            fill="#0F6B63"
             fontSize="16"
             fontFamily="system-ui,sans-serif"
             fontWeight="700"
@@ -122,7 +122,7 @@ export function HealthcareHeroIllustration({
             width="90"
             height="10"
             rx="5"
-            fill="#0F4C81"
+            fill="#0F6B63"
           />
           <rect
             x="384"

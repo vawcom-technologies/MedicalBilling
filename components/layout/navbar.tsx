@@ -126,7 +126,7 @@ export function Navbar() {
       shell.style.paddingRight = `${p * (desktop ? 10 : 6)}px`;
       shell.style.overflow = servicesOpen && desktop ? "visible" : "hidden";
       shell.style.boxShadow = showGlass
-        ? `0 ${10 + p * 8}px ${28 + p * 14}px rgba(15,76,129,${0.06 + p * 0.08})`
+        ? `0 ${10 + p * 8}px ${28 + p * 14}px rgba(15, 107, 99,${0.06 + p * 0.08})`
         : "none";
       shell.style.borderColor = showGlass
         ? `rgba(255,255,255,${0.55 + p * 0.2})`
@@ -257,7 +257,7 @@ export function Navbar() {
       pill && "h-8 px-2.5 text-[13px]",
       active
         ? pill
-          ? "bg-primary text-white shadow-[0_6px_16px_rgba(15,76,129,0.22)]"
+          ? "bg-primary text-white shadow-[0_6px_16px_rgba(15, 107, 99,0.22)]"
           : "bg-primary/5 text-primary"
         : "text-muted hover:bg-white/70 hover:text-primary"
     );
@@ -301,14 +301,14 @@ export function Navbar() {
           >
             <span
               ref={logoRef}
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary via-secondary to-accent text-white shadow-[0_8px_20px_rgba(15,76,129,0.25)] transition-transform duration-300 group-hover:scale-105"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary text-white shadow-[0_8px_20px_rgba(12,92,86,0.28)] transition-transform duration-300 group-hover:scale-105"
             >
               <Cross ref={iconRef} className="h-5 w-5" aria-hidden="true" />
             </span>
             <span
               ref={titleRef}
               className={cn(
-                "font-bold tracking-tight text-primary",
+                "font-display font-semibold tracking-tight text-primary",
                 pill ? "max-w-[9rem] truncate sm:max-w-none" : "truncate"
               )}
             >
@@ -360,7 +360,7 @@ export function Navbar() {
               {servicesOpen ? (
                 <div
                   role="menu"
-                  className="absolute left-1/2 top-[calc(100%+0.55rem)] z-[60] w-64 -translate-x-1/2 rounded-2xl border border-white/70 bg-white/95 p-2 shadow-[0_18px_40px_rgba(15,76,129,0.14)] backdrop-blur-xl"
+                  className="absolute left-1/2 top-[calc(100%+0.55rem)] z-[60] w-64 -translate-x-1/2 rounded-2xl border border-white/70 bg-white/95 p-2 shadow-[0_18px_40px_rgba(15, 107, 99,0.14)] backdrop-blur-xl"
                 >
                   {servicesMenuLinks.map((link) => {
                     const active = pathname.startsWith(link.href);

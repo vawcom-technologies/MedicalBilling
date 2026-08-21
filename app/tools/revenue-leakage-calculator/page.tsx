@@ -73,7 +73,7 @@ export default function RevenueLeakageCalculatorPage() {
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
               Free Practice Tool
             </p>
-            <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-[3.2rem]">
+            <h1 className="text-balance font-display text-4xl font-semibold tracking-tight text-foreground md:text-5xl lg:text-[3.2rem]">
               Revenue Leakage Calculator for Medical Billing Denials
             </h1>
             <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">

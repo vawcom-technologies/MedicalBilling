@@ -405,7 +405,7 @@ export function SupportAssistant() {
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         className={cn(
-          "inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-[0_14px_34px_rgba(15,76,129,0.35)] transition hover:-translate-y-0.5 hover:brightness-105",
+          "inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-[0_14px_34px_rgba(15, 107, 99,0.35)] transition hover:-translate-y-0.5 hover:brightness-105",
           open && "bg-secondary"
         )}
         aria-label={open ? "Close support assistant" : "Open support assistant"}

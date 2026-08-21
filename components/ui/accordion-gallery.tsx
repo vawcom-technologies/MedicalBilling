@@ -76,7 +76,7 @@ export function AccordionGallery({
   items = DEFAULT_ITEMS,
   defaultIndex = 2,
   accentColor = "#2ec4b6",
-  overlayColor = "#0a365c",
+  overlayColor = "#0A4F4A",
   textColor = "#ffffff",
   height = 460,
   gap = 10,

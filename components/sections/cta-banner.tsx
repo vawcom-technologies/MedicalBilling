@@ -21,32 +21,28 @@ export function CtaBanner({
     <section className="relative overflow-hidden py-16 md:py-20">
       <Container>
         <FadeIn>
-          <div className="noise-overlay relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-primary via-[#1463aa] to-secondary px-6 py-12 text-white shadow-[0_24px_60px_rgba(15,76,129,0.28)] md:px-12 md:py-16">
+          <div className="section-ink noise-overlay relative overflow-hidden rounded-[1.5rem] px-7 py-12 md:px-14 md:py-16">
             <div
-              className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/40 blur-3xl"
+              className="pointer-events-none absolute -right-20 top-0 h-72 w-72 rounded-full bg-accent/25 blur-3xl"
               aria-hidden="true"
             />
             <div
-              className="pointer-events-none absolute -bottom-20 left-10 h-56 w-56 rounded-full bg-highlight/25 blur-3xl"
+              className="pointer-events-none absolute -bottom-24 left-0 h-64 w-64 rounded-full bg-secondary/20 blur-3xl"
               aria-hidden="true"
             />
-            <div
-              className="pointer-events-none absolute bottom-8 right-24 h-24 w-24 rounded-full bg-spark/30 blur-2xl"
-              aria-hidden="true"
-            />
-            <div className="relative z-[2] grid items-center gap-8 lg:grid-cols-[1.4fr_auto]">
+            <div className="relative z-[2] grid items-center gap-8 lg:grid-cols-[1.35fr_auto] lg:gap-12">
               <div>
-                <h2 className="max-w-2xl text-balance text-3xl font-bold tracking-tight md:text-4xl">
+                <h2 className="font-display max-w-2xl text-balance text-3xl font-semibold tracking-tight md:text-4xl">
                   {title}
                 </h2>
-                <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
                   {description}
                 </p>
               </div>
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-primary hover:bg-white/95"
+                className="bg-white text-primary shadow-none hover:bg-white/95 hover:text-primary-dark"
               >
                 <Link href={href}>
                   {cta}

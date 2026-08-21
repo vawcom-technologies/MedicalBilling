@@ -64,12 +64,12 @@ export default function MedicalBillingPage() {
         >
           <ServiceArt
             variant="billing"
-            className="h-auto w-full drop-shadow-[0_24px_50px_rgba(15,76,129,0.12)]"
+            className="h-auto w-full drop-shadow-[0_24px_50px_rgba(15, 107, 99,0.12)]"
           />
         </HeroStatsOverlay>
       </PageHero>
 
-      <section className="py-16 md:py-20">
+      <section className="py-20 md:py-24">
         <Container>
           <FadeIn className="mx-auto max-w-3xl space-y-5 text-center">
             {medicalBillingContent.intro.map((paragraph) => (
@@ -99,7 +99,7 @@ export default function MedicalBillingPage() {
               description={medicalBillingContent.whyTeam.description}
             />
             <FadeIn delay={0.1}>
-              <div className="glass rounded-[1.75rem] p-8">
+              <div className="surface-panel rounded-[1.25rem] p-8">
                 <h3 className="text-lg font-semibold text-foreground">
                   Related services that strengthen collections
                 </h3>

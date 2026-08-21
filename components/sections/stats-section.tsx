@@ -25,80 +25,73 @@ export function StatsSection({
     <section
       className={
         brand
-          ? "relative overflow-hidden bg-gradient-to-br from-primary via-[#125a98] to-[#0d6cb8] py-16 text-white md:py-20"
-          : "section-surface border-y py-16 md:py-20"
+          ? "section-ink relative overflow-hidden py-20 md:py-24"
+          : "section-surface border-y py-20 md:py-24"
       }
     >
       {brand ? (
         <>
           <div
-            className="pointer-events-none absolute -left-10 top-0 h-48 w-48 rounded-full bg-accent/30 blur-3xl"
+            className="pointer-events-none absolute -left-16 top-0 h-56 w-56 rounded-full bg-accent/20 blur-3xl"
             aria-hidden="true"
           />
           <div
-            className="pointer-events-none absolute -right-8 bottom-0 h-40 w-40 rounded-full bg-spark/20 blur-3xl"
+            className="pointer-events-none absolute -right-10 bottom-0 h-48 w-48 rounded-full bg-spark/15 blur-3xl"
             aria-hidden="true"
           />
         </>
       ) : null}
       <Container className="relative">
         {(title || description) && (
-          <FadeIn className="mx-auto mb-10 max-w-2xl text-center">
+          <FadeIn className="mx-auto mb-12 max-w-2xl text-center">
             {title ? (
               <h2
-                className={`text-2xl font-bold md:text-3xl ${brand ? "text-white" : "text-foreground"}`}
+                className={`font-display text-2xl font-semibold md:text-3xl ${brand ? "text-white" : "text-foreground"}`}
               >
                 {title}
               </h2>
             ) : null}
             {description ? (
               <p
-                className={`mt-3 text-sm md:text-base ${brand ? "text-white/80" : "text-muted"}`}
+                className={`mt-3 text-sm md:text-base ${brand ? "text-white/70" : "text-muted"}`}
               >
                 {description}
               </p>
             ) : null}
           </FadeIn>
         )}
-        <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat, index) => {
-            const numberClass = brand
-              ? "text-white"
-              : [
-                  "text-primary",
-                  "text-secondary",
-                  "text-accent",
-                  "text-primary",
-                ][index % 4];
+        <Stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((stat) => {
+            const numberClass = brand ? "text-white" : "text-primary";
             return (
-            <StaggerItem key={stat.label}>
-              <div
-                className={`rounded-[1.5rem] p-6 text-center ${
-                  brand
-                    ? "border border-white/20 bg-white/10 backdrop-blur-md"
-                    : "glass"
-                }`}
-              >
+              <StaggerItem key={stat.label}>
                 <div
-                  className={`text-3xl font-bold tracking-tight md:text-4xl ${numberClass}`}
+                  className={`rounded-[1.25rem] p-7 text-center ${
+                    brand
+                      ? "border border-white/12 bg-white/8 backdrop-blur-md"
+                      : "surface-panel"
+                  }`}
                 >
-                  {typeof stat.value === "number" ? (
-                    <AnimatedCounter
-                      value={stat.value}
-                      suffix={"suffix" in stat ? stat.suffix : ""}
-                      prefix={"prefix" in stat ? stat.prefix : ""}
-                    />
-                  ) : (
-                    stat.value
-                  )}
+                  <div
+                    className={`font-display text-3xl font-semibold tracking-tight md:text-4xl ${numberClass}`}
+                  >
+                    {typeof stat.value === "number" ? (
+                      <AnimatedCounter
+                        value={stat.value}
+                        suffix={"suffix" in stat ? stat.suffix : ""}
+                        prefix={"prefix" in stat ? stat.prefix : ""}
+                      />
+                    ) : (
+                      stat.value
+                    )}
+                  </div>
+                  <p
+                    className={`mt-3 text-sm font-medium ${brand ? "text-white/65" : "text-muted"}`}
+                  >
+                    {stat.label}
+                  </p>
                 </div>
-                <p
-                  className={`mt-2 text-sm font-medium ${brand ? "text-white/75" : "text-muted"}`}
-                >
-                  {stat.label}
-                </p>
-              </div>
-            </StaggerItem>
+              </StaggerItem>
             );
           })}
         </Stagger>

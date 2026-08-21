@@ -83,8 +83,8 @@ export function Timeline({
                     "group relative h-full min-w-0 overflow-hidden rounded-[1.35rem] border text-left",
                     "transition-[flex-grow,background-color,border-color,box-shadow,color] duration-500 ease-in-out",
                     isActive
-                      ? "grow-[2.4] border-primary bg-gradient-to-br from-primary via-[#135a96] to-secondary text-white shadow-[0_18px_40px_rgba(15,76,129,0.25)]"
-                      : "glass grow text-foreground"
+                      ? "grow-[2.4] border-primary bg-primary text-white shadow-[0_18px_40px_rgba(12,92,86,0.28)]"
+                      : "surface-panel grow text-foreground"
                   )}
                 >
                   {/* Collapsed view */}
@@ -105,7 +105,7 @@ export function Timeline({
                     <h3 className="px-1 text-center text-[15px] font-bold leading-snug text-foreground">
                       {item.title}
                     </h3>
-                    <span className="glass mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full text-muted">
+                    <span className="surface-panel mt-1 inline-flex h-9 w-9 items-center justify-center rounded-full text-muted">
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </span>
                   </div>
@@ -176,8 +176,8 @@ export function Timeline({
                   className={cn(
                     "w-full rounded-[1.35rem] border p-4 text-left transition-[background-color,border-color,box-shadow,color] duration-500 ease-in-out",
                     isActive
-                      ? "border-primary bg-gradient-to-br from-primary to-secondary text-white shadow-[0_16px_40px_rgba(15,76,129,0.25)]"
-                      : "glass text-foreground"
+                      ? "border-primary bg-primary text-white shadow-[0_16px_40px_rgba(12,92,86,0.28)]"
+                      : "surface-panel text-foreground"
                   )}
                 >
                   <div className="flex items-center gap-3">
@@ -207,7 +207,7 @@ export function Timeline({
                         "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors duration-500",
                         isActive
                           ? "border-white/30 bg-white text-primary"
-                          : "glass text-muted"
+                          : "surface-panel text-muted"
                       )}
                     >
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />

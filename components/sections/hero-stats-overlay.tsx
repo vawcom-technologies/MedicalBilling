@@ -45,7 +45,7 @@ export function HeroStatsOverlay({ children, stats }: HeroStatsOverlayProps) {
   return (
     <div className="relative mx-auto w-full max-w-[480px]">
       {/* Art stays clean: no overlays on top of it */}
-      <div className="overflow-hidden rounded-[1.75rem] shadow-[0_20px_50px_rgba(15,76,129,0.1)]">
+      <div className="overflow-hidden rounded-[1.75rem] shadow-[0_20px_50px_rgba(15, 107, 99,0.1)]">
         {children}
       </div>
 

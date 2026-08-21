@@ -62,7 +62,7 @@ export function ContactForm() {
             <span className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/15 text-accent">
               <CheckCircle2 className="h-8 w-8" aria-hidden="true" />
             </span>
-            <h3 className="mt-5 text-2xl font-bold text-foreground">
+            <h3 className="font-display mt-5 text-2xl font-semibold text-foreground">
               Message received
             </h3>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
@@ -142,7 +142,7 @@ export function ContactForm() {
             >
               <select
                 id="service"
-                className="glass-strong flex h-12 w-full rounded-2xl px-4 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/40"
+                className="flex h-12 w-full rounded-xl border border-primary/12 bg-white/80 px-4 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/25"
                 aria-invalid={!!errors.service}
                 defaultValue=""
                 {...register("service")}

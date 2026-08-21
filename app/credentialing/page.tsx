@@ -63,12 +63,12 @@ export default function CredentialingPage() {
         >
           <ServiceArt
             variant="credentialing"
-            className="h-auto w-full drop-shadow-[0_24px_50px_rgba(15,76,129,0.12)]"
+            className="h-auto w-full drop-shadow-[0_24px_50px_rgba(15, 107, 99,0.12)]"
           />
         </HeroStatsOverlay>
       </PageHero>
 
-      <section className="py-16 md:py-20">
+      <section className="py-20 md:py-24">
         <Container>
           <FadeIn className="mx-auto max-w-3xl space-y-5 text-center">
             {credentialingContent.intro.map((paragraph) => (

@@ -48,7 +48,7 @@ export default function ContactPage() {
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
               Contact
             </p>
-            <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-[3.2rem]">
+            <h1 className="text-balance font-display text-4xl font-semibold tracking-tight text-foreground md:text-5xl lg:text-[3.2rem]">
               {contactContent.hero.h1}
             </h1>
             <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
@@ -82,8 +82,8 @@ export default function ContactPage() {
           <div className="grid items-start gap-10 lg:grid-cols-[0.92fr_1.08fr]">
             <FadeIn>
               <div className="space-y-5">
-                <div className="glass rounded-[1.5rem] p-6">
-                  <h2 className="text-xl font-bold text-foreground">
+                <div className="surface-panel rounded-[1.25rem] p-6">
+                  <h2 className="font-display text-xl font-semibold text-foreground">
                     Contact Details
                   </h2>
                   <ul className="mt-5 space-y-4 text-sm text-muted">
@@ -144,7 +144,7 @@ export default function ContactPage() {
                   </ul>
                 </div>
 
-                <div className="glass overflow-hidden rounded-[1.5rem]">
+                <div className="surface-panel overflow-hidden rounded-[1.25rem]">
                   <div
                     className="flex h-64 items-center justify-center bg-[linear-gradient(135deg,#e8f3fb_0%,#f4fbf9_100%)]"
                     role="img"

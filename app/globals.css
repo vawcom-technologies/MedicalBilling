@@ -1,43 +1,40 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #0f4c81;
-  --primary-dark: #0a365c;
-  --secondary: #1e88e5;
-  --accent: #2ad4c4;
-  --highlight: #4aa8ff;
-  --spark: #f3c14b;
-  --background: #eef5fa;
-  --card: rgba(255, 255, 255, 0.62);
-  --foreground: #111827;
-  --muted: #6b7280;
-  --border: rgba(15, 76, 129, 0.1);
-  --radius: 1.5rem;
-  --shadow-soft: 0 10px 40px rgba(15, 76, 129, 0.08);
-  --shadow-lift: 0 20px 50px rgba(15, 76, 129, 0.12);
-  --glass-bg: rgba(255, 255, 255, 0.58);
-  --glass-bg-strong: rgba(255, 255, 255, 0.78);
-  --glass-border: rgba(255, 255, 255, 0.72);
-  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.82);
-  --glass-shade:
-    inset 0 -28px 48px rgba(15, 76, 129, 0.05),
-    inset 22px 0 36px rgba(42, 212, 196, 0.035),
-    inset -18px 12px 32px rgba(74, 168, 255, 0.04);
-  --glass-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12  0 0 0 0 0.32  0 0 0 0 0.48  0 0 0 0.28 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --primary: #0c5c56;
+  --primary-dark: #083f3b;
+  --secondary: #1a7fc4;
+  --accent: #2bb8a9;
+  --highlight: #5ba8e0;
+  --spark: #d4a84b;
+  --background: #f3f7f6;
+  --card: #ffffff;
+  --foreground: #0f1c1a;
+  --muted: #5a6b68;
+  --border: rgba(12, 92, 86, 0.12);
+  --radius: 1.25rem;
+  --ink: #0a2e2b;
+  --mist: #e8f2f0;
+  --panel: rgba(255, 255, 255, 0.78);
+  --shadow-soft: 0 8px 32px rgba(10, 46, 43, 0.07);
+  --shadow-lift: 0 18px 48px rgba(10, 46, 43, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-bg-strong: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.85);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --glass-shade: inset 0 -20px 40px rgba(12, 92, 86, 0.03);
+  --glass-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.05  0 0 0 0 0.2  0 0 0 0 0.22  0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --glass-wash:
     var(--glass-noise),
-    radial-gradient(120% 90% at 0% 0%, rgba(74, 168, 255, 0.16), transparent 54%),
-    radial-gradient(90% 80% at 100% 100%, rgba(42, 212, 196, 0.13), transparent 52%),
-    radial-gradient(70% 55% at 92% 8%, rgba(243, 193, 75, 0.07), transparent 48%),
-    linear-gradient(165deg, rgba(255, 255, 255, 0.78) 0%, rgba(232, 244, 251, 0.7) 48%, rgba(237, 250, 247, 0.74) 100%);
+    radial-gradient(100% 80% at 0% 0%, rgba(43, 184, 169, 0.1), transparent 55%),
+    radial-gradient(90% 70% at 100% 100%, rgba(26, 127, 196, 0.08), transparent 50%),
+    linear-gradient(165deg, rgba(255, 255, 255, 0.92) 0%, rgba(243, 249, 248, 0.88) 100%);
   --glass-wash-strong:
     var(--glass-noise),
-    radial-gradient(120% 90% at 0% 0%, rgba(74, 168, 255, 0.14), transparent 54%),
-    radial-gradient(90% 80% at 100% 100%, rgba(42, 212, 196, 0.11), transparent 52%),
-    radial-gradient(70% 55% at 92% 8%, rgba(243, 193, 75, 0.06), transparent 48%),
-    linear-gradient(165deg, rgba(255, 255, 255, 0.9) 0%, rgba(236, 246, 252, 0.84) 50%, rgba(240, 251, 248, 0.86) 100%);
-  /* Lighter blur keeps glass look without scroll jank */
-  --glass-blur: blur(10px);
+    radial-gradient(100% 80% at 0% 0%, rgba(43, 184, 169, 0.08), transparent 55%),
+    radial-gradient(90% 70% at 100% 100%, rgba(26, 127, 196, 0.06), transparent 50%),
+    linear-gradient(165deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 251, 250, 0.94) 100%);
+  --glass-blur: blur(12px);
 }
 
 @theme inline {
@@ -52,7 +49,10 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --color-ink: var(--ink);
+  --color-mist: var(--mist);
   --font-sans: var(--font-plus-jakarta);
+  --font-display: var(--font-fraunces);
   --radius-2xl: var(--radius);
 }
 
@@ -66,11 +66,10 @@ html {
 
 body {
   background:
-    radial-gradient(ellipse 70% 50% at 8% 0%, rgba(74, 168, 255, 0.18), transparent 55%),
-    radial-gradient(ellipse 55% 45% at 92% 8%, rgba(42, 212, 196, 0.16), transparent 50%),
-    radial-gradient(ellipse 36% 28% at 72% 78%, rgba(243, 193, 75, 0.08), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(15, 76, 129, 0.08), transparent 55%),
-    linear-gradient(180deg, #f4f9fc 0%, #eef5fa 45%, #f7fbfd 100%);
+    radial-gradient(ellipse 80% 55% at 0% -10%, rgba(43, 184, 169, 0.16), transparent 55%),
+    radial-gradient(ellipse 60% 45% at 100% 0%, rgba(26, 127, 196, 0.12), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 80% 100%, rgba(212, 168, 75, 0.08), transparent 55%),
+    linear-gradient(180deg, #f7fbfa 0%, #f0f6f5 40%, #f5f8f7 100%);
   color: var(--foreground);
   font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -78,8 +77,13 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--secondary) 28%, white);
+  background: color-mix(in srgb, var(--accent) 32%, white);
   color: var(--primary-dark);
+}
+
+.font-display {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  font-optical-sizing: auto;
 }
 
 .noise-overlay {
@@ -91,7 +95,7 @@ body {
   pointer-events: none;
   position: absolute;
   inset: 0;
-  opacity: 0.035;
+  opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   z-index: 1;
 }
@@ -103,9 +107,9 @@ body {
 .glass-panel {
   background-color: var(--glass-bg);
   background-image: var(--glass-wash);
-  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size: 180px 180px, auto, auto, auto, auto;
-  background-blend-mode: overlay, normal, normal, normal, normal;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 160px 160px, auto, auto, auto;
+  background-blend-mode: soft-light, normal, normal, normal;
   border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-soft), var(--glass-highlight), var(--glass-shade);
   backdrop-filter: var(--glass-blur);
@@ -115,35 +119,40 @@ body {
 .glass-strong {
   background-color: var(--glass-bg-strong);
   background-image: var(--glass-wash-strong);
-  border-color: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .glass-soft {
-  background-color: rgba(255, 255, 255, 0.48);
-  box-shadow: 0 8px 28px rgba(15, 76, 129, 0.05), var(--glass-highlight), var(--glass-shade);
+  background-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 6px 24px rgba(10, 46, 43, 0.05), var(--glass-highlight);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
 .glass-nav {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.82);
   background-image: var(--glass-wash-strong);
   box-shadow:
-    0 16px 40px rgba(15, 76, 129, 0.1),
-    var(--glass-highlight),
-    var(--glass-shade);
+    0 12px 40px rgba(10, 46, 43, 0.08),
+    var(--glass-highlight);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.86);
+  background-image: var(--glass-wash-strong);
+  box-shadow: var(--shadow-lift), var(--glass-highlight);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 
-.glass-panel {
-  background-color: rgba(255, 255, 255, 0.76);
-  background-image: var(--glass-wash-strong);
-  box-shadow: var(--shadow-lift), var(--glass-highlight), var(--glass-shade);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+.surface-panel {
+  background: linear-gradient(165deg, #ffffff 0%, #f7fbfa 100%);
+  border: 1px solid rgba(12, 92, 86, 0.08);
+  box-shadow: var(--shadow-soft);
 }
 
 .gradient-border {
@@ -151,49 +160,49 @@ body {
   background-color: transparent;
   background-image:
     var(--glass-noise),
-    radial-gradient(120% 90% at 0% 0%, rgba(74, 168, 255, 0.16), transparent 54%),
-    radial-gradient(90% 80% at 100% 100%, rgba(42, 212, 196, 0.13), transparent 52%),
-    linear-gradient(165deg, rgba(255, 255, 255, 0.8), rgba(232, 244, 251, 0.72)),
-    linear-gradient(
-      135deg,
-      rgba(74, 168, 255, 0.72),
-      rgba(42, 212, 196, 0.7),
-      rgba(243, 193, 75, 0.45)
-    );
+    radial-gradient(120% 90% at 0% 0%, rgba(43, 184, 169, 0.12), transparent 54%),
+    linear-gradient(165deg, rgba(255, 255, 255, 0.94), rgba(243, 249, 248, 0.9)),
+    linear-gradient(135deg, rgba(12, 92, 86, 0.55), rgba(43, 184, 169, 0.65), rgba(26, 127, 196, 0.45));
   background-origin: border-box;
-  background-clip: padding-box, padding-box, padding-box, padding-box, border-box;
-  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size: 180px 180px, auto, auto, auto, auto;
+  background-clip: padding-box, padding-box, padding-box, border-box;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 160px 160px, auto, auto, auto;
   border: 1px solid transparent;
-  box-shadow: var(--shadow-soft), var(--glass-highlight), var(--glass-shade);
+  box-shadow: var(--shadow-soft), var(--glass-highlight);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 .hero-gradient {
   background:
-    radial-gradient(ellipse 80% 60% at 10% 10%, rgba(74, 168, 255, 0.22), transparent 55%),
-    radial-gradient(ellipse 70% 50% at 90% 20%, rgba(42, 212, 196, 0.2), transparent 50%),
-    radial-gradient(ellipse 40% 30% at 78% 72%, rgba(243, 193, 75, 0.1), transparent 58%),
-    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(15, 76, 129, 0.1), transparent 55%),
-    linear-gradient(180deg, rgba(244, 249, 252, 0.65) 0%, rgba(238, 245, 250, 0.35) 55%, transparent 100%);
+    radial-gradient(ellipse 90% 70% at 50% -20%, rgba(43, 184, 169, 0.2), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 100% 30%, rgba(26, 127, 196, 0.12), transparent 50%),
+    radial-gradient(ellipse 40% 35% at 0% 80%, rgba(212, 168, 75, 0.08), transparent 55%),
+    linear-gradient(180deg, #f8fcfb 0%, rgba(243, 247, 246, 0.4) 60%, transparent 100%);
 }
 
 .section-alt {
   background:
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.28) 0%,
-      rgba(238, 245, 250, 0.18) 100%
+      rgba(232, 242, 240, 0.55) 0%,
+      rgba(243, 247, 246, 0.35) 100%
     );
 }
 
 .section-surface {
-  background: rgba(255, 255, 255, 0.35);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.42);
+  border-color: rgba(12, 92, 86, 0.06);
 }
 
-/* Skip expensive backdrop blur while scrolling on smaller / low-power devices */
+.section-ink {
+  background:
+    radial-gradient(ellipse 60% 80% at 10% 20%, rgba(43, 184, 169, 0.22), transparent 55%),
+    radial-gradient(ellipse 50% 60% at 90% 80%, rgba(26, 127, 196, 0.18), transparent 50%),
+    linear-gradient(145deg, #0a2e2b 0%, #0c5c56 48%, #0a3d4a 100%);
+  color: #ffffff;
+}
+
 @media (max-width: 767px), (prefers-reduced-transparency: reduce) {
   .glass,
   .glass-strong,
@@ -207,29 +216,23 @@ body {
 
   .glass,
   .glass-soft {
-    background-color: rgba(248, 252, 255, 0.96);
+    background-color: rgba(255, 255, 255, 0.96);
     background-image: var(--glass-wash);
   }
 
   .glass-strong,
   .glass-nav,
   .glass-panel {
-    background-color: rgba(250, 253, 255, 0.98);
+    background-color: rgba(255, 255, 255, 0.98);
     background-image: var(--glass-wash-strong);
   }
 
   .gradient-border {
     background-image:
       var(--glass-noise),
-      radial-gradient(120% 90% at 0% 0%, rgba(74, 168, 255, 0.14), transparent 54%),
-      radial-gradient(90% 80% at 100% 100%, rgba(42, 212, 196, 0.12), transparent 52%),
-      linear-gradient(165deg, rgba(252, 254, 255, 0.96), rgba(236, 247, 252, 0.94)),
-      linear-gradient(
-        135deg,
-        rgba(74, 168, 255, 0.72),
-        rgba(42, 212, 196, 0.7),
-        rgba(243, 193, 75, 0.45)
-      );
+      radial-gradient(120% 90% at 0% 0%, rgba(43, 184, 169, 0.1), transparent 54%),
+      linear-gradient(165deg, rgba(255, 255, 255, 0.98), rgba(246, 251, 250, 0.96)),
+      linear-gradient(135deg, rgba(12, 92, 86, 0.55), rgba(43, 184, 169, 0.65), rgba(26, 127, 196, 0.45));
   }
 }
 

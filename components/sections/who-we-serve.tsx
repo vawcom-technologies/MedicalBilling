@@ -62,8 +62,8 @@ export function WhoWeServe({ title, description }: WhoWeServeProps) {
             height={440}
             gap={12}
             radius={24}
-            accentColor="#2ec4b6"
-            overlayColor="#0a365c"
+            accentColor="#2bb8a9"
+            overlayColor="#083f3b"
             textColor="#ffffff"
             grayscale
             showLabels

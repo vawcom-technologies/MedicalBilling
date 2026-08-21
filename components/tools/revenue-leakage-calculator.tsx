@@ -311,7 +311,7 @@ export function RevenueLeakageCalculator() {
                   </p>
                 </div>
 
-                <div className="rounded-[1.5rem] bg-gradient-to-br from-primary to-secondary p-6 text-white shadow-[0_16px_40px_rgba(15,76,129,0.25)]">
+                <div className="rounded-[1.5rem] bg-gradient-to-br from-primary to-secondary p-6 text-white shadow-[0_16px_40px_rgba(15, 107, 99,0.25)]">
                   <p className="text-sm font-medium text-white/80">
                     Likely monthly leakage
                   </p>
