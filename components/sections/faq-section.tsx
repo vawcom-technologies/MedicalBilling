@@ -24,10 +24,10 @@ export function FaqSection({
   eyebrow = "FAQ",
 }: FaqSectionProps) {
   return (
-    <section className="section-alt py-20 md:py-28">
+    <section className="section-alt py-12 md:py-16">
       <Container>
         <SectionTitle eyebrow={eyebrow} title={title} description={description} />
-        <FadeIn delay={0.1} className="mx-auto mt-12 max-w-3xl">
+        <FadeIn delay={0.1} className="mx-auto mt-8 max-w-3xl">
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem key={faq.question} value={`item-${index}`}>

@@ -16,6 +16,7 @@ import { SectionTitle } from "@/components/section-title";
 import { FadeIn, Stagger, StaggerItem } from "@/components/motion/fade-in";
 import { Award, BadgeCheck, Eye, FileText, Headset, Target } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { heroBackgrounds } from "@/lib/hero-backgrounds";
 
 const teamIcons: Record<string, LucideIcon> = {
   "Revenue Cycle Leadership": FileText,
@@ -49,6 +50,8 @@ export default function AboutPage() {
         primaryCta={aboutContent.hero.primaryCta}
         secondaryCta={aboutContent.hero.secondaryCta}
         secondaryHref="#mission"
+        backgroundImage={heroBackgrounds.about.src}
+        backgroundAlt={heroBackgrounds.about.alt}
       >
         <HeroStatsOverlay
           stats={[
@@ -64,7 +67,7 @@ export default function AboutPage() {
         </HeroStatsOverlay>
       </PageHero>
 
-      <section className="py-16 md:py-20">
+      <section className="py-10 md:py-14">
         <Container>
           <FadeIn className="mx-auto max-w-3xl text-center">
             <p className="text-base leading-relaxed text-muted md:text-lg">
@@ -84,7 +87,7 @@ export default function AboutPage() {
         variant="brand"
       />
 
-      <section id="mission" className="py-20 md:py-28">
+      <section id="mission" className="py-12 md:py-16">
         <Container>
           <div className="grid gap-6 lg:grid-cols-2">
             <FadeIn>
@@ -117,7 +120,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="section-alt py-20 md:py-28">
+      <section className="section-alt py-12 md:py-16">
         <Container>
           <SectionTitle
             eyebrow="Values"
@@ -154,7 +157,7 @@ export default function AboutPage() {
         steps={aboutContent.timeline}
       />
 
-      <section className="py-20 md:py-28">
+      <section className="py-12 md:py-16">
         <Container>
           <SectionTitle
             eyebrow="Team"
@@ -187,7 +190,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-20 md:py-28">
+      <section className="py-12 md:py-16">
         <Container>
           <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <SectionTitle

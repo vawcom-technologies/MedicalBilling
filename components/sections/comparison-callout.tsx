@@ -26,7 +26,7 @@ export function ComparisonCallout({
   items,
 }: ComparisonCalloutProps) {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-12 md:py-16">
       <Container>
         <SectionTitle
           eyebrow={eyebrow}

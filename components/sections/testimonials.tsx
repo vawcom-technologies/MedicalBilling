@@ -76,7 +76,7 @@ export function Testimonials({
   );
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-12 md:py-16">
       <Container>
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionTitle

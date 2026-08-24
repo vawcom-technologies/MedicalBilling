@@ -63,7 +63,7 @@ export const siteConfig = {
     freeAssessment: "Schedule a Free Revenue Cycle Assessment",
     billingAnalysis: "Get a Free Billing & Collections Analysis",
     credentialing: "Start Your Credentialing Application Today",
-    mips: "Get a Free MIPS Consultation", // Used when /mips page is re-enabled
+    mips: "Get a Free MIPS Consultation",
     frontDesk: "Talk to Us About Front Desk Support",
     consultation: "Schedule a Free Consultation",
     discovery: "Book a Discovery Call",
@@ -80,7 +80,7 @@ export const navLinks = [
   { href: "/", label: "Home", short: "Home" },
   { href: "/medical-billing", label: "Medical Billing", short: "Billing" },
   { href: "/credentialing", label: "Credentialing", short: "Credentialing" },
-  // Re-enable later: { href: "/mips", label: "MIPS", short: "MIPS" },
+  { href: "/mips", label: "MIPS", short: "MIPS" },
   {
     href: "/virtual-front-desk",
     label: "Virtual Front Desk",
@@ -125,12 +125,11 @@ export const serviceLinks = [
     title: "Credentialing Services",
     short: "Credentialing",
   },
-  // Re-enable later:
-  // {
-  //   href: "/mips",
-  //   title: "MIPS Services",
-  //   short: "MIPS",
-  // },
+  {
+    href: "/mips",
+    title: "MIPS Services",
+    short: "MIPS",
+  },
   {
     href: "/virtual-front-desk",
     title: "Virtual Front Desk Services",

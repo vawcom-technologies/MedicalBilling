@@ -4,7 +4,7 @@
   <circle cx="160" cy="520" r="160" fill="#2EC4B6" fill-opacity="0.14"/>
   <rect x="80" y="80" width="72" height="72" rx="20" fill="#0F4C81"/>
   <path d="M116 98v36M100 116h32" stroke="white" stroke-width="6" stroke-linecap="round"/>
-  <text x="180" y="128" fill="#0F4C81" font-family="Arial, sans-serif" font-size="34" font-weight="700">Medsol</text>
+  <text x="180" y="128" fill="#0F4C81" font-family="Arial, sans-serif" font-size="34" font-weight="700">MedSol</text>
   <text x="80" y="280" fill="#111827" font-family="Arial, sans-serif" font-size="64" font-weight="700">Medical Billing Services</text>
   <text x="80" y="360" fill="#6B7280" font-family="Arial, sans-serif" font-size="32">Revenue Cycle Management " Credentialing " Virtual Front Desk</text>
   <rect x="80" y="420" width="280" height="56" rx="18" fill="#0F4C81"/>

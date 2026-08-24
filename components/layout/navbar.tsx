@@ -280,7 +280,7 @@ export function Navbar() {
   return (
     <header
       ref={headerRef}
-      className="pointer-events-none fixed inset-x-0 top-0 z-50"
+      className="pointer-events-none fixed inset-x-0 top-0 z-50 nav-enter"
       style={{ paddingLeft: 0, paddingRight: 0, paddingTop: 0 }}
     >
       <div

@@ -40,14 +40,14 @@ const websiteProjectItems = [
 
 export function WebsiteBuildsGallery() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-12 md:py-16">
       <Container>
         <SectionTitle
           eyebrow="What We Build"
           title="Website Projects That Help Practices Grow Online"
           description="From brand new practice websites to redesigns, landing pages, and mobile ready builds, every project is shaped to help patients understand your care and reach your team."
         />
-        <div className="mt-10 md:mt-12">
+        <div className="mt-8 md:mt-10">
           <AccordionGallery
             items={websiteProjectItems}
             defaultIndex={2}

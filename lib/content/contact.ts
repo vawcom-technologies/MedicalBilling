@@ -30,7 +30,7 @@ export const contactContent = {
   services: [
     "Medical Billing Services",
     "Credentialing Services",
-    // "MIPS Services", // Re-enable later with /mips page
+    "MIPS Services",
     "Virtual Front Desk Services",
     "Website Development",
     "Social Media Marketing",

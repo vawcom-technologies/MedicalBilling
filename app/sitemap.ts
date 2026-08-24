@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "", priority: 1, changeFrequency: "weekly" },
     { path: "/medical-billing", priority: 0.9, changeFrequency: "monthly" },
     { path: "/credentialing", priority: 0.85, changeFrequency: "monthly" },
+    { path: "/mips", priority: 0.85, changeFrequency: "monthly" },
     { path: "/virtual-front-desk", priority: 0.85, changeFrequency: "monthly" },
     { path: "/website-development", priority: 0.75, changeFrequency: "monthly" },
     { path: "/social-media-marketing", priority: 0.75, changeFrequency: "monthly" },

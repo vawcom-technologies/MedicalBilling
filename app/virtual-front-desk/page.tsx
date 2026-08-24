@@ -19,6 +19,7 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { SectionTitle } from "@/components/section-title";
+import { heroBackgrounds } from "@/lib/hero-backgrounds";
 
 export const metadata = buildMetadata({
   title: virtualFrontDeskContent.seo.title,
@@ -56,6 +57,8 @@ export default function VirtualFrontDeskPage() {
         primaryCta={virtualFrontDeskContent.hero.primaryCta}
         secondaryCta={virtualFrontDeskContent.hero.secondaryCta}
         secondaryHref="/contact"
+        backgroundImage={heroBackgrounds["virtual-front-desk"].src}
+        backgroundAlt={heroBackgrounds["virtual-front-desk"].alt}
       >
         <HeroStatsOverlay
           stats={[
@@ -71,7 +74,7 @@ export default function VirtualFrontDeskPage() {
         </HeroStatsOverlay>
       </PageHero>
 
-      <section className="py-16 md:py-20">
+      <section className="py-10 md:py-14">
         <Container>
           <FadeIn className="mx-auto max-w-3xl space-y-5 text-center">
             {virtualFrontDeskContent.intro.map((paragraph) => (
@@ -91,7 +94,7 @@ export default function VirtualFrontDeskPage() {
         items={virtualFrontDeskContent.includes.items}
       />
 
-      <section className="bg-background py-20 md:py-28">
+      <section className="bg-background py-12 md:py-16">
         <Container>
           <SectionTitle
             title={virtualFrontDeskContent.efficiency.title}
@@ -126,7 +129,7 @@ export default function VirtualFrontDeskPage() {
         description="*Results vary by specialty, call volume, and scheduling policies."
       />
 
-      <section className="py-20 md:py-24">
+      <section className="py-12 md:py-16">
         <Container>
           <SectionTitle
             title={virtualFrontDeskContent.flexible.title}

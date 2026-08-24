@@ -20,6 +20,13 @@ import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { SectionTitle } from "@/components/section-title";
 import type { DigitalServiceContent } from "@/lib/content/digital-services";
+import { heroBackgrounds, type HeroBackgroundKey } from "@/lib/hero-backgrounds";
+
+const digitalHeroKey: Record<string, HeroBackgroundKey> = {
+  "/website-development": "website-development",
+  "/social-media-marketing": "social-media-marketing",
+  "/seo-services": "seo-services",
+};
 
 export function buildDigitalServiceMetadata(content: DigitalServiceContent) {
   return buildMetadata({
@@ -64,6 +71,14 @@ export function DigitalServicePage({
         primaryCta={content.hero.primaryCta}
         secondaryCta={content.hero.secondaryCta}
         secondaryHref="/contact"
+        backgroundImage={
+          heroBackgrounds[digitalHeroKey[content.path] ?? "website-development"]
+            .src
+        }
+        backgroundAlt={
+          heroBackgrounds[digitalHeroKey[content.path] ?? "website-development"]
+            .alt
+        }
       >
         <HeroStatsOverlay
           stats={[
@@ -79,7 +94,7 @@ export function DigitalServicePage({
         </HeroStatsOverlay>
       </PageHero>
 
-      <section className="py-16 md:py-20">
+      <section className="py-10 md:py-14">
         <Container>
           <FadeIn className="mx-auto max-w-3xl space-y-5 text-center">
             {content.intro.map((paragraph) => (
@@ -98,7 +113,7 @@ export function DigitalServicePage({
 
       <FeatureList title={content.includes.title} items={content.includes.items} />
 
-      <section className="bg-background py-20 md:py-28">
+      <section className="bg-background py-12 md:py-16">
         <Container>
           <SectionTitle
             title={content.whyMatters.title}

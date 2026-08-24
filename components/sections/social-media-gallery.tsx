@@ -40,14 +40,14 @@ const socialMediaItems = [
 
 export function SocialMediaGallery() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-12 md:py-16">
       <Container>
         <SectionTitle
           eyebrow="How We Show Up"
           title="Social Content Built to Keep Practices Visible"
           description="From planned posting calendars to education content, community replies, and clear reporting, we help your practice stay active online without adding work for your staff."
         />
-        <div className="mt-10 md:mt-12">
+        <div className="mt-8 md:mt-10">
           <AccordionGallery
             items={socialMediaItems}
             defaultIndex={2}

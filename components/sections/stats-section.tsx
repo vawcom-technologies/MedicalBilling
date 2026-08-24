@@ -25,8 +25,8 @@ export function StatsSection({
     <section
       className={
         brand
-          ? "relative overflow-hidden bg-gradient-to-br from-primary via-[#125a98] to-[#0d6cb8] py-16 text-white md:py-20"
-          : "section-surface border-y py-16 md:py-20"
+          ? "relative overflow-hidden bg-gradient-to-br from-primary via-[#125a98] to-[#0d6cb8] py-12 text-white md:py-14"
+          : "section-surface border-y py-12 md:py-14"
       }
     >
       {brand ? (

@@ -50,7 +50,7 @@ export function SectionTitle({
         {title}
       </Heading>
       {description ? (
-        <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
+        <p className="mt-3 text-base leading-relaxed text-muted md:text-lg">
           {description}
         </p>
       ) : null}

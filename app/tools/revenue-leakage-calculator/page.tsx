@@ -9,6 +9,8 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { FaqSection } from "@/components/sections/faq-section";
 import { HeroStatsRow } from "@/components/sections/hero-stats-overlay";
 import { siteConfig } from "@/lib/site-config";
+import { PhotoHeroShell } from "@/components/sections/photo-hero-shell";
+import { heroBackgrounds } from "@/lib/hero-backgrounds";
 
 const faqs = [
   {
@@ -60,55 +62,52 @@ export default function RevenueLeakageCalculatorPage() {
       />
       <JsonLd data={faqSchema(faqs)} />
 
-      <section className="hero-gradient noise-overlay relative overflow-hidden pb-10 pt-32 md:pb-14 md:pt-40">
-        <Container className="relative z-[2]">
-          <FadeIn className="mx-auto max-w-3xl text-center">
-            <p className="mb-3 text-sm text-muted">
-              <Link href="/" className="hover:text-primary">
-                Home
-              </Link>
-              <span className="mx-2">/</span>
-              <span className="font-medium text-foreground">Calculator</span>
-            </p>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
-              Free Practice Tool
-            </p>
-            <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-[3.2rem]">
-              Revenue Leakage Calculator for Medical Billing Denials
-            </h1>
-            <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
-              Estimate how much your practice may be losing to claim denials and
-              aging AR, then unlock a personalized breakdown and talk with our{" "}
-              <Link
-                href="/medical-billing"
-                className="font-semibold text-secondary underline-offset-4 hover:underline"
-              >
-                medical billing services
-              </Link>{" "}
-              team about recovery opportunities.
-            </p>
-            <HeroStatsRow
-              stats={[
-                {
-                  label: "Takes",
-                  value: "< 60s",
-                  tone: "primary",
-                },
-                {
-                  label: "Avg. Leakage Found",
-                  value: "3–8%",
-                  tone: "accent",
-                },
-                {
-                  label: "Recovery Potential",
-                  value: "40–70%",
-                  tone: "secondary",
-                },
-              ]}
-            />
-          </FadeIn>
-        </Container>
-      </section>
+      <PhotoHeroShell
+        src={heroBackgrounds.calculator.src}
+        alt={heroBackgrounds.calculator.alt}
+        intensity="strong"
+        breadcrumb="Calculator"
+        align="center"
+      >
+        <FadeIn className="mx-auto max-w-3xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+            Free Practice Tool
+          </p>
+          <h1 className="text-balance text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-[3.2rem]">
+            Revenue Leakage Calculator for Medical Billing Denials
+          </h1>
+          <p className="mt-5 text-base leading-relaxed text-white/80 md:text-lg">
+            Estimate how much your practice may be losing to claim denials and
+            aging AR, then unlock a personalized breakdown and talk with our{" "}
+            <Link
+              href="/medical-billing"
+              className="font-semibold text-white underline underline-offset-4 hover:text-accent"
+            >
+              medical billing services
+            </Link>{" "}
+            team about recovery opportunities.
+          </p>
+          <HeroStatsRow
+            stats={[
+              {
+                label: "Takes",
+                value: "< 60s",
+                tone: "primary",
+              },
+              {
+                label: "Avg. Leakage Found",
+                value: "3–8%",
+                tone: "accent",
+              },
+              {
+                label: "Recovery Potential",
+                value: "40–70%",
+                tone: "secondary",
+              },
+            ]}
+          />
+        </FadeIn>
+      </PhotoHeroShell>
 
       <section className="pb-20 pt-4 md:pb-28">
         <Container>

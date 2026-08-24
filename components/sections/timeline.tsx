@@ -52,7 +52,7 @@ export function Timeline({
   const [active, setActive] = useState(0);
 
   return (
-    <section className="section-alt py-16 md:py-24">
+    <section className="section-alt py-12 md:py-16">
       <Container>
         <SectionTitle
           eyebrow={eyebrow}

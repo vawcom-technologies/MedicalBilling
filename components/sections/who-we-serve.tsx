@@ -46,14 +46,14 @@ type WhoWeServeProps = {
 
 export function WhoWeServe({ title, description }: WhoWeServeProps) {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-12 md:py-16">
       <Container>
         <SectionTitle
           eyebrow="Practices We Support"
           title={title}
           description={description}
         />
-        <FadeIn delay={0.08} className="mt-10 md:mt-12">
+        <FadeIn delay={0.08} className="mt-8 md:mt-10">
           <AccordionGallery
             items={audienceItems}
             defaultIndex={1}

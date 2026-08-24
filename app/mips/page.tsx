@@ -1,8 +1,3 @@
-/**
- * MIPS page — temporarily disabled.
- * To re-enable: rename this file to `page.tsx` and uncomment MIPS entries in
- * site-config, home, contact, sitemap, page-summaries, and support-chat.
- */
 import Link from "next/link";
 import { mipsContent } from "@/lib/content/mips";
 import { buildMetadata } from "@/lib/seo";
@@ -24,6 +19,7 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { SectionTitle } from "@/components/section-title";
+import { heroBackgrounds } from "@/lib/hero-backgrounds";
 
 export const metadata = buildMetadata({
   title: mipsContent.seo.title,
@@ -58,6 +54,8 @@ export default function MipsPage() {
         primaryCta={mipsContent.hero.primaryCta}
         secondaryCta={mipsContent.hero.secondaryCta}
         secondaryHref="/contact"
+        backgroundImage={heroBackgrounds.mips.src}
+        backgroundAlt={heroBackgrounds.mips.alt}
       >
         <HeroStatsOverlay
           stats={[
@@ -73,7 +71,7 @@ export default function MipsPage() {
         </HeroStatsOverlay>
       </PageHero>
 
-      <section className="py-16 md:py-20">
+      <section className="py-10 md:py-14">
         <Container>
           <FadeIn className="mx-auto max-w-3xl space-y-5 text-center">
             {mipsContent.intro.map((paragraph) => (
@@ -93,7 +91,7 @@ export default function MipsPage() {
         items={mipsContent.includes.items}
       />
 
-      <section className="bg-background py-20 md:py-28">
+      <section className="bg-background py-12 md:py-16">
         <Container>
           <SectionTitle
             title={mipsContent.whyMatters.title}
@@ -135,7 +133,7 @@ export default function MipsPage() {
         description="*CMS rules and category weights can change by performance year. We track current requirements for your practice."
       />
 
-      <section className="py-20 md:py-24">
+      <section className="py-12 md:py-16">
         <Container>
           <SectionTitle
             title={mipsContent.growing.title}

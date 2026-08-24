@@ -18,10 +18,10 @@ export function CtaBanner({
   href = "/contact",
 }: CtaBannerProps) {
   return (
-    <section className="relative overflow-hidden py-16 md:py-20">
+    <section className="relative overflow-hidden py-10 md:py-14">
       <Container>
         <FadeIn>
-          <div className="noise-overlay relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-primary via-[#1463aa] to-secondary px-6 py-12 text-white shadow-[0_24px_60px_rgba(15,76,129,0.28)] md:px-12 md:py-16">
+          <div className="noise-overlay relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-primary via-[#1463aa] to-secondary px-6 py-10 text-white shadow-[0_24px_60px_rgba(15,76,129,0.28)] md:px-12 md:py-12">
             <div
               className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/40 blur-3xl"
               aria-hidden="true"

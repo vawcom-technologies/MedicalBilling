@@ -40,14 +40,14 @@ const seoProjectItems = [
 
 export function SeoGallery() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-12 md:py-16">
       <Container>
         <SectionTitle
           eyebrow="How We Improve Visibility"
           title="SEO Work That Helps Patients Find Your Practice"
           description="From local search and service page targeting to technical fixes and clear reporting, we strengthen the search foundations that help the right patients discover your care."
         />
-        <div className="mt-10 md:mt-12">
+        <div className="mt-8 md:mt-10">
           <AccordionGallery
             items={seoProjectItems}
             defaultIndex={2}

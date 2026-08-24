@@ -4,6 +4,7 @@ import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import { HealthcareHeroIllustration } from "@/components/illustrations/healthcare-hero";
+import { heroBackgrounds } from "@/lib/hero-backgrounds";
 import { ServiceCards } from "@/components/sections/service-cards";
 import { BenefitGrid } from "@/components/sections/benefit-grid";
 import { StatsSection } from "@/components/sections/stats-section";
@@ -15,7 +16,7 @@ import { CalculatorPromo } from "@/components/sections/calculator-promo";
 import { ComparisonCallout } from "@/components/sections/comparison-callout";
 import { WhoWeServe } from "@/components/sections/who-we-serve";
 import { Container } from "@/components/ui/container";
-import { FadeIn } from "@/components/motion/fade-in";
+import { FadeIn, Stagger, StaggerItem } from "@/components/motion/fade-in";
 import {
   ClipboardCheck,
   MapPinned,
@@ -45,6 +46,8 @@ export default function HomePage() {
         primaryCta={homeContent.hero.primaryCta}
         secondaryCta={homeContent.hero.secondaryCta}
         secondaryHref="/medical-billing"
+        backgroundImage={heroBackgrounds.home.src}
+        backgroundAlt={heroBackgrounds.home.alt}
       >
         <div className="relative">
           <HealthcareHeroIllustration />
@@ -65,34 +68,31 @@ export default function HomePage() {
 
       <section className="section-surface border-b py-7 md:py-8">
         <Container>
-          <FadeIn>
-            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
-              {[
-                {
-                  label: "HIPAA-aware workflows",
-                  icon: ShieldCheck,
-                  tone: "text-accent bg-accent/10 group-hover:bg-accent group-hover:shadow-[0_6px_16px_rgba(42,212,196,0.35)]",
-                },
-                {
-                  label: "Transparent reporting",
-                  icon: ClipboardCheck,
-                  tone: "text-secondary bg-secondary/10 group-hover:bg-secondary group-hover:shadow-[0_6px_16px_rgba(74,168,255,0.35)]",
-                },
-                {
-                  label: "Specialty-aware specialists",
-                  icon: Stethoscope,
-                  tone: "text-primary bg-primary/10 group-hover:bg-primary group-hover:shadow-[0_6px_16px_rgba(15,76,129,0.3)]",
-                },
-                {
-                  label: "US-focused RCM support",
-                  icon: MapPinned,
-                  tone: "text-spark bg-spark/15 group-hover:bg-spark group-hover:shadow-[0_6px_16px_rgba(243,193,75,0.4)]",
-                },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="group relative inline-flex cursor-default items-center gap-2.5 rounded-full border border-white/70 bg-[linear-gradient(165deg,rgba(255,255,255,0.72),rgba(232,244,251,0.58))] px-4 py-2.5 text-sm font-medium text-muted shadow-[0_4px_16px_rgba(15,76,129,0.04),inset_0_-12px_20px_rgba(15,76,129,0.04)] backdrop-blur-sm transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-accent/30 hover:bg-white hover:text-primary hover:shadow-[0_12px_28px_rgba(42,212,196,0.18)]"
-                >
+          <Stagger className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+            {[
+              {
+                label: "HIPAA-aware workflows",
+                icon: ShieldCheck,
+                tone: "text-accent bg-accent/10 group-hover:bg-accent group-hover:shadow-[0_6px_16px_rgba(42,212,196,0.35)]",
+              },
+              {
+                label: "Transparent reporting",
+                icon: ClipboardCheck,
+                tone: "text-secondary bg-secondary/10 group-hover:bg-secondary group-hover:shadow-[0_6px_16px_rgba(74,168,255,0.32)]",
+              },
+              {
+                label: "Specialty-aware specialists",
+                icon: Stethoscope,
+                tone: "text-primary bg-primary/10 group-hover:bg-primary group-hover:shadow-[0_6px_16px_rgba(15,76,129,0.3)]",
+              },
+              {
+                label: "US-focused RCM support",
+                icon: MapPinned,
+                tone: "text-spark bg-spark/15 group-hover:bg-spark group-hover:shadow-[0_6px_16px_rgba(243,193,75,0.4)]",
+              },
+            ].map((item) => (
+              <StaggerItem key={item.label}>
+                <div className="group relative inline-flex cursor-default items-center gap-2.5 rounded-full border border-white/70 bg-[linear-gradient(165deg,rgba(255,255,255,0.72),rgba(232,244,251,0.58))] px-4 py-2.5 text-sm font-medium text-muted shadow-[0_4px_16px_rgba(15,76,129,0.04),inset_0_-12px_20px_rgba(15,76,129,0.04)] backdrop-blur-sm transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-accent/30 hover:bg-white hover:text-primary hover:shadow-[0_12px_28px_rgba(42,212,196,0.18)]">
                   <span
                     className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 group-hover:text-white ${item.tone}`}
                   >
@@ -105,15 +105,17 @@ export default function HomePage() {
                       aria-hidden="true"
                     />
                   </span>
-                  <span className="transition-colors duration-300">{item.label}</span>
+                  <span className="transition-colors duration-300">
+                    {item.label}
+                  </span>
                 </div>
-              ))}
-            </div>
-          </FadeIn>
+              </StaggerItem>
+            ))}
+          </Stagger>
         </Container>
       </section>
 
-      <section className="py-16 md:py-20">
+      <section className="py-10 md:py-14">
         <Container>
           <FadeIn className="mx-auto max-w-3xl text-center">
             <p className="text-base leading-relaxed text-muted md:text-lg">

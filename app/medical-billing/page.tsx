@@ -20,6 +20,7 @@ import { CalculatorPromo } from "@/components/sections/calculator-promo";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { SectionTitle } from "@/components/section-title";
+import { heroBackgrounds } from "@/lib/hero-backgrounds";
 
 export const metadata = buildMetadata({
   title: medicalBillingContent.seo.title,
@@ -54,6 +55,8 @@ export default function MedicalBillingPage() {
         primaryCta={medicalBillingContent.hero.primaryCta}
         secondaryCta={medicalBillingContent.hero.secondaryCta}
         secondaryHref="/contact"
+        backgroundImage={heroBackgrounds["medical-billing"].src}
+        backgroundAlt={heroBackgrounds["medical-billing"].alt}
       >
         <HeroStatsOverlay
           stats={[
@@ -69,7 +72,7 @@ export default function MedicalBillingPage() {
         </HeroStatsOverlay>
       </PageHero>
 
-      <section className="py-16 md:py-20">
+      <section className="py-10 md:py-14">
         <Container>
           <FadeIn className="mx-auto max-w-3xl space-y-5 text-center">
             {medicalBillingContent.intro.map((paragraph) => (
@@ -89,9 +92,9 @@ export default function MedicalBillingPage() {
         items={medicalBillingContent.includes.items}
       />
 
-      <section className="bg-background py-20 md:py-28">
+      <section className="bg-background py-12 md:py-16">
         <Container>
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1fr]">
+          <div className="grid items-center gap-8 lg:grid-cols-[1fr_1fr]">
             <SectionTitle
               align="left"
               eyebrow="Billing Expertise"
@@ -160,7 +163,7 @@ export default function MedicalBillingPage() {
         description="Run our free Revenue Leakage Calculator to quantify potential losses, then request a free billing and collections analysis."
       />
 
-      <section className="py-20 md:py-24">
+      <section className="py-12 md:py-16">
         <Container>
           <SectionTitle
             title={medicalBillingContent.specialties.title}

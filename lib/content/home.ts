@@ -36,14 +36,13 @@ export const homeContent = {
         "We get providers enrolled with Medicare, Medicaid, and commercial payers faster, with fewer rejected applications and less back-and-forth.",
       icon: "BadgeCheck",
     },
-    // Re-enable later with /mips page:
-    // {
-    //   title: "MIPS Services",
-    //   href: "/mips",
-    //   description:
-    //     "Measure selection, year-round tracking, and Quality Payment Program submission support that helps protect your Medicare reimbursement.",
-    //   icon: "ClipboardList",
-    // },
+    {
+      title: "MIPS Services",
+      href: "/mips",
+      description:
+        "Measure selection, year-round tracking, and Quality Payment Program submission support that helps protect your Medicare reimbursement.",
+      icon: "ClipboardList",
+    },
     {
       title: "Virtual Front Desk Services",
       href: "/virtual-front-desk",

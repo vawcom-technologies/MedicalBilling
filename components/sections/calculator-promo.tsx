@@ -14,7 +14,7 @@ export function CalculatorPromo({
   description = "Use our free Revenue Leakage Calculator to estimate losses from claim denials and aging AR, then unlock a personalized breakdown.",
 }: CalculatorPromoProps) {
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-10 md:py-14">
       <Container>
         <FadeIn>
           <div className="glass relative overflow-hidden rounded-[1.75rem] px-6 py-10 md:px-10 md:py-12">

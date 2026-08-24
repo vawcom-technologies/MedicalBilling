@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { contactContent } from "@/lib/content/contact";
 import { siteConfig } from "@/lib/site-config";
@@ -15,6 +14,8 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { HeroStatsRow } from "@/components/sections/hero-stats-overlay";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/motion/fade-in";
+import { PhotoHeroShell } from "@/components/sections/photo-hero-shell";
+import { heroBackgrounds } from "@/lib/hero-backgrounds";
 
 export const metadata = buildMetadata({
   title: contactContent.seo.title,
@@ -35,47 +36,44 @@ export default function ContactPage() {
       <JsonLd data={contactPageSchema()} />
       <JsonLd data={faqSchema([...contactContent.faqs])} />
 
-      <section className="hero-gradient noise-overlay relative overflow-hidden pb-10 pt-32 md:pb-16 md:pt-40">
-        <Container className="relative z-[2]">
-          <FadeIn className="mx-auto max-w-3xl text-center">
-            <p className="mb-3 text-sm text-muted">
-              <Link href="/" className="hover:text-primary">
-                Home
-              </Link>
-              <span className="mx-2">/</span>
-              <span className="font-medium text-foreground">Contact</span>
-            </p>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
-              Contact
-            </p>
-            <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-[3.2rem]">
-              {contactContent.hero.h1}
-            </h1>
-            <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
-              {contactContent.hero.subheadline}
-            </p>
-            <HeroStatsRow
-              stats={[
-                {
-                  label: "Response Time",
-                  value: "1 Day",
-                  tone: "primary",
-                },
-                {
-                  label: "Free Consultations",
-                  value: "100%",
-                  tone: "accent",
-                },
-                {
-                  label: "Support Coverage",
-                  value: "Mon–Fri",
-                  tone: "secondary",
-                },
-              ]}
-            />
-          </FadeIn>
-        </Container>
-      </section>
+      <PhotoHeroShell
+        src={heroBackgrounds.contact.src}
+        alt={heroBackgrounds.contact.alt}
+        intensity="strong"
+        breadcrumb="Contact"
+        align="center"
+      >
+        <FadeIn className="mx-auto max-w-3xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+            Contact
+          </p>
+          <h1 className="text-balance text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-[3.2rem]">
+            {contactContent.hero.h1}
+          </h1>
+          <p className="mt-5 text-base leading-relaxed text-white/80 md:text-lg">
+            {contactContent.hero.subheadline}
+          </p>
+          <HeroStatsRow
+            stats={[
+              {
+                label: "Response Time",
+                value: "1 Day",
+                tone: "primary",
+              },
+              {
+                label: "Free Consultations",
+                value: "100%",
+                tone: "accent",
+              },
+              {
+                label: "Support Coverage",
+                value: "Mon–Fri",
+                tone: "secondary",
+              },
+            ]}
+          />
+        </FadeIn>
+      </PhotoHeroShell>
 
       <section className="pb-20 pt-6 md:pb-28">
         <Container>

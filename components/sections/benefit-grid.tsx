@@ -27,7 +27,7 @@ export function BenefitGrid({
   const loopItems = [...items, ...items];
 
   return (
-    <section className="overflow-hidden py-20 md:py-28">
+    <section className="overflow-hidden py-12 md:py-16">
       <Container>
         <SectionTitle
           eyebrow={eyebrow}
@@ -36,7 +36,7 @@ export function BenefitGrid({
         />
       </Container>
 
-      <FadeIn className="mt-12">
+      <FadeIn className="mt-8">
         <div className="relative">
           <div
             className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-16 bg-gradient-to-r from-[#eef5fa] to-transparent md:w-28"

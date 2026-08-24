@@ -61,22 +61,36 @@ export function ServiceCards({
   services: readonly Service[] | Service[];
 }) {
   return (
-    <section className="section-alt py-20 md:py-28">
+    <section className="section-alt py-12 md:py-16">
       <Container>
         <SectionTitle
           eyebrow="What We Do"
           title={title}
           description={description}
         />
-        <Stagger className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => {
+        <Stagger className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {services.map((service, index) => {
             const Icon = icons[service.icon] ?? FileText;
             const iconClass = iconStyles[service.icon] ?? fallbackIconStyle;
+            const isLast = index === services.length - 1;
+            const aloneOnMd = isLast && services.length % 2 === 1;
+            const aloneOnXl = isLast && services.length % 3 === 1;
+
             return (
-              <StaggerItem key={service.href}>
+              <StaggerItem
+                key={service.href}
+                className={[
+                  aloneOnMd ? "md:col-span-2 md:flex md:justify-center xl:block" : "",
+                  aloneOnXl ? "xl:col-span-1 xl:col-start-2" : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+              >
                 <Link
                   href={service.href}
-                  className="glass group flex h-full flex-col rounded-[1.5rem] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/35 hover:shadow-[0_20px_50px_rgba(42,212,196,0.14)] md:p-8"
+                  className={`glass group flex h-full flex-col rounded-[1.5rem] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/35 hover:shadow-[0_20px_50px_rgba(42,212,196,0.14)] md:p-8 ${
+                    aloneOnMd ? "md:w-[calc(50%-0.75rem)] xl:w-full" : ""
+                  }`}
                 >
                   <span
                     className={`flex h-14 w-14 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-105 ${iconClass}`}

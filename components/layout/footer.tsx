@@ -9,7 +9,7 @@ export function Footer() {
 
   return (
     <footer className="section-surface border-t">
-      <Container className="py-16 md:py-20">
+      <Container className="py-10 md:py-14">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1.1fr]">
           <div>
             <Link href="/" className="inline-flex items-center gap-2.5">

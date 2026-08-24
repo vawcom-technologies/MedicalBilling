@@ -107,9 +107,9 @@ export function FeatureList({
   }, [activeIndex, reduceMotion]);
 
   return (
-    <section className="section-alt py-20 md:py-28">
+    <section className="section-alt py-12 md:py-16">
       <Container>
-        <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionTitle
             align="left"
             eyebrow={eyebrow}
