@@ -10,7 +10,7 @@ const websiteProjectItems = [
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
     label: "New Practice Sites",
-    alt: "Medical practice website development planning on a laptop",
+    alt: "Medical practice webpage development planning on a laptop",
   },
   {
     image:

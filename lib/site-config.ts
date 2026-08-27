@@ -68,7 +68,7 @@ export const siteConfig = {
     consultation: "Schedule a Free Consultation",
     discovery: "Book a Discovery Call",
     experts: "Talk to Our Experts",
-    websiteDevelopment: "Get a Free Website Consultation",
+    webpageDevelopment: "Get a Free Webpage Consultation",
     socialMedia: "Talk About Social Media Marketing",
     seoServices: "Get a Free SEO Consultation",
   },
@@ -98,9 +98,9 @@ export const navLinks = [
 /** Dropdown under the Services nav item */
 export const servicesMenuLinks = [
   {
-    href: "/website-development",
-    label: "Website Development",
-    short: "Websites",
+    href: "/webpage-development",
+    label: "Webpage Development",
+    short: "Webpages",
   },
   {
     href: "/social-media-marketing",
@@ -136,9 +136,9 @@ export const serviceLinks = [
     short: "Virtual Front Desk",
   },
   {
-    href: "/website-development",
-    title: "Website Development",
-    short: "Website Development",
+    href: "/webpage-development",
+    title: "Webpage Development",
+    short: "Webpage Development",
   },
   {
     href: "/social-media-marketing",

@@ -14,7 +14,7 @@ export type SupportTopicId =
   | "credentialing"
   | "mips"
   | "front-desk"
-  | "website-development"
+  | "webpage-development"
   | "social-media"
   | "seo"
   | "pricing"
@@ -54,10 +54,10 @@ export const supportTopics: SupportTopic[] = [
     href: "/virtual-front-desk",
   },
   {
-    id: "website-development",
+    id: "webpage-development",
     label: "Websites",
-    description: "Practice website development",
-    href: "/website-development",
+    description: "Practice webpage development",
+    href: "/webpage-development",
   },
   {
     id: "social-media",
@@ -236,13 +236,13 @@ export const supportFaqs: SupportFaq[] = [
       "Virtual front desk support covers appointment scheduling, insurance eligibility verification, patient intake, call answering, reminders, and referral coordination. It expands front-desk capacity without adding full-time overhead.",
   },
   {
-    id: "website-development-included",
-    topic: "website-development",
+    id: "webpage-development-included",
+    topic: "webpage-development",
     question: "Do you build websites for medical practices?",
     keywords: [
       "website",
       "web development",
-      "website development",
+      "webpage development",
       "redesign",
       "site",
     ],
@@ -293,7 +293,7 @@ export const supportFaqs: SupportFaq[] = [
       "percentage",
       "contract",
     ],
-    answer: `Pricing depends on specialty, claim volume, and which services you need (billing, credentialing, front desk, website development, social media, SEO, or a combination). Most practices start with a free consultation so we can recommend a clear plan. Contact ${siteConfig.name} for a tailored quote.`,
+    answer: `Pricing depends on specialty, claim volume, and which services you need (billing, credentialing, front desk, webpage development, social media, SEO, or a combination). Most practices start with a free consultation so we can recommend a clear plan. Contact ${siteConfig.name} for a tailored quote.`,
   },
   {
     id: "get-started",
@@ -440,7 +440,7 @@ export function buildKnowledgeContext() {
     .join("\n");
 
   return `Company: ${siteConfig.name}
-Services: medical billing, provider credentialing, virtual front desk, website development, social media marketing, SEO
+Services: medical billing, provider credentialing, virtual front desk, webpage development, social media marketing, SEO
 Phone: ${siteConfig.phone}
 Email: ${siteConfig.email}
 CTA: free consultation / free revenue cycle assessment

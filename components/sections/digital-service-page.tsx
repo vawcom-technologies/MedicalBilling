@@ -23,7 +23,7 @@ import type { DigitalServiceContent } from "@/lib/content/digital-services";
 import { heroBackgrounds, type HeroBackgroundKey } from "@/lib/hero-backgrounds";
 
 const digitalHeroKey: Record<string, HeroBackgroundKey> = {
-  "/website-development": "website-development",
+  "/webpage-development": "webpage-development",
   "/social-media-marketing": "social-media-marketing",
   "/seo-services": "seo-services",
 };
@@ -72,11 +72,11 @@ export function DigitalServicePage({
         secondaryCta={content.hero.secondaryCta}
         secondaryHref="/contact"
         backgroundImage={
-          heroBackgrounds[digitalHeroKey[content.path] ?? "website-development"]
+          heroBackgrounds[digitalHeroKey[content.path] ?? "webpage-development"]
             .src
         }
         backgroundAlt={
-          heroBackgrounds[digitalHeroKey[content.path] ?? "website-development"]
+          heroBackgrounds[digitalHeroKey[content.path] ?? "webpage-development"]
             .alt
         }
       >
@@ -122,10 +122,10 @@ export function DigitalServicePage({
           <FadeIn className="mx-auto mt-8 max-w-3xl text-center text-sm text-muted">
             Explore related services like{" "}
             <Link
-              href="/website-development"
+              href="/webpage-development"
               className="font-semibold text-secondary underline-offset-4 hover:underline"
             >
-              website development
+              webpage development
             </Link>
             ,{" "}
             <Link

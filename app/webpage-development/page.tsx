@@ -1,5 +1,5 @@
 import {
-  websiteDevelopmentContent,
+  webpageDevelopmentContent,
 } from "@/lib/content/digital-services";
 import {
   DigitalServicePage,
@@ -7,13 +7,13 @@ import {
 } from "@/components/sections/digital-service-page";
 import { WebsiteBuildsGallery } from "@/components/sections/website-builds-gallery";
 
-export const metadata = buildDigitalServiceMetadata(websiteDevelopmentContent);
+export const metadata = buildDigitalServiceMetadata(webpageDevelopmentContent);
 
-export default function WebsiteDevelopmentPage() {
+export default function WebpageDevelopmentPage() {
   return (
     <DigitalServicePage
-      content={websiteDevelopmentContent}
-      serviceName="Website Development Services"
+      content={webpageDevelopmentContent}
+      serviceName="Webpage Development Services"
       afterFeatures={<WebsiteBuildsGallery />}
     />
   );

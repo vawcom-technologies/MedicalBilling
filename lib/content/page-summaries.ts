@@ -42,9 +42,9 @@ export const pageGuides: PageGuide[] = [
       "Virtual front desk support handles appointment scheduling, insurance eligibility verification, patient intake, call answering, reminders, and referral coordination without adding full-time overhead.",
   },
   {
-    id: "website-development",
-    label: "Website Development",
-    href: "/website-development",
+    id: "webpage-development",
+    label: "Webpage Development",
+    href: "/webpage-development",
     summary:
       "Website development services create fast, mobile-friendly practice websites with clear service pages and conversion-focused contact paths.",
   },
@@ -81,7 +81,7 @@ export const pageGuides: PageGuide[] = [
     label: "Contact",
     href: "/contact",
     summary:
-      "Share your practice details and the service you need: medical billing, credentialing, virtual front desk, website development, social media, or SEO. Most inquiries receive a response within one business day, and consultations are free.",
+      "Share your practice details and the service you need: medical billing, credentialing, virtual front desk, webpage development, social media, or SEO. Most inquiries receive a response within one business day, and consultations are free.",
   },
 ];
 

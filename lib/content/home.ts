@@ -51,8 +51,8 @@ export const homeContent = {
       icon: "Headset",
     },
     {
-      title: "Website Development",
-      href: "/website-development",
+      title: "Webpage Development",
+      href: "/webpage-development",
       description:
         "Modern, mobile-friendly practice websites with clear service pages and easy ways for patients to contact you.",
       icon: "Globe",

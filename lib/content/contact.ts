@@ -32,7 +32,7 @@ export const contactContent = {
     "Credentialing Services",
     "MIPS Services",
     "Virtual Front Desk Services",
-    "Website Development",
+    "Webpage Development",
     "Social Media Marketing",
     "SEO Services",
     "Full Revenue Cycle Assessment",

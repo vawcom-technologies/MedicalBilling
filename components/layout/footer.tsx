@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { Cross, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { navLinks, serviceLinks, siteConfig } from "@/lib/site-config";
 import { Container } from "@/components/ui/container";
 import { NewsletterForm } from "@/components/sections/newsletter-form";
+import { BrandLogo } from "@/components/brand-logo";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -13,8 +14,8 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1.1fr]">
           <div>
             <Link href="/" className="inline-flex items-center gap-2.5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent text-white">
-                <Cross className="h-5 w-5" aria-hidden="true" />
+              <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden">
+                <BrandLogo alt="" className="scale-[1.08]" />
               </span>
               <span className="text-lg font-bold text-primary">
                 {siteConfig.name}

@@ -15,7 +15,7 @@ export function organizationSchema() {
     "@type": "Organization",
     name: siteConfig.name,
     url: absoluteUrl("/"),
-    logo: absoluteUrl("/logo.svg"),
+    logo: absoluteUrl("/logo.png"),
     email: siteConfig.email,
     ...(phone ? { telephone: phone } : {}),
     address: {

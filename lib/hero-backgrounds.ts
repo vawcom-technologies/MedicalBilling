@@ -30,9 +30,9 @@ export const heroBackgrounds = {
     src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=2400&q=80",
     alt: "Healthcare consultation desk ready for patient and practice support calls",
   },
-  "website-development": {
+  "webpage-development": {
     src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2400&q=80",
-    alt: "Laptop and analytics workspace for medical practice website development",
+    alt: "Laptop and analytics workspace for medical practice webpage development",
   },
   "social-media-marketing": {
     src: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=2400&q=80",

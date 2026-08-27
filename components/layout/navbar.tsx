@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Menu, X, Cross } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { navLinks, servicesMenuLinks, siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { BrandLogo } from "@/components/brand-logo";
 
 function clamp(value: number, min = 0, max = 1) {
   return Math.min(max, Math.max(min, value));
@@ -32,7 +33,6 @@ export function Navbar() {
   const shellRef = useRef<HTMLDivElement>(null);
   const rowRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLSpanElement>(null);
-  const iconRef = useRef<SVGSVGElement>(null);
   const titleRef = useRef<HTMLSpanElement>(null);
   const ctaRef = useRef<HTMLAnchorElement>(null);
   const ctaFullRef = useRef<HTMLSpanElement>(null);
@@ -83,7 +83,6 @@ export function Navbar() {
       const shell = shellRef.current;
       const row = rowRef.current;
       const logo = logoRef.current;
-      const icon = iconRef.current;
       const title = titleRef.current;
       const cta = ctaRef.current;
       if (!header || !shell || !row) return;
@@ -111,7 +110,6 @@ export function Navbar() {
 
       const barHeight = 72 - p * (desktop ? 12 : 10);
       const logoSize = 40 - p * 4;
-      const iconSize = 20 - p * 4;
       const titleSize = 18 - p * 2.5;
       const ctaHeight = 44 - p * 6;
       const ctaPadX = 22 - p * 4;
@@ -148,10 +146,6 @@ export function Navbar() {
       if (logo) {
         logo.style.width = `${logoSize}px`;
         logo.style.height = `${logoSize}px`;
-      }
-      if (icon) {
-        icon.style.width = `${iconSize}px`;
-        icon.style.height = `${iconSize}px`;
       }
       if (title) {
         title.style.fontSize = `${titleSize}px`;
@@ -310,9 +304,9 @@ export function Navbar() {
           >
             <span
               ref={logoRef}
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary via-secondary to-accent text-white shadow-[0_8px_20px_rgba(15,76,129,0.25)] transition-transform duration-300 group-hover:scale-105"
+              className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105"
             >
-              <Cross ref={iconRef} className="h-5 w-5" aria-hidden="true" />
+              <BrandLogo alt="" priority className="scale-[1.08]" />
             </span>
             <span
               ref={titleRef}

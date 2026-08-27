@@ -75,10 +75,10 @@ export function SeoGallery() {
           </Link>{" "}
           or start with a stronger foundation through{" "}
           <Link
-            href="/website-development"
+            href="/webpage-development"
             className="font-semibold text-secondary underline-offset-4 hover:underline"
           >
-            website development
+            webpage development
           </Link>
           .
         </p>

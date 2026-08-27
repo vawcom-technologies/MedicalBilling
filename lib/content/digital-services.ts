@@ -43,34 +43,34 @@ export type DigitalServiceContent = {
   finalCta: { title: string; description: string; cta: string };
 };
 
-export const websiteDevelopmentContent: DigitalServiceContent = {
-  path: "/website-development",
-  breadcrumb: "Website Development",
-  eyebrow: "Website Development Services",
+export const webpageDevelopmentContent: DigitalServiceContent = {
+  path: "/webpage-development",
+  breadcrumb: "Webpage Development",
+  eyebrow: "Webpage Development Services",
   seo: {
-    title: `Website Development for Medical Practices | ${siteConfig.name}`,
+    title: `Webpage Development for Medical Practices | ${siteConfig.name}`,
     description:
       "Get a fast, mobile-friendly practice website with clear service pages, strong contact paths, and conversion-focused design built for healthcare providers.",
     keywords: [
-      "medical practice website development",
+      "medical practice webpage development",
       "healthcare website design",
-      "doctor website development",
+      "doctor webpage development",
       "clinic website design",
     ],
   },
   hero: {
-    h1: "Website Development That Helps Patients Find and Choose Your Practice",
+    h1: "Webpage Development That Helps Patients Find and Choose Your Practice",
     subheadline:
       "Your website is often the first impression patients get of your practice. We build modern, mobile-ready sites that explain your services clearly and make it easy to get in touch.",
-    primaryCta: siteConfig.cta.websiteDevelopment,
+    primaryCta: siteConfig.cta.webpageDevelopment,
     secondaryCta: "Talk About Your Website",
   },
   intro: [
-    "We design and develop healthcare practice websites, including medical practice website development and clinic website design, that look professional, load quickly, and guide visitors toward booking or contacting your team.",
+    "We design and develop healthcare practice websites, including medical practice webpage development and clinic website design, that look professional, load quickly, and guide visitors toward booking or contacting your team.",
     "From single-location clinics to multi-provider groups, every site is built around clarity, trust, and conversion, not clutter.",
   ],
   includes: {
-    title: "Website Development Services for Medical Practices",
+    title: "Webpage Development Services for Medical Practices",
     items: [
       {
         title: "Custom practice website design",
@@ -178,12 +178,12 @@ export const websiteDevelopmentContent: DigitalServiceContent = {
     title: "Ready for a Stronger Practice Website?",
     description:
       "Get a clear plan for a modern site that helps patients understand your services and reach your team.",
-    cta: siteConfig.cta.websiteDevelopment,
+    cta: siteConfig.cta.webpageDevelopment,
   },
   finalCta: {
     title: "Build a Website Patients Can Trust",
-    description: `Partner with ${siteConfig.name} for website development built around clarity, speed, and patient conversion.`,
-    cta: siteConfig.cta.websiteDevelopment,
+    description: `Partner with ${siteConfig.name} for webpage development built around clarity, speed, and patient conversion.`,
+    cta: siteConfig.cta.webpageDevelopment,
   },
 };
 
@@ -457,7 +457,7 @@ export const seoServicesContent: DigitalServiceContent = {
         "Not always. We can improve an existing site, but a slow or poorly structured website may need updates first for SEO to perform well.",
     },
     {
-      question: "Can SEO work with social media and website development?",
+      question: "Can SEO work with social media and webpage development?",
       answer:
         "Yes. Website development, social media, and SEO reinforce each other. A strong site, active presence, and search visibility work best together.",
     },

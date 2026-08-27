@@ -440,3 +440,87 @@ html.lenis body {
 .animate-accordion-up {
   animation: accordion-up 0.2s ease-out;
 }
+
+/* —— Initial splash (CureMD-style) —— */
+html.splash-active {
+  overflow: hidden;
+}
+
+.site-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  transition: opacity 0.42s ease, visibility 0.42s ease;
+}
+
+.site-splash--hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.site-splash-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 11.5rem;
+  height: 11.5rem;
+}
+
+.site-splash-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  border-top-color: var(--primary);
+  border-bottom-color: var(--primary);
+  animation: site-splash-spin 1.05s linear infinite;
+}
+
+.site-splash-brand {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.site-splash-logo {
+  width: 3.25rem;
+  height: 3.25rem;
+  object-fit: contain;
+}
+
+.site-splash-wordmark {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes site-splash-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-splash-ring {
+    animation: none;
+    border-color: color-mix(in srgb, var(--primary) 35%, transparent);
+    border-top-color: var(--primary);
+    border-bottom-color: var(--primary);
+  }
+
+  .site-splash {
+    transition: none;
+  }
+}
