@@ -11,7 +11,7 @@ import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { LenisProvider } from "@/components/providers/lenis-provider";
 import { NavigationEffects } from "@/components/providers/navigation-effects";
 import { PageTransition } from "@/components/providers/page-transition";
-import { SplashDismiss } from "@/components/providers/splash-dismiss";
+import { InitialSplash } from "@/components/providers/initial-splash";
 import { JsonLd } from "@/components/json-ld";
 import {
   healthcareBusinessSchema,
@@ -78,32 +78,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="splash-active">
+    <html lang="en">
       <body className={`${plusJakarta.variable} antialiased`}>
-        <div
-          id="site-splash"
-          className="site-splash"
-          role="status"
-          aria-live="polite"
-          aria-label="Loading"
-        >
-          <div className="site-splash-inner">
-            <div className="site-splash-ring" aria-hidden="true" />
-            <div className="site-splash-brand">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/logo.png"
-                alt=""
-                width={64}
-                height={58}
-                className="site-splash-logo"
-                decoding="async"
-              />
-              <p className="site-splash-wordmark">{siteConfig.name}</p>
-            </div>
-          </div>
-        </div>
-        <SplashDismiss />
+        <InitialSplash />
         <JsonLd data={organizationSchema()} />
         <JsonLd data={healthcareBusinessSchema()} />
         <a
