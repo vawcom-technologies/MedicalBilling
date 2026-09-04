@@ -16,6 +16,7 @@ import { Timeline } from "@/components/sections/timeline";
 import { StatsSection } from "@/components/sections/stats-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { VirtualFrontDeskGallery } from "@/components/sections/virtual-front-desk-gallery";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { SectionTitle } from "@/components/section-title";
@@ -93,6 +94,8 @@ export default function VirtualFrontDeskPage() {
         title={virtualFrontDeskContent.includes.title}
         items={virtualFrontDeskContent.includes.items}
       />
+
+      <VirtualFrontDeskGallery />
 
       <section className="bg-background py-12 md:py-16">
         <Container>

@@ -19,8 +19,8 @@ export const heroBackgrounds = {
     alt: "Clinician reviewing quality metrics and MIPS reporting on a tablet",
   },
   "virtual-front-desk": {
-    src: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=2400&q=80",
-    alt: "Medical front desk and patient check-in area for virtual front desk support",
+    src: "https://images.unsplash.com/photo-1580795479225-c50ab8c3348d?auto=format&fit=crop&w=2400&q=80",
+    alt: "Front desk support specialist wearing a headset and typing at a computer workstation",
   },
   about: {
     src: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=2400&q=80",

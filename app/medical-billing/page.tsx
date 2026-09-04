@@ -17,6 +17,7 @@ import { StatsSection } from "@/components/sections/stats-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { CalculatorPromo } from "@/components/sections/calculator-promo";
+import { MedicalBillingGallery } from "@/components/sections/medical-billing-gallery";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/motion/fade-in";
 import { SectionTitle } from "@/components/section-title";
@@ -91,6 +92,8 @@ export default function MedicalBillingPage() {
         title={medicalBillingContent.includes.title}
         items={medicalBillingContent.includes.items}
       />
+
+      <MedicalBillingGallery />
 
       <section className="bg-background py-12 md:py-16">
         <Container>
