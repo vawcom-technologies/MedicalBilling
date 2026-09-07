@@ -8,9 +8,9 @@ import { AccordionGallery } from "@/components/ui/accordion-gallery";
 const mipsProjectItems = [
   {
     image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=80",
     label: "Quality Measure Selection",
-    alt: "Clinician reviewing quality measures and patient data for MIPS reporting",
+    alt: "Laptop dashboard used to compare MIPS quality measure options",
   },
   {
     image:
@@ -20,9 +20,9 @@ const mipsProjectItems = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?auto=format&fit=crop&w=1400&q=80",
     label: "Promoting Interoperability",
-    alt: "Provider using an EHR tablet for Promoting Interoperability measures",
+    alt: "EHR workstation used for Promoting Interoperability attestation",
   },
   {
     image:
@@ -32,9 +32,9 @@ const mipsProjectItems = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=1400&q=80",
     label: "Score Optimization",
-    alt: "Financial and performance reports used to protect Medicare reimbursement",
+    alt: "Financial planning used to protect Medicare reimbursement scores",
   },
 ];
 

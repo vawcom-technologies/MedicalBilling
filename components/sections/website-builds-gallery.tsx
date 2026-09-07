@@ -8,9 +8,9 @@ import { AccordionGallery } from "@/components/ui/accordion-gallery";
 const websiteProjectItems = [
   {
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80",
     label: "New Practice Sites",
-    alt: "Medical practice webpage development planning on a laptop",
+    alt: "Developer building a new practice website on a laptop",
   },
   {
     image:
@@ -32,9 +32,9 @@ const websiteProjectItems = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1400&q=80",
     label: "Conversion Focused Layouts",
-    alt: "Dashboard and charts on a computer monitor",
+    alt: "Website design layouts focused on patient inquiries and conversions",
   },
 ];
 

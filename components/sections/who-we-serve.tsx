@@ -9,15 +9,15 @@ import { AccordionGallery } from "@/components/ui/accordion-gallery";
 const audienceItems = [
   {
     image:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1400&q=80",
     label: "Independent Physicians",
-    alt: "Independent physician reviewing patient care in a medical practice",
+    alt: "Independent physician in a medical practice",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1400&q=80",
     label: "Specialty Clinics",
-    alt: "Specialty clinic hallway serving healthcare providers",
+    alt: "Specialist clinician providing care in a clinic",
   },
   {
     image:
@@ -27,15 +27,15 @@ const audienceItems = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1400&q=80",
     label: "Behavioral Health",
-    alt: "Healthcare professional with tablet",
+    alt: "Behavioral health professional supporting patients",
   },
   {
     image:
       "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1400&q=80",
     label: "Multi-Provider Groups",
-    alt: "Modern medical facility exterior",
+    alt: "Modern medical facility for multi-provider groups",
   },
 ];
 

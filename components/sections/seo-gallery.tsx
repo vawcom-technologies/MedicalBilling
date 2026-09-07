@@ -14,27 +14,27 @@ const seoProjectItems = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1664575602276-acd073f104c1?auto=format&fit=crop&w=1400&q=80",
     label: "Service Page Optimization",
-    alt: "Person reviewing documents and charts for page improvements",
+    alt: "Marketer reviewing service page content on a laptop",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1400&q=80",
     label: "Keyword Targeting",
-    alt: "Analytics charts used for search performance tracking",
+    alt: "Search and keyword research work on a computer",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=1400&q=80",
     label: "Technical SEO Fixes",
-    alt: "Hands typing on a laptop during website optimization",
+    alt: "Code and technical website fixes for search performance",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=80",
     label: "Ranking Reports",
-    alt: "Dashboard screens showing performance metrics",
+    alt: "Specialist reviewing search ranking and visibility reports",
   },
 ];
 

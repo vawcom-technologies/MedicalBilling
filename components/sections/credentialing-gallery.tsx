@@ -8,15 +8,15 @@ import { AccordionGallery } from "@/components/ui/accordion-gallery";
 const credentialingProjectItems = [
   {
     image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&w=1400&q=80",
     label: "Initial Provider Enrollment",
-    alt: "Credentialing specialist reviewing provider enrollment documents",
+    alt: "Organized enrollment files prepared for a new provider packet",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80",
     label: "Medicare & Medicaid",
-    alt: "Healthcare administrator working on government payer enrollment",
+    alt: "Enrollment agreement handshake for government payer participation",
   },
   {
     image:
@@ -32,9 +32,9 @@ const credentialingProjectItems = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=1400&q=80",
     label: "Recredentialing & Renewals",
-    alt: "Checklist and calendar used for recredentialing deadlines",
+    alt: "Calendar and planner used to track recredentialing deadlines",
   },
 ];
 

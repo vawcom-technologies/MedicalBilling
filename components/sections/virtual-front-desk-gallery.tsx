@@ -14,9 +14,9 @@ const frontDeskProjectItems = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1580795479225-c50ab8c3348d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&fit=crop&w=1400&q=80",
     label: "Headset-Ready Support",
-    alt: "Support specialist with headset typing at a front desk computer",
+    alt: "Professional headset at a virtual front desk workstation",
   },
   {
     image:
@@ -26,15 +26,15 @@ const frontDeskProjectItems = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1400&q=80",
     label: "Appointment Scheduling",
-    alt: "Healthcare staff coordinating appointments on a computer",
+    alt: "Front desk specialist on a call while reviewing the schedule",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1560264418-c4445382edbc?auto=format&fit=crop&w=1400&q=80",
     label: "Patient Check-In & Intake",
-    alt: "Medical front desk helping a patient with registration and intake",
+    alt: "Office team handling patient intake and registration tasks",
   },
 ];
 

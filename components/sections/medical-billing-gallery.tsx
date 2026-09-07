@@ -8,27 +8,27 @@ import { AccordionGallery } from "@/components/ui/accordion-gallery";
 const medicalBillingProjectItems = [
   {
     image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1400&q=80",
     label: "Claim Scrubbing & Submission",
-    alt: "Billing specialist reviewing claims before electronic submission",
+    alt: "Specialist preparing electronic claims on a laptop",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=1400&q=80",
     label: "Payment Posting",
-    alt: "Financial documents and remittances used for payment posting",
+    alt: "Laptop and financial records used for payment posting and reconciliation",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80",
-    label: "Denial Management",
-    alt: "Team analyzing denied claims and preparing appeals",
+      "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1400&q=80",
+    label: "Denial Rate Trends",
+    alt: "Line graph showing denial rate performance over time",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
-    label: "AR Recovery",
-    alt: "Dashboards tracking aging accounts receivable and collections",
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1400&q=80",
+    label: "Aging AR Dashboard",
+    alt: "Analytics dashboard tracking aging accounts receivable",
   },
   {
     image:
