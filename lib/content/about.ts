@@ -96,6 +96,24 @@ export const aboutContent = {
       description:
         "Trained healthcare support professionals who protect first impressions while keeping schedules and intake accurate.",
     },
+    {
+      name: "MIPS Specialists",
+      role: "Quality Payment Program",
+      description:
+        "MIPS analysts who select measures, track performance year-round, and submit Quality Payment Program data so Medicare reimbursement stays protected.",
+    },
+    {
+      name: "Webpage Development Team",
+      role: "Practice Websites",
+      description:
+        "Designers and developers who build fast, mobile-ready practice sites with clear service pages and conversion-focused contact paths.",
+    },
+    {
+      name: "Social Media & SEO Team",
+      role: "Visibility & Growth",
+      description:
+        "Marketers who keep practices visible with healthcare-appropriate social content and local SEO so patients can find and choose your care.",
+    },
   ],
   certifications: {
     title: "Healthcare Certifications & Standards",

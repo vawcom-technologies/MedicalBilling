@@ -14,7 +14,17 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { Container } from "@/components/ui/container";
 import { SectionTitle } from "@/components/section-title";
 import { FadeIn, Stagger, StaggerItem } from "@/components/motion/fade-in";
-import { Award, BadgeCheck, Eye, FileText, Headset, Target } from "lucide-react";
+import {
+  Award,
+  BadgeCheck,
+  ClipboardList,
+  Eye,
+  FileText,
+  Globe,
+  Headset,
+  Megaphone,
+  Target,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { heroBackgrounds } from "@/lib/hero-backgrounds";
 
@@ -22,6 +32,9 @@ const teamIcons: Record<string, LucideIcon> = {
   "Revenue Cycle Leadership": FileText,
   "Credentialing Specialists": BadgeCheck,
   "Virtual Front Desk Team": Headset,
+  "MIPS Specialists": ClipboardList,
+  "Webpage Development Team": Globe,
+  "Social Media & SEO Team": Megaphone,
 };
 
 export const metadata = buildMetadata({
